@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://daj4n0evxxeig"]
+[gd_scene load_steps=6 format=4 uid="uid://daj4n0evxxeig"]
 
 [ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_omx4m"]
 [ext_resource type="Script" path="res://Scenes/Levels/dummy_level.gd" id="1_xpino"]
 [ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_4m5nu"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_ic73y"]
+[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="5_53h01"]
 
 [node name="DummyLevel" type="Node2D"]
 script = ExtResource("1_xpino")
@@ -16,4 +18,30 @@ position = Vector2(56, 56)
 [node name="NPC2" parent="." instance=ExtResource("2_4m5nu")]
 position = Vector2(-8, 7)
 
+[node name="NPC3" parent="." instance=ExtResource("2_4m5nu")]
+position = Vector2(-25, -41)
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Nut1" parent="." instance=ExtResource("4_ic73y")]
+position = Vector2(10, 8)
+scale = Vector2(0.05, 0.05)
+
+[node name="Nut2" parent="." instance=ExtResource("4_ic73y")]
+position = Vector2(9, 55)
+scale = Vector2(0.05, 0.05)
+
+[node name="Nut3" parent="." instance=ExtResource("4_ic73y")]
+position = Vector2(-39, -41)
+scale = Vector2(0.05, 0.05)
+
+[node name="Nut4" parent="." instance=ExtResource("4_ic73y")]
+position = Vector2(40, 7)
+scale = Vector2(0.05, 0.05)
+
+[node name="Nut5" parent="." instance=ExtResource("4_ic73y")]
+position = Vector2(55, -24)
+scale = Vector2(0.05, 0.05)
+
+[node name="Squirrel" parent="." instance=ExtResource("5_53h01")]
+position = Vector2(-57, 58)

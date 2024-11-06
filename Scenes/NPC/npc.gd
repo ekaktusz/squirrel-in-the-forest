@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 @onready var npc: CharacterBody2D = $"."
-@onready var navigation_agent_2d: NavigationAgent2D = $"../NavigationAgent2D"
-
 const SPEED = 30
 const ACCELERATION = 1
 var direction: Vector2 = Vector2.UP
@@ -23,7 +21,6 @@ func change_direction():
 func move_side():
 	velocity = direction_2 * SPEED * ACCELERATION
 	move_and_slide()
-	print(is_on_wall())
 	if is_on_wall():
 		change_direction_side()
 
