@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cauia1447s1l2"]
+[gd_scene load_steps=7 format=3 uid="uid://cauia1447s1l2"]
 
 [ext_resource type="Script" path="res://Scenes/Squirrel/squirrel.gd" id="1_ufrd5"]
 [ext_resource type="Texture2D" uid="uid://kys84x5wpcxf" path="res://icon.svg" id="2_pf5ub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_80fer"]
-radius = 61.0328
+radius = 60.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjika"]
 atlas = ExtResource("2_pf5ub")
@@ -21,9 +21,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n733n"]
+size = Vector2(130, 130)
+
 [node name="Squirrel" type="CharacterBody2D"]
 y_sort_enabled = true
 scale = Vector2(0.1, 0.1)
+motion_mode = 1
 script = ExtResource("1_ufrd5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,3 +35,12 @@ shape = SubResource("CircleShape2D_80fer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c5cg8")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_n733n")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

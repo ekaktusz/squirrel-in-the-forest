@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://shrlalqvdt0q"]
 
 [ext_resource type="PackedScene" uid="uid://daj4n0evxxeig" path="res://Scenes/Levels/DummyLevel.tscn" id="1_i1m72"]
-[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="1_iiss6"]
+[ext_resource type="PackedScene" uid="uid://cdnwvb5y6yy62" path="res://Scenes/Hud/Hud.tscn" id="3_hap6f"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(130, 65)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(3.5, 3.5)
 
 [node name="DummyLevel" parent="." instance=ExtResource("1_i1m72")]
 
-[node name="Squirrel" parent="." instance=ExtResource("1_iiss6")]
-position = Vector2(-57, 58)
+[node name="Hud" parent="." instance=ExtResource("3_hap6f")]
+position = Vector2(-161, -89)
