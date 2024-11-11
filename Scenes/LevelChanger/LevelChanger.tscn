@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://biopddoon2btm"]
+
+[ext_resource type="Script" path="res://Scenes/LevelChanger/level_changer.gd" id="1_dlosa"]
+
+[node name="LevelChanger" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dlosa")
+metadata/_edit_horizontal_guides_ = [337.0]
+metadata/_edit_vertical_guides_ = [573.0]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -20.0
+offset_right = 90.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DummyLevel" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Dummy Level"
+
+[node name="Level1" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 1
+"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DummyLevel" to="." method="_on_dummy_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
