@@ -30,17 +30,16 @@ scale = Vector2(0.1, 0.1)
 motion_mode = 1
 script = ExtResource("1_ufrd5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SpriteCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_80fer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c5cg8")
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
-scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1, 1)
+[node name="AreaCollision" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
 shape = SubResource("RectangleShape2D_n733n")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
