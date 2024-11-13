@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm0d02nx3eh2y"]
+
+[ext_resource type="Script" path="res://Scenes/StartEnd/start_end.gd" id="1_ida47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0mo"]
+size = Vector2(64, 64)
+
+[node name="StartEnd" type="Node2D"]
+script = ExtResource("1_ida47")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bu0mo")
+
+[node name="EvacuateLabel" type="Label" parent="."]
+visible = false
+offset_left = -80.0
+offset_top = -56.0
+offset_right = 80.0
+offset_bottom = -33.0
+text = "Press [E] to evacuate"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

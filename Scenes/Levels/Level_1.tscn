@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=4 uid="uid://gcj2g3i4n07k"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_qwneu"]
+[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="2_qx7f2"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_nh6rd"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_f7rwt"]
+[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="5_mmdjh"]
+[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="6_o3a5d"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(96, -80)
+script = ExtResource("1_qwneu")
+
+[node name="TilemapGroundFloor" parent="." instance=ExtResource("2_qx7f2")]
+tile_map_data = PackedByteArray("AAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAAAAAD9////AAAAAAEAAAD9/wAAAAABAAAAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+////AAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAABAAAAAAD//wMAAAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAP//AAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAD///7/AAACAAAAAGAAAP7/AAACAAAAAGD8//7/AAACAAAAAGD9//7/AAACAAAAAGD+//7/AAACAAAAAGD7////AAACAAAAADD7/wAAAAACAAAAADD7/wEAAAACAAAAADD7/wIAAAACAAAAADD7/wMAAAACAAAAADAAAAQAAAACAAAAAFD8/wQAAAACAAAAAFD9/wQAAAACAAAAAFD+/wQAAAACAAAAAFD//wQAAAACAAAAAFA=")
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="NPC" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(-32, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="NPC2" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(-32, 32)
+scale = Vector2(0.5, 0.5)
+
+[node name="NPC3" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(-160, 96)
+scale = Vector2(0.5, 0.5)
+
+[node name="NPC4" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(-160, 160)
+scale = Vector2(0.5, 0.5)
+
+[node name="NPC5" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(-96, 224)
+scale = Vector2(0.5, 0.5)
+
+[node name="Nuts" type="Node2D" parent="."]
+
+[node name="Nut1" parent="Nuts" instance=ExtResource("4_f7rwt")]
+position = Vector2(32, -32)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut2" parent="Nuts" instance=ExtResource("4_f7rwt")]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut3" parent="Nuts" instance=ExtResource("4_f7rwt")]
+position = Vector2(32, 96)
+scale = Vector2(0.1, 0.1)
+
+[node name="Squirrel" parent="." instance=ExtResource("5_mmdjh")]
+position = Vector2(-224, 224)
+scale = Vector2(0.25, 0.25)
+
+[node name="StartEnd" parent="." instance=ExtResource("6_o3a5d")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-224, 224)
+
+[connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
+[connection signal="evacuate" from="StartEnd" to="." method="_on_start_end_evacuate"]

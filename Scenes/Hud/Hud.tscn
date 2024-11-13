@@ -5,8 +5,19 @@
 [node name="Hud" type="Node2D"]
 script = ExtResource("1_qq101")
 
-[node name="Label" type="Label" parent="."]
+[node name="LevelNut" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 16
 text = "Nuts: "
+horizontal_alignment = 2
+
+[node name="TotalNut" type="Label" parent="."]
+offset_top = 23.0
+offset_right = 46.0
+offset_bottom = 46.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 16
+text = "Nuts: "
+horizontal_alignment = 2

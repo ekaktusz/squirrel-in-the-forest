@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cauia1447s1l2"]
+[gd_scene load_steps=8 format=3 uid="uid://cauia1447s1l2"]
 
 [ext_resource type="Script" path="res://Scenes/Squirrel/squirrel.gd" id="1_ufrd5"]
 [ext_resource type="Texture2D" uid="uid://kys84x5wpcxf" path="res://icon.svg" id="2_pf5ub"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_80fer"]
-radius = 60.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjika"]
 atlas = ExtResource("2_pf5ub")
@@ -21,8 +18,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n733n"]
-size = Vector2(130, 130)
+[sub_resource type="CircleShape2D" id="CircleShape2D_80fer"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6glb"]
+radius = 60.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp6x2"]
+bg_color = Color(0.133165, 0.623586, 0.551104, 1)
+anti_aliasing = false
 
 [node name="Squirrel" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -30,16 +34,39 @@ scale = Vector2(0.1, 0.1)
 motion_mode = 1
 script = ExtResource("1_ufrd5")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_c5cg8")
+
 [node name="SpriteCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_80fer")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_c5cg8")
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="AreaCollision" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
-shape = SubResource("RectangleShape2D_n733n")
+position = Vector2(-2.38418e-06, -2.98023e-06)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_n6glb")
+
+[node name="PowerUpSpeedTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+z_index = 1
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 124.0
+offset_bottom = -73.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_pp6x2")
+value = 100.0
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+metadata/_edit_lock_ = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="PowerUpSpeedTimer" to="." method="_on_power_up_speed_timer_timeout"]
