@@ -1,18 +1,23 @@
-[gd_scene load_steps=7 format=4 uid="uid://gcj2g3i4n07k"]
+[gd_scene load_steps=8 format=4 uid="uid://gcj2g3i4n07k"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_kipvb"]
 [ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="2_qx7f2"]
+[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="3_lws38"]
 [ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_nh6rd"]
 [ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_f7rwt"]
 [ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="5_mmdjh"]
 [ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="6_o3a5d"]
 
 [node name="Level1" type="Node2D"]
+y_sort_enabled = true
 position = Vector2(96, -80)
 script = ExtResource("1_kipvb")
 
 [node name="TilemapGroundFloor" parent="." instance=ExtResource("2_qx7f2")]
-tile_map_data = PackedByteArray("AAD4/wcAAAAAAAAAAAACAAcAAAACAAAAAAACAAYAAAACAAAAAAACAAUAAAACAAAAAAACAAQAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAACAAEAAAACAAAAAAACAAAAAAACAAAAAAACAP//AAACAAAAAAD3/wcAAAACAAAAAAD3/wYAAAACAAAAAAD3/wUAAAACAAAAAAD3/wQAAAACAAAAAAD3/wMAAAACAAAAAAD3/wIAAAACAAAAAAD3/wEAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD5//3/AAABAAAAAAD4//3/AAABAAAAAAD4/wgAAAABAAAAAAD5/wgAAAABAAAAAAD6/wgAAAABAAAAAAD7/wgAAAABAAAAAAD8/wgAAAABAAAAAAD9/wgAAAABAAAAAAD+/wgAAAABAAAAAAD//wgAAAABAAAAAAAAAAgAAAABAAAAAAABAAgAAAABAAAAAAD//wMAAAACAAAAAAD+/wMAAAACAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAD8/wUAAAABAAAAAAABAAQAAAABAAAAAAD4//7/AAABAAAAAAD4////AAABAAAAAAD4/wAAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD4/wcAAAAAAAAAAAD//wMAAAAAAAEAAAD+/wMAAAAAAAEAAAD7/wEAAAAAAAEAAAD6/wEAAAAAAAEAAAD8/wUAAAAAAAEAAAD5////AAAAAAEAAAD6////AAAAAAEAAAD7////AAAAAAEAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAD//wcAAAAAAAEAAAD+/wcAAAAAAAEAAAD9/wYAAAAAAAEAAAD8/wYAAAAAAAEAAAD8/wcAAAAAAAEAAAD7/wcAAAAAAAEAAAD6/wcAAAAAAAEAAAD6/wYAAAAAAAEAAAD6/wUAAAAAAAEAAAD6/wQAAAAAAAEAAAD6/wMAAAAAAAEAAAD6/wIAAAAAAAEAAAD7/wIAAAAAAAEAAAD6/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD9/wEAAAAAAAEAAAD+/wEAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD9/wQAAAAAAAEAAAD8/wMAAAAAAAEAAAD9/wIAAAAAAAEAAAD+/wIAAAAAAAEAAAD//wQAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wUAAAAAAAEAAAD9/wUAAAAAAAEAAAD7/wUAAAAAAAEAAAD7/wQAAAAAAAEAAAD5/wQAAAAAAAEAAAD4/wQAAAAAAAEAAAD4/wUAAAAAAAEAAAD4/wMAAAAAAAEAAAD4/wIAAAAAAAEAAAD5/wIAAAAAAAEAAAD5/wEAAAAAAAEAAAD4/wEAAAAAAAEAAAD4////AAAAAAEAAAA=")
+
+[node name="TilemapFirstFloor" parent="TilemapGroundFloor" instance=ExtResource("3_lws38")]
+tile_map_data = PackedByteArray("AAACAAcAAAACAAAAAAACAAYAAAACAAAAAAACAAUAAAACAAAAAAACAAQAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAACAAEAAAACAAAAAAACAAAAAAACAAAAAAACAP//AAACAAAAAAD3/wcAAAACAAAAAAD3/wYAAAACAAAAAAD3/wUAAAACAAAAAAD3/wQAAAACAAAAAAD3/wMAAAACAAAAAAD3/wIAAAACAAAAAAD3/wEAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD5//3/AAABAAAAAAD4//3/AAABAAAAAAABAAgAAAABAAAAAAAAAAgAAAABAAAAAAD//wgAAAABAAAAAAD+/wgAAAABAAAAAAD9/wgAAAABAAAAAAD8/wgAAAABAAAAAAD7/wgAAAABAAAAAAD6/wgAAAABAAAAAAD5/wgAAAABAAAAAAD4/wgAAAABAAAAAAD6/wUAAAABAAAAAAD7/wUAAAABAAAAAAD+/wUAAAABAAAAAAD//wUAAAABAAAAAAD//wMAAAABAAAAAAD+/wMAAAABAAAAAAD5/wMAAAABAAAAAAD5/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAD9/wMAAAABAAAAAAD8/wMAAAABAAAAAAA=")
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -22,43 +27,47 @@ scale = Vector2(2, 2)
 style = 2
 
 [node name="NPC2" parent="NPCs" instance=ExtResource("3_nh6rd")]
-position = Vector2(-32, 32)
+position = Vector2(-160, 104)
 scale = Vector2(2, 2)
 style = 1
 
 [node name="NPC3" parent="NPCs" instance=ExtResource("3_nh6rd")]
-position = Vector2(-160, 96)
+position = Vector2(-24, 80)
 scale = Vector2(2, 2)
 
 [node name="NPC4" parent="NPCs" instance=ExtResource("3_nh6rd")]
-position = Vector2(-160, 160)
+position = Vector2(-224, 160)
 scale = Vector2(2, 2)
 style = 2
 
 [node name="NPC5" parent="NPCs" instance=ExtResource("3_nh6rd")]
-position = Vector2(-96, 224)
+position = Vector2(-96, 216)
 scale = Vector2(2, 2)
 style = 1
 
 [node name="NPC6" parent="NPCs" instance=ExtResource("3_nh6rd")]
-position = Vector2(32, 224)
+position = Vector2(32, 216)
 scale = Vector2(2, 2)
 
 [node name="Nuts" type="Node2D" parent="."]
 
 [node name="Nut1" parent="Nuts" instance=ExtResource("4_f7rwt")]
+z_index = 1
 position = Vector2(32, -32)
 scale = Vector2(0.1, 0.1)
 
 [node name="Nut2" parent="Nuts" instance=ExtResource("4_f7rwt")]
+z_index = 1
 position = Vector2(32, 32)
 scale = Vector2(0.1, 0.1)
 
 [node name="Nut3" parent="Nuts" instance=ExtResource("4_f7rwt")]
+z_index = 1
 position = Vector2(32, 96)
 scale = Vector2(0.1, 0.1)
 
 [node name="Squirrel" parent="." instance=ExtResource("5_mmdjh")]
+z_index = 1
 position = Vector2(-224, 224)
 
 [node name="StartEnd" parent="." instance=ExtResource("6_o3a5d")]
