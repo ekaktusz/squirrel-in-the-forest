@@ -7,4 +7,4 @@ func _on_dummy_level_pressed() -> void:
 
 
 func _on_level_1_pressed() -> void:
-		change_level.emit(1)
+	change_level.emit(1)

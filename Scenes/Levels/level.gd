@@ -6,6 +6,7 @@ extends Node2D
 func _on_squirrel_enemy_hit() -> void:
 	squirrel.position = starting_position.position
 
-func _on_start_end_evacuate() -> void:
-	#todo add evacuate anim and wait time
+
+func _on_squirrel_level_done() -> void:
+	Globals.changing_level = true
 	queue_free()
