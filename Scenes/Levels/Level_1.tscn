@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://gcj2g3i4n07k"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_qwneu"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_kipvb"]
 [ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="2_qx7f2"]
 [ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_nh6rd"]
 [ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_f7rwt"]
@@ -9,32 +9,40 @@
 
 [node name="Level1" type="Node2D"]
 position = Vector2(96, -80)
-script = ExtResource("1_qwneu")
+script = ExtResource("1_kipvb")
 
 [node name="TilemapGroundFloor" parent="." instance=ExtResource("2_qx7f2")]
-tile_map_data = PackedByteArray("AAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAAAAAD9////AAAAAAEAAAD9/wAAAAABAAAAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+////AAAAAAEAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAABAAAAAAD//wMAAAAAAAEAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAP//AAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAD///7/AAACAAAAAGAAAP7/AAACAAAAAGD8//7/AAACAAAAAGD9//7/AAACAAAAAGD+//7/AAACAAAAAGD7////AAACAAAAADD7/wAAAAACAAAAADD7/wEAAAACAAAAADD7/wIAAAACAAAAADD7/wMAAAACAAAAADAAAAQAAAACAAAAAFD8/wQAAAACAAAAAFD9/wQAAAACAAAAAFD+/wQAAAACAAAAAFD//wQAAAACAAAAAFA=")
+tile_map_data = PackedByteArray("AAD4/wcAAAAAAAAAAAACAAcAAAACAAAAAAACAAYAAAACAAAAAAACAAUAAAACAAAAAAACAAQAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAACAAEAAAACAAAAAAACAAAAAAACAAAAAAACAP//AAACAAAAAAD3/wcAAAACAAAAAAD3/wYAAAACAAAAAAD3/wUAAAACAAAAAAD3/wQAAAACAAAAAAD3/wMAAAACAAAAAAD3/wIAAAACAAAAAAD3/wEAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD5//3/AAABAAAAAAD4//3/AAABAAAAAAD4/wgAAAABAAAAAAD5/wgAAAABAAAAAAD6/wgAAAABAAAAAAD7/wgAAAABAAAAAAD8/wgAAAABAAAAAAD9/wgAAAABAAAAAAD+/wgAAAABAAAAAAD//wgAAAABAAAAAAAAAAgAAAABAAAAAAABAAgAAAABAAAAAAD//wMAAAACAAAAAAD+/wMAAAACAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAD8/wUAAAABAAAAAAABAAQAAAABAAAAAAD4//7/AAABAAAAAAD4////AAABAAAAAAD4/wAAAAABAAAAAAA=")
 
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="NPC" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-32, -32)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
+style = 2
 
 [node name="NPC2" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-32, 32)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
+style = 1
 
 [node name="NPC3" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-160, 96)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
 
 [node name="NPC4" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-160, 160)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
+style = 2
 
 [node name="NPC5" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-96, 224)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
+style = 1
+
+[node name="NPC6" parent="NPCs" instance=ExtResource("3_nh6rd")]
+position = Vector2(32, 224)
+scale = Vector2(2, 2)
 
 [node name="Nuts" type="Node2D" parent="."]
 
@@ -52,7 +60,6 @@ scale = Vector2(0.1, 0.1)
 
 [node name="Squirrel" parent="." instance=ExtResource("5_mmdjh")]
 position = Vector2(-224, 224)
-scale = Vector2(0.25, 0.25)
 
 [node name="StartEnd" parent="." instance=ExtResource("6_o3a5d")]
 z_index = 1
@@ -60,4 +67,4 @@ y_sort_enabled = true
 position = Vector2(-224, 224)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
-[connection signal="evacuate" from="StartEnd" to="." method="_on_start_end_evacuate"]
+[connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
