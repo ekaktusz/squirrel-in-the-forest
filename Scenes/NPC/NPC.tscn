@@ -133,6 +133,8 @@ radius = 4.5
 [node name="NPC" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 7
 slide_on_ceiling = false
 floor_block_on_wall = false
 script = ExtResource("1_r6vrx")
@@ -145,7 +147,12 @@ sprite_frames = SubResource("SpriteFrames_c5cg8")
 animation = &"blue_up"
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_iw6pf")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

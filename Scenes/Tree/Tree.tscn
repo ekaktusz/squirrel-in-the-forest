@@ -16,6 +16,8 @@ self_modulate = Color(0.210809, 0.841909, 0.211243, 1)
 texture = ExtResource("1_tas3y")
 
 [node name="Area2D" type="Area2D" parent="." groups=["tree"]]
+collision_layer = 8
+collision_mask = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qujdx")
