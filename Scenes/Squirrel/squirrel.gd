@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var power_up_invisible_timer: Timer = $PowerUpInvisibleTimer
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var enter_timer: Timer = $EnterTimer
 @onready var area_2d: Area2D = $Area2D
 
 signal enemy_hit
