@@ -42,20 +42,35 @@ func _input(event):
 		
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
-	power_up_speed_timer.start()
 	Globals.power_up_speed_available = false
-	add_power_up_progressbar()
 	Globals.speed = Globals.speed * 2
+	add_power_up_progressbar()
+	power_up_speed_timer.start()
+	
+func _on_power_up_speed_timer_timeout() -> void:
+	progress_bar.visible = false
+	state = Globals.SquirrelState.NORMAL
+	Globals.power_up_speed_available = true
+	Globals.speed = Globals.speed / 2
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
-	power_up_invisible_timer.start()
 	Globals.power_up_invis_available = false
+	set_collision_layers(false)
 	add_power_up_progressbar()
-	area_2d.set_collision_mask_value(COLLISION_LAYER_ENEMY, false)
-	area_2d.set_collision_layer_value(COLLISION_LAYER_PLAYER, false)
-	squirrel.set_collision_mask_value(COLLISION_LAYER_ENEMY, false)
-	squirrel.set_collision_layer_value(COLLISION_LAYER_PLAYER, false)
+	power_up_invisible_timer.start()
+	
+func _on_power_up_invisible_timer_timeout() -> void:
+	progress_bar.visible = false
+	state = Globals.SquirrelState.NORMAL
+	Globals.power_up_invis_available = true
+	set_collision_layers(true)
+	
+func set_collision_layers(enabled: bool):
+	area_2d.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
+	area_2d.set_collision_layer_value(COLLISION_LAYER_PLAYER, enabled)
+	squirrel.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
+	squirrel.set_collision_layer_value(COLLISION_LAYER_PLAYER, enabled)
 	
 func add_power_up_progressbar():
 	progress_bar.visible = true
@@ -95,8 +110,7 @@ func handle_evacuation() -> void:
 func handle_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
-		play_movement_anim(direction, state)
-
+		play_movement_animation(direction)
 		velocity = velocity.move_toward(direction * Globals.speed, Globals.acceleration)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, Globals.friction)
@@ -111,7 +125,7 @@ func handle_movement() -> void:
 	if (!Globals.hiding):
 		move_and_slide()
 
-func play_movement_anim(direction: Vector2, state: Globals.SquirrelState):
+func play_movement_animation(direction: Vector2) -> void:
 	match state:
 		Globals.SquirrelState.NORMAL:
 			match direction:
@@ -156,20 +170,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		enemy_hit.emit()
 	if area.is_in_group("nut"):
 		Globals.collect_nut()
-
-func _on_power_up_speed_timer_timeout() -> void:
-	progress_bar.visible = false
-	state = Globals.SquirrelState.NORMAL
-	Globals.power_up_speed_available = true
-	Globals.speed = Globals.speed / 2
-
-
-func _on_power_up_invisible_timer_timeout() -> void:
-	progress_bar.visible = false
-	state = Globals.SquirrelState.NORMAL
-	Globals.power_up_invis_available = true
-	area_2d.set_collision_mask_value(3,true)
-	area_2d.set_collision_layer_value(2,true)
-	squirrel.set_collision_mask_value(3,true)
-	squirrel.set_collision_layer_value(2,true)
-	
