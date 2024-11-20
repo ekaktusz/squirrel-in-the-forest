@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var npc: CharacterBody2D = $"."
-@export var style : int
+@export var style : Globals.NpcType
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 60
