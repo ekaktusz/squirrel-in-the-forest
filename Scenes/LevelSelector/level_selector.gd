@@ -13,7 +13,7 @@ func _ready() -> void:
 	initial_position = grid_container.position
 
 	# Iterate through all child nodes of the LevelSelector
-	for child in get_children():
+	for child in grid_container.get_children():
 		if child is Button:  # Check if the child is a Button
 			child.connect("level_pressed", _on_level_button_pressed)
 
