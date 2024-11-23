@@ -56,140 +56,76 @@ columns = 4
 layout_mode = 2
 text = "LEVEL 0"
 level_number = 0
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton2" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton3" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 2"
 level_number = 2
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton4" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 3"
 level_number = 3
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton5" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 4"
 level_number = 4
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton6" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 5"
 level_number = 5
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton7" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 6"
 level_number = 6
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton8" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 7"
 level_number = 7
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton9" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 8"
 level_number = 8
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton10" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 9"
 level_number = 9
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton11" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 10"
 level_number = 10
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton12" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 11"
 level_number = 11
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton13" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 12"
 level_number = 12
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton14" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 13"
 level_number = 13
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton15" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 14"
 level_number = 14
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null
 
 [node name="LevelButton16" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 15"
 level_number = 15
-zoom_scale = null
-animation_duration = null
-hover_z_index = null
-normal_z_index = null

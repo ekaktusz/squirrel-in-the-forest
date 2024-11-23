@@ -10,5 +10,9 @@ offset_bottom = 39.0
 theme = ExtResource("1_k8liw")
 text = "LEVEL 1"
 script = ExtResource("1_nvu8a")
+zoom_scale = null
+animation_duration = null
+hover_z_index = null
+normal_z_index = null
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
