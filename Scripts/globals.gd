@@ -7,14 +7,10 @@ var total_nut_counter: int = 0
 var level_nut_counter: int = 0
 var changing_level: bool = false
 
-var speed = 150
-const acceleration = 50
-const friction = 30
-
 var power_up_speed_available = true
 var power_up_invis_available = true
 
-#to do add state manager later if need
+# to do add state manager later if need
 var hiding = false
 var able_to_hide = false
 var ready_to_evacuate: bool = false

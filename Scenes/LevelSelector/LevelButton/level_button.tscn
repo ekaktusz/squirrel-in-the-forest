@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btuhamhviic8d"]
+
+[ext_resource type="Theme" uid="uid://4nraf4d63wn6" path="res://Themes/base_theme.tres" id="1_k8liw"]
+[ext_resource type="Script" path="res://Scenes/LevelSelector/LevelButton/level_button.gd" id="1_nvu8a"]
+
+[node name="Button" type="Button"]
+offset_left = -1.0
+offset_right = 79.0
+offset_bottom = 39.0
+theme = ExtResource("1_k8liw")
+text = "LEVEL 1"
+script = ExtResource("1_nvu8a")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

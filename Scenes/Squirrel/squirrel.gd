@@ -9,6 +9,10 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 
+var speed = 150
+const acceleration = 50
+const friction = 30
+
 signal enemy_hit
 signal level_done
 
@@ -42,7 +46,7 @@ func _input(event):
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
 	Globals.power_up_speed_available = false
-	Globals.speed = Globals.speed * 2
+	speed *= 2
 	add_power_up_progressbar()
 	power_up_speed_timer.start()
 	
@@ -50,7 +54,7 @@ func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_speed_available = true
-	Globals.speed = Globals.speed / 2
+	speed /= 2
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
@@ -110,9 +114,9 @@ func handle_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		play_movement_animation(direction)
-		velocity = velocity.move_toward(direction * Globals.speed, Globals.acceleration)
+		velocity = velocity.move_toward(direction * speed, acceleration)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, Globals.friction)
+		velocity = velocity.move_toward(Vector2.ZERO, friction)
 		if (!exit_enter_in_progress):
 			match state:
 				Globals.SquirrelState.NORMAL:
