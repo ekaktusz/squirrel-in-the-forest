@@ -10,5 +10,4 @@ func _ready() -> void:
 
 # Common handler for all buttons
 func _on_level_button_pressed(level_number: int) -> void:
-	print("Selected level" + str(level_number))
 	change_level.emit(level_number)

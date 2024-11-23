@@ -9,6 +9,8 @@ position = Vector2(1, -2)
 script = ExtResource("1_bgwb2")
 
 [node name="LevelChanger" parent="." instance=ExtResource("1_8kw7s")]
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
