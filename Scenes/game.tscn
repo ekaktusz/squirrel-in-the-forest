@@ -9,12 +9,13 @@ position = Vector2(1, -2)
 script = ExtResource("1_bgwb2")
 
 [node name="LevelChanger" parent="." instance=ExtResource("1_8kw7s")]
-offset_left = 470.0
-offset_top = 304.0
-offset_right = 470.0
-offset_bottom = 304.0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("3_hap6f")]
 visible = false
