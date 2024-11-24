@@ -1,29 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://shrlalqvdt0q"]
+[gd_scene load_steps=4 format=3 uid="uid://shrlalqvdt0q"]
 
 [ext_resource type="PackedScene" uid="uid://biopddoon2btm" path="res://Scenes/LevelSelector/level_selector.tscn" id="1_8kw7s"]
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_bgwb2"]
-[ext_resource type="Shader" path="res://Scenes/game_background.gdshader" id="2_uq1yw"]
 [ext_resource type="PackedScene" uid="uid://cdnwvb5y6yy62" path="res://Scenes/Hud/Hud.tscn" id="3_hap6f"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfyxd"]
-shader = ExtResource("2_uq1yw")
-shader_parameter/base_color = Vector4(0.4, 0.4, 0.8, 1)
-shader_parameter/mouse_position = null
-shader_parameter/pixel_size = 32.146
-shader_parameter/circle_radius = 0.62
-shader_parameter/light_radius = 0.892
-shader_parameter/min_circle_size = 0.286
-shader_parameter/aspect_ratio = Vector2(1, 1)
 
 [node name="Game" type="Node2D"]
 position = Vector2(1, -2)
 script = ExtResource("1_bgwb2")
-
-[node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_qfyxd")
-offset_right = 1165.0
-offset_bottom = 669.0
-color = Color(0.0901961, 0.0745098, 0.141176, 1)
 
 [node name="LevelChanger" parent="." instance=ExtResource("1_8kw7s")]
 offset_right = 0.0

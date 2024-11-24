@@ -40,7 +40,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(3.85046e-07, 0.628103, 0.986203, 1)
+bg_color = Color(0, 0.627451, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdhk8"]
 
@@ -49,7 +49,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.00207857, 0.240781, 0.404697, 1)
+bg_color = Color(4.75291e-07, 0.299281, 4.81308e-08, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpjgl"]
 
