@@ -12,6 +12,7 @@
 [node name="DummyLevel" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xpino")
+nut_number_on_level = 4
 
 [node name="TilemapGroundFloor" parent="." instance=ExtResource("1_omx4m")]
 tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD+//3/AAABAAAAAAAAAP3/AAACAAAAAAACAP3/AAADAAAAAAD8////AAAAAAEAAAD+////AAABAAEAAAAAAP//AAACAAEAAAACAP//AAADAAEAAAACAAEAAAADAAIAAAAAAAEAAAACAAIAAAD+/wEAAAABAAIAAAD8/wEAAAAAAAIAAAD8/wMAAAAAAAMAAAD+/wMAAAABAAMAAAAAAAMAAAACAAMAAAACAAMAAAADAAMAAAA=")
@@ -90,3 +91,4 @@ position = Vector2(-96, 96)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
 [connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
+[connection signal="nut_collected" from="Squirrel" to="." method="_on_squirrel_nut_collected"]

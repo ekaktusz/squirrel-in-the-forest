@@ -31,5 +31,4 @@ func reset_level_logic():
 	hud.visible = true
 	level_changer.hide()
 	Globals.changing_level = false
-	Globals.level_nut_counter = 0
 	Globals.ready_to_evacuate = false

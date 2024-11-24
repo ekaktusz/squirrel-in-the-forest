@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 signal enemy_hit
 signal level_done
+signal nut_collected
 
 var state: Globals.SquirrelState = Globals.SquirrelState.NORMAL
 var exit_enter_in_progress = true
@@ -42,21 +43,22 @@ func _input(event):
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
 	Globals.power_up_speed_available = false
-	Globals.speed = Globals.speed * 2
-	add_power_up_progressbar()
+	Globals.speed = Globals.speed * Globals.speed_power_up_percentage
+	add_power_up_progressbar(2)
 	power_up_speed_timer.start()
 	
 func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_speed_available = true
-	Globals.speed = Globals.speed / 2
+	Globals.speed = Globals.speed / Globals.speed_power_up_percentage
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
 	Globals.power_up_invis_available = false
 	set_collision_layers(false)
-	add_power_up_progressbar()
+	add_power_up_progressbar(Globals.invis_power_up_time)
+	power_up_invisible_timer.wait_time = Globals.invis_power_up_time
 	power_up_invisible_timer.start()
 	
 func _on_power_up_invisible_timer_timeout() -> void:
@@ -71,11 +73,11 @@ func set_collision_layers(enabled: bool):
 	squirrel.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
 	squirrel.set_collision_layer_value(COLLISION_LAYER_PLAYER, enabled)
 	
-func add_power_up_progressbar():
+func add_power_up_progressbar(time: float):
 	progress_bar.visible = true
 	progress_bar.value = 100
 	var tween = get_tree().create_tween()
-	tween.tween_property(progress_bar,"value",0,2.0)	
+	tween.tween_property(progress_bar,"value",0,time)	
 		
 func _physics_process(_delta: float) -> void:
 	if exit_enter_in_progress:
@@ -168,4 +170,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Globals.lose_nut()
 		enemy_hit.emit()
 	if area.is_in_group("nut"):
+		nut_collected.emit()
 		Globals.collect_nut()
