@@ -12,7 +12,9 @@ script = ExtResource("1_bgwb2")
 offset_right = 0.0
 offset_bottom = 0.0
 
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("3_hap6f")]
 visible = false

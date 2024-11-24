@@ -1,77 +1,94 @@
 [gd_scene load_steps=9 format=4 uid="uid://daj4n0evxxeig"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_7cbht"]
-[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="2_7urjy"]
-[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="3_ys1l5"]
-[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="4_lr1yv"]
-[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="5_geayh"]
-[ext_resource type="PackedScene" uid="uid://dyjsq2ye6wjqp" path="res://Scenes/Tree/Tree.tscn" id="6_1cclv"]
-[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="7_ilvde"]
-[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="8_hmbc3"]
+[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_omx4m"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xpino"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_4m5nu"]
+[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="3_olgas"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_ic73y"]
+[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="5_53h01"]
+[ext_resource type="PackedScene" uid="uid://dyjsq2ye6wjqp" path="res://Scenes/Tree/Tree.tscn" id="6_0rdc7"]
+[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="7_bxuyl"]
 
-[node name="Level0" type="Node2D"]
+[node name="DummyLevel" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_7cbht")
+script = ExtResource("1_xpino")
+nut_number_on_level = 4
 
-[node name="TilemapGroundFloor" parent="." instance=ExtResource("2_7urjy")]
-tile_map_data = PackedByteArray("AAD8/wMAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAAAAAD//wMAAAABAAAAAAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAEAAIAAAACAAAAAAAEAAEAAAACAAAAAAAEAAAAAAACAAAAAAAEAP//AAACAAAAAAAEAP7/AAACAAAAAAAEAP3/AAACAAAAAAAEAPz/AAACAAAAAAD7//z/AAACAAAAAAD7//3/AAACAAAAAAD7//7/AAACAAAAAAD7////AAACAAAAAAD7/wAAAAACAAAAAAD7/wEAAAACAAAAAAD7/wMAAAABAAAAAAAEAPr/AAABAAAAAAADAPr/AAABAAAAAAACAPr/AAABAAAAAAABAPr/AAABAAAAAAAAAPr/AAABAAAAAAD///r/AAABAAAAAAD+//r/AAABAAAAAAD9//r/AAABAAAAAAD8//r/AAABAAAAAAD7//r/AAABAAAAAAABAP7/AAACAAAAAAACAP7/AAAAAAEAAAAAAP7/AAABAAAAAAD9/wAAAAABAAAAAAD8//3/AAAAAAEAAAD9//3/AAAAAAEAAAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAACAP3/AAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAABAAIAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wAAAAAAAAEAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAABAP//AAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD8/wIAAAAAAAAAAAD+/wIAAAAAAAEAAAA=")
+[node name="TilemapGroundFloor" parent="." instance=ExtResource("1_omx4m")]
+tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD+//3/AAABAAAAAAAAAP3/AAACAAAAAAACAP3/AAADAAAAAAD8////AAAAAAEAAAD+////AAABAAEAAAAAAP//AAACAAEAAAACAP//AAADAAEAAAACAAEAAAADAAIAAAAAAAEAAAACAAIAAAD+/wEAAAABAAIAAAD8/wEAAAAAAAIAAAD8/wMAAAAAAAMAAAD+/wMAAAABAAMAAAAAAAMAAAACAAMAAAACAAMAAAADAAMAAAA=")
 
-[node name="TilemapFirstFloor" parent="TilemapGroundFloor" instance=ExtResource("3_ys1l5")]
-tile_map_data = PackedByteArray("AAAEAAIAAAACAAAAAAAEAAEAAAACAAAAAAAEAAAAAAACAAAAAAAEAP//AAACAAAAAAAEAP7/AAACAAAAAAAEAP3/AAACAAAAAAADAPv/AAABAAAAAAACAPv/AAABAAAAAAABAPv/AAABAAAAAAAAAPv/AAABAAAAAAD///v/AAABAAAAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//v/AAABAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAABAAAAAAD//wMAAAABAAAAAAD+/wMAAAABAAAAAAD9/wMAAAABAAAAAAD8/wMAAAABAAAAAAD7/wMAAAACAAAAAAD7/wIAAAACAAAAAAD7/wEAAAACAAAAAAD7/wAAAAACAAAAAAD7////AAACAAAAAAD7//7/AAACAAAAAAD7//3/AAACAAAAAAAAAP//AAABAAAAAAABAP//AAACAAAAAAACAP//AAABAAAAAAD+//7/AAABAAAAAAA=")
+[node name="TileMapLayer" parent="." instance=ExtResource("3_olgas")]
+tile_map_data = PackedByteArray("AAAEAP7/AAAFAAAAAAAEAP//AAAFAAAAAAAEAAAAAAAFAAAAAAAEAAEAAAAFAAAAAAAEAAIAAAAFAAAAAAAEAAMAAAAFAAAAAAD6//3/AAAFAAAAAgD6//7/AAAFAAAAAgD6////AAAFAAAAAgD6/wAAAAAFAAAAAgD6/wEAAAAFAAAAAgD6/wIAAAAFAAAAAgD6/wMAAAAFAAAAAgD8/wUAAAAFAAAAAwD9/wUAAAAFAAAAAwD+/wUAAAAFAAAAAwD//wUAAAAFAAAAAwAAAAUAAAAFAAAAAwABAAUAAAAFAAAAAwACAAUAAAAFAAAAAwAEAP3/AAAFAAAAAAD8//v/AAAFAAAAAQD9//v/AAAFAAAAAQD+//v/AAAFAAAAAQD///v/AAAFAAAAAQAAAPv/AAAFAAAAAQABAPv/AAAFAAAAAQACAPv/AAAFAAAAAQAEAAQAAAAGAAAAAQD7/wUAAAAGAAAAAwAEAPz/AAAGAAAAAAD7//v/AAAGAAAAAgD9/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD9//3/AAADAAEAAAD//wIAAAADAAEAAAAAAAIAAAADAAAAAAABAAIAAAAEAAAAAAACAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAAAAAADAAAAAAD///7/AAADAAAAAAADAP7/AAADAAAAAAAAAP7/AAADAAEAAAABAP7/AAADAAEAAAA=")
 
 [node name="NPCs" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="NPC" parent="NPCs" instance=ExtResource("4_lr1yv")]
-position = Vector2(96, 72)
+[node name="NPC" parent="NPCs" instance=ExtResource("2_4m5nu")]
+position = Vector2(112, 80)
 style = 1
 
-[node name="NPC2" parent="NPCs" instance=ExtResource("4_lr1yv")]
-position = Vector2(-96, -40)
+[node name="StaticNpcs" type="Node2D" parent="NPCs"]
+
+[node name="NPC3" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(-16, -112)
+
+[node name="NPC4" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(48, -112)
+
+[node name="NPC5" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(112, 16)
+
+[node name="NPC6" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(16, 16)
+
+[node name="NPC7" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(-48, 16)
+
+[node name="SideNpcs" type="Node2D" parent="NPCs"]
+
+[node name="NPC2" parent="NPCs/SideNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(16, 112)
 style = 2
 
-[node name="NPC3" parent="NPCs" instance=ExtResource("4_lr1yv")]
-position = Vector2(-32, -104)
+[node name="NPC3" parent="NPCs/SideNpcs" instance=ExtResource("2_4m5nu")]
+position = Vector2(16, -80)
+style = 2
 
 [node name="Nuts" type="Node2D" parent="."]
 
-[node name="Nut1" parent="Nuts" instance=ExtResource("5_geayh")]
-position = Vector2(80, -112)
+[node name="Nut1" parent="Nuts" instance=ExtResource("4_ic73y")]
+position = Vector2(112, -112)
 scale = Vector2(0.1, 0.1)
 
-[node name="Nut2" parent="Nuts" instance=ExtResource("5_geayh")]
-position = Vector2(80, -80)
+[node name="Nut2" parent="Nuts" instance=ExtResource("4_ic73y")]
+z_index = 1
+position = Vector2(-48, 48)
 scale = Vector2(0.1, 0.1)
 
-[node name="Nut3" parent="Nuts" instance=ExtResource("5_geayh")]
-position = Vector2(-104, -112)
+[node name="Nut3" parent="Nuts" instance=ExtResource("4_ic73y")]
+position = Vector2(-112, -112)
 scale = Vector2(0.1, 0.1)
 
-[node name="Nut4" parent="Nuts" instance=ExtResource("5_geayh")]
-position = Vector2(-40, 48)
-scale = Vector2(0.1, 0.1)
-
-[node name="Nut5" parent="Nuts" instance=ExtResource("5_geayh")]
-position = Vector2(16, -112)
+[node name="Nut4" parent="Nuts" instance=ExtResource("4_ic73y")]
+z_index = 1
+position = Vector2(-48, -16)
 scale = Vector2(0.1, 0.1)
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Tree" parent="Trees" instance=ExtResource("6_1cclv")]
-position = Vector2(-32, -32)
+[node name="Tree" parent="Trees" instance=ExtResource("6_0rdc7")]
+position = Vector2(16, -112)
 scale = Vector2(0.25, 0.25)
 
-[node name="Tree2" parent="Trees" instance=ExtResource("6_1cclv")]
-position = Vector2(224, 184)
-scale = Vector2(0.25, 0.25)
-
-[node name="Squirrel" parent="." instance=ExtResource("7_ilvde")]
+[node name="Squirrel" parent="." instance=ExtResource("5_53h01")]
 z_index = 1
-position = Vector2(-96, 64)
+position = Vector2(-112, 112)
 
-[node name="StartEnd" parent="." instance=ExtResource("8_hmbc3")]
-position = Vector2(-96, 64)
+[node name="StartEnd" parent="." instance=ExtResource("7_bxuyl")]
+z_index = 1
+position = Vector2(-96, 96)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
 [connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
+[connection signal="nut_collected" from="Squirrel" to="." method="_on_squirrel_nut_collected"]
