@@ -7,12 +7,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qfyxd"]
 shader = ExtResource("2_uq1yw")
-shader_parameter/base_color = Vector4(0.2, 0.6, 0.8, 1)
-shader_parameter/wave_amplitude_base = 30.0
-shader_parameter/wave_frequency_base = 2.0
-shader_parameter/wave_speed_base = 0.5
+shader_parameter/base_color = Vector4(0.4, 0.4, 0.8, 1)
 shader_parameter/mouse_position = null
-shader_parameter/pixel_size = 10.0
+shader_parameter/pixel_size = 32.146
+shader_parameter/circle_radius = 0.62
+shader_parameter/light_radius = 0.892
+shader_parameter/min_circle_size = 0.286
+shader_parameter/aspect_ratio = Vector2(1, 1)
 
 [node name="Game" type="Node2D"]
 position = Vector2(1, -2)
@@ -20,8 +21,8 @@ script = ExtResource("1_bgwb2")
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qfyxd")
-offset_right = 1162.0
-offset_bottom = 664.0
+offset_right = 1165.0
+offset_bottom = 669.0
 color = Color(0.0901961, 0.0745098, 0.141176, 1)
 
 [node name="LevelChanger" parent="." instance=ExtResource("1_8kw7s")]

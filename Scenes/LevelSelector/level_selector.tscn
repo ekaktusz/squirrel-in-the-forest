@@ -5,11 +5,11 @@
 [ext_resource type="Theme" uid="uid://4nraf4d63wn6" path="res://Themes/base_theme.tres" id="3_coy6b"]
 [ext_resource type="Shader" path="res://Scenes/LevelSelector/level_selector.gdshader" id="3_o5bsa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktd5x"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
 shader = ExtResource("3_o5bsa")
-shader_parameter/wave_amplitude = 0.3
-shader_parameter/wave_frequency = 0.1
-shader_parameter/wave_speed = 2.0
+shader_parameter/wave_amplitude = 0.4
+shader_parameter/wave_frequency = 0.01
+shader_parameter/wave_speed = 3.0
 
 [node name="LevelSelector" type="Control"]
 layout_mode = 3
@@ -27,7 +27,7 @@ metadata/_edit_horizontal_guides_ = [646.0]
 metadata/_edit_vertical_guides_ = [1155.0]
 
 [node name="Label" type="Label" parent="."]
-material = SubResource("ShaderMaterial_ktd5x")
+material = SubResource("ShaderMaterial_kl3kk")
 layout_mode = 0
 offset_left = 70.0
 offset_top = 29.0

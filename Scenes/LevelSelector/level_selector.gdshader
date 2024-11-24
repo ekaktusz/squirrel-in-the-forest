@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
-uniform float wave_amplitude : hint_range(0.0, 20.0) = 0.3;
-uniform float wave_frequency : hint_range(0.0, 10.0) = 0.1;
-uniform float wave_speed : hint_range(0.0, 5.0) = 2.0;
+uniform float wave_amplitude : hint_range(0.0, 20.0) = 0.4;
+uniform float wave_frequency : hint_range(0.0, 10.0) = 0.01;
+uniform float wave_speed : hint_range(0.0, 5.0) = 3.0;
 
 void fragment() {
     vec2 pos = FRAGCOORD.xy;
