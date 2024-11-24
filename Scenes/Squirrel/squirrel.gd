@@ -14,10 +14,14 @@ signal level_done
 signal nut_collected
 
 var state: Globals.SquirrelState = Globals.SquirrelState.NORMAL
-var exit_enter_in_progress = true
+var exit_enter_in_progress: bool = true
 
-const COLLISION_LAYER_ENEMY = 3
-const COLLISION_LAYER_PLAYER = 2
+var speed: int = 150
+const acceleration: int = 50
+const friction: int = 30
+
+const COLLISION_LAYER_ENEMY: int = 3
+const COLLISION_LAYER_PLAYER: int = 2
 
 func _ready() -> void:
 	await get_tree().create_timer(2.2).timeout
@@ -112,9 +116,9 @@ func handle_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		play_movement_animation(direction)
-		velocity = velocity.move_toward(direction * Globals.speed, Globals.acceleration)
+		velocity = velocity.move_toward(direction * speed, acceleration)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, Globals.friction)
+		velocity = velocity.move_toward(Vector2.ZERO, friction)
 		if (!exit_enter_in_progress):
 			match state:
 				Globals.SquirrelState.NORMAL:

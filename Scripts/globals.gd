@@ -12,9 +12,6 @@ var power_up_invis_available = true
 var power_up_speed_unlocked = false
 var power_up_invis_unlocked = false
 
-var power_up_speed_available = false
-var power_up_invis_available = false
-
 var speed_power_up_percentage = 1.5
 var invis_power_up_time = 1
 
