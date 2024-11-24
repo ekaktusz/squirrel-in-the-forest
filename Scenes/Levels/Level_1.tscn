@@ -24,31 +24,25 @@ tile_map_data = PackedByteArray("AAD3/wcAAAAFAAAAAAD3/wYAAAAFAAAAAAD3/wUAAAAFAAA
 
 [node name="NPC" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-32, -32)
-scale = Vector2(2, 2)
 style = 2
 
 [node name="NPC2" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-160, 104)
-scale = Vector2(2, 2)
 style = 1
 
 [node name="NPC3" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-24, 80)
-scale = Vector2(2, 2)
 
 [node name="NPC4" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-224, 160)
-scale = Vector2(2, 2)
 style = 2
 
 [node name="NPC5" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(-96, 216)
-scale = Vector2(2, 2)
 style = 1
 
 [node name="NPC6" parent="NPCs" instance=ExtResource("3_nh6rd")]
 position = Vector2(32, 216)
-scale = Vector2(2, 2)
 
 [node name="Nuts" type="Node2D" parent="."]
 
