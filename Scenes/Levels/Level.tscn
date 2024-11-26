@@ -19,12 +19,12 @@ tile_map_data = PackedByteArray("AAD4/wcAAAAAAAAAAAD//wMAAAAAAAEAAAD+/wMAAAAAAAE
 
 [node name="Squirrel" parent="." instance=ExtResource("3_5soyu")]
 z_index = 1
-position = Vector2(-224, 224)
+position = Vector2(-208, 208)
 
 [node name="StartEnd" parent="." instance=ExtResource("4_h2a05")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-224, 224)
+position = Vector2(-192, 192)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
 [connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
