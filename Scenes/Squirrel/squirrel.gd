@@ -34,12 +34,12 @@ func _input(event):
 	if state != Globals.SquirrelState.NORMAL:
 		return
 	
-	var can_power_up_speed_pick_up: bool = event.is_action_pressed("power_up_speed") && Globals.power_up_speed_available
+	var can_power_up_speed_pick_up: bool = event.is_action_pressed("power_up_speed") and Globals.power_up_speed_available
 	
 	if can_power_up_speed_pick_up:
 		activate_power_up_speed()
 		
-	var can_power_up_invis_pick_up: bool = event.is_action_pressed("power_up_invisible") && Globals.power_up_invis_available
+	var can_power_up_invis_pick_up: bool = event.is_action_pressed("power_up_invisible") and Globals.power_up_invis_available
 	
 	if can_power_up_invis_pick_up:
 		activate_power_up_invisible()
@@ -47,7 +47,7 @@ func _input(event):
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
 	Globals.power_up_speed_available = false
-	Globals.speed = Globals.speed * Globals.speed_power_up_percentage
+	speed = speed * Globals.speed_power_up_percentage
 	add_power_up_progressbar(2)
 	power_up_speed_timer.start()
 	
@@ -55,7 +55,7 @@ func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_speed_available = true
-	Globals.speed = Globals.speed / Globals.speed_power_up_percentage
+	speed = speed / Globals.speed_power_up_percentage
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
