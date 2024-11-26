@@ -2,7 +2,7 @@ extends Node2D
 
 const DUMMY_LEVEL = preload("res://Scenes/Levels/DummyLevel.tscn")
 const LEVEL_1 = preload("res://Scenes/Levels/Level_1.tscn")
-const LEVEL_2 = preload("res://Scenes/Levels/Level_2.tscn")
+const LEVEL_4 = preload("res://Scenes/Levels/Level_4.tscn")
 
 @onready var hud: Node2D = $CanvasLayer/Hud
 @onready var level_changer: Control = $LevelChanger
@@ -29,8 +29,8 @@ func _on_level_changer_change_level(level) -> void:
 			var	level_1 = LEVEL_1.instantiate()
 			get_parent().add_child(level_1)
 			
-		2:
-			get_parent().add_child(LEVEL_2.instantiate())
+		4:
+			get_parent().add_child(LEVEL_4.instantiate())
 
 func reset_level_logic():
 	hud.visible = true

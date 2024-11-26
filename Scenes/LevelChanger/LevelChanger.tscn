@@ -42,11 +42,11 @@ size_flags_vertical = 4
 text = "Level 1
 "
 
-[node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Level 2
+text = "Level 4
 "
 
 [node name="PowerUpShop" parent="." instance=ExtResource("2_isc0t")]
@@ -56,4 +56,4 @@ position = Vector2(547, 334)
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/DummyLevel" to="." method="_on_dummy_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level4" to="." method="_on_level_4_pressed"]
