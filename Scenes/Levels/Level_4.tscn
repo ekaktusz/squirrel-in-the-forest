@@ -40,6 +40,16 @@ color = 2
 position = Vector2(48, 112)
 style = 1
 
+[node name="NPC4" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(-16, 112)
+style = 2
+color = 1
+
+[node name="NPC5" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(17, -113)
+style = 2
+color = 1
+
 [node name="Nut" parent="." instance=ExtResource("3_gbshk")]
 z_index = 1
 position = Vector2(-111, -111)
@@ -62,7 +72,7 @@ scale = Vector2(0.1, 0.1)
 
 [node name="Nut5" parent="." instance=ExtResource("3_gbshk")]
 z_index = 1
-position = Vector2(48, 16)
+position = Vector2(48, -14)
 scale = Vector2(0.1, 0.1)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
