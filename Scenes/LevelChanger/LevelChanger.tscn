@@ -42,6 +42,48 @@ size_flags_vertical = 4
 text = "Level 1
 "
 
+[node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 2
+"
+
+[node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 3
+"
+
+[node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 4
+"
+
+[node name="Level5" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 5
+"
+
+[node name="Level6" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 6
+"
+
+[node name="Level7" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 7
+"
+
 [node name="PowerUpShop" parent="." instance=ExtResource("2_isc0t")]
 visible = false
 position = Vector2(547, 334)
@@ -49,3 +91,9 @@ position = Vector2(547, 334)
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/DummyLevel" to="." method="_on_dummy_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level7" to="." method="_on_level_7_pressed"]

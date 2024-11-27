@@ -10,6 +10,9 @@ radius = 69.029
 radius = 86.0233
 
 [node name="Nut" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.1, 0.1)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_bqe84")

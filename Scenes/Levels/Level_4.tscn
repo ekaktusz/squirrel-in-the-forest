@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=4 uid="uid://bwgwvvhy3xq20"]
+
+[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_0dmnr"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_aqme4"]
+[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="2_vt1ls"]
+[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="3_65h73"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="3_gbshk"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_uot7s"]
+[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="4_5hbsa"]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_aqme4")
+
+[node name="TilemapGroundFloor" parent="." instance=ExtResource("1_0dmnr")]
+tile_map_data = PackedByteArray("AAAAAAEAAAAEAAAAAAACAAEAAAAEAAAAAAAAAP//AAAEAAAAAAACAP//AAAEAAAAAAD+/wEAAAAEAAAAAAD8/wEAAAAEAAAAAAD+////AAAGAAAAAAD8////AAAGAAAAAAD+/wMAAAAGAAAAAAAAAAMAAAAGAAAAAAD+//3/AAAGAAAAAAAAAP3/AAAGAAAAAAACAP3/AAAGAAAAAAD8//3/AAAGAAAAAAD8/wMAAAAGAAAAAAACAAMAAAAGAAAAAAA=")
+
+[node name="TilemapFirstFloor" parent="." instance=ExtResource("2_vt1ls")]
+tile_map_data = PackedByteArray("AAD8/wIAAAAAAAMAAAD8/wEAAAAAAAMAAAD8/wAAAAAAAAMAAAD8////AAAAAAMAAAD8//v/AAABAAMAAAD8//7/AAAAAAIAAAD8//3/AAADAAIAAAD+//3/AAAEAAIAAAACAP3/AAAEAAIAAAD+//7/AAABAAIAAAAAAP3/AAABAAIAAAAAAP7/AAABAAMAAAAAAP//AAAAAAMAAAD9//v/AAADAAMAAAD///v/AAABAAMAAAAAAPv/AAABAAMAAAABAPv/AAADAAMAAAADAPv/AAABAAMAAAAEAPz/AAAEAAMAAAAEAP3/AAAEAAMAAAAEAP7/AAAEAAMAAAAEAP//AAAEAAMAAAAEAAAAAAAEAAMAAAAEAAEAAAAEAAMAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAMAAAD7/wMAAAAEAAMAAAD7/wIAAAAEAAMAAAD7/wEAAAAEAAMAAAD7/wAAAAAEAAMAAAD7////AAAEAAMAAAD7//7/AAAEAAMAAAD7//3/AAAEAAMAAAD7//z/AAAEAAMAAAD7//v/AAAEAAMAAAAEAPv/AAAEAAMAAAD7/wQAAAAEAAMAAAD8/wQAAAACAAMAAAD9/wQAAAACAAMAAAD+/wQAAAACAAMAAAD//wQAAAACAAMAAAAAAAQAAAACAAMAAAABAAQAAAACAAMAAAACAAQAAAACAAMAAAADAAQAAAACAAMAAAAEAAQAAAAEAAMAAAAAAAAAAAACAAIAAAAAAAIAAAABAAIAAAACAAIAAAAAAAIAAAD+/wIAAAAAAAIAAAD+/wEAAAAEAAIAAAD+/wAAAAAAAAIAAAACAAEAAAAEAAIAAAACAAAAAAABAAIAAAACAP//AAAAAAMAAAA=")
+
+[node name="Squirrel" parent="." instance=ExtResource("3_65h73")]
+z_index = 1
+position = Vector2(-96, 96)
+
+[node name="StartEnd" parent="." instance=ExtResource("4_5hbsa")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-96, 96)
+
+[node name="NPC" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(-81, 15)
+style = 1
+color = 1
+
+[node name="NPC2" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(-15, -81)
+style = 1
+color = 2
+
+[node name="NPC3" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(48, 112)
+style = 1
+
+[node name="NPC4" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(-16, 112)
+style = 2
+color = 1
+
+[node name="NPC5" parent="." instance=ExtResource("3_uot7s")]
+position = Vector2(17, -113)
+style = 2
+color = 1
+
+[node name="Nut" parent="." instance=ExtResource("3_gbshk")]
+z_index = 1
+position = Vector2(-111, -111)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut2" parent="." instance=ExtResource("3_gbshk")]
+z_index = 1
+position = Vector2(-81, -112)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut3" parent="." instance=ExtResource("3_gbshk")]
+z_index = 1
+position = Vector2(-15, -112)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut4" parent="." instance=ExtResource("3_gbshk")]
+z_index = 1
+position = Vector2(48, -113)
+scale = Vector2(0.1, 0.1)
+
+[node name="Nut5" parent="." instance=ExtResource("3_gbshk")]
+z_index = 1
+position = Vector2(48, -14)
+scale = Vector2(0.1, 0.1)
+
+[connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
+[connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
+[connection signal="nut_collected" from="Squirrel" to="." method="_on_squirrel_nut_collected"]

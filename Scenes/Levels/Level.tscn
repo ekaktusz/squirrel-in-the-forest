@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=4 uid="uid://dkkluhyruoleb"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_cnoak"]
+[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_u1l0b"]
+[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="2_ndtvl"]
+[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="3_5soyu"]
+[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="4_h2a05"]
+
+[node name="Level" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(96, -80)
+script = ExtResource("1_cnoak")
+nut_number_on_level = 3
+
+[node name="TilemapGroundFloor" parent="." instance=ExtResource("1_u1l0b")]
+tile_map_data = PackedByteArray("AAD5/wYAAAAAAAMAAAD7/wYAAAABAAMAAAD9/wYAAAACAAMAAAD//wYAAAADAAMAAAD5/wQAAAAAAAIAAAD7/wQAAAABAAIAAAD9/wQAAAACAAIAAAD//wQAAAADAAIAAAD//wIAAAADAAEAAAD9/wIAAAACAAEAAAD7/wIAAAABAAEAAAD5/wIAAAAAAAEAAAD5/wAAAAAAAAAAAAD7/wAAAAABAAAAAAD9/wAAAAACAAAAAAD//wAAAAADAAAAAAA=")
+
+[node name="TilemapFirstFloor" parent="." instance=ExtResource("2_ndtvl")]
+
+[node name="Squirrel" parent="." instance=ExtResource("3_5soyu")]
+z_index = 1
+position = Vector2(-208, 208)
+
+[node name="StartEnd" parent="." instance=ExtResource("4_h2a05")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-192, 192)
+
+[connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
+[connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
+[connection signal="nut_collected" from="Squirrel" to="." method="_on_squirrel_nut_collected"]
