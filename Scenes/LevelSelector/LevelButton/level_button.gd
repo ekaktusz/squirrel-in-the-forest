@@ -3,10 +3,10 @@
 extends Button
 
 @export var level_number: int = 1
-@export var zoom_scale: float = 1.2  # Scale factor for the zoom effect
-@export var animation_duration: float = 0.2  # Duration of the zoom animation
-@export var hover_z_index: int = 10  # Z-index for hovered button
-@export var normal_z_index: int = 0  # Default z-index for non-hovered button
+const zoom_scale: float = 1.2  # Scale factor for the zoom effect
+const animation_duration: float = 0.2  # Duration of the zoom animation
+const hover_z_index: int = 10  # Z-index for hovered button
+const normal_z_index: int = 0  # Default z-index for non-hovered button
 
 signal level_pressed(level_number: int)
 

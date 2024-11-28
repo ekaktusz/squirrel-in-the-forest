@@ -7,7 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
 shader = ExtResource("3_o5bsa")
-shader_parameter/wave_amplitude = 0.4
+shader_parameter/wave_amplitude = 0.2
 shader_parameter/wave_frequency = 0.01
 shader_parameter/wave_speed = 3.0
 
@@ -28,8 +28,8 @@ metadata/_edit_vertical_guides_ = [1155.0]
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1189.0
-offset_bottom = 687.0
+offset_right = 1155.0
+offset_bottom = 647.0
 color = Color(0, 0.12549, 0, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -62,140 +62,76 @@ columns = 4
 layout_mode = 2
 text = "LEVEL 0"
 level_number = 0
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton2" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton3" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 2"
 level_number = 2
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton4" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 3"
 level_number = 3
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton5" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 4"
 level_number = 4
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton6" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 5"
 level_number = 5
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton7" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 6"
 level_number = 6
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton8" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 7"
 level_number = 7
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton9" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 8"
 level_number = 8
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton10" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 9"
 level_number = 9
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton11" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 10"
 level_number = 10
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton12" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 11"
 level_number = 11
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton13" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 12"
 level_number = 12
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton14" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 13"
 level_number = 13
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton15" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 14"
 level_number = 14
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0
 
 [node name="LevelButton16" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
 text = "LEVEL 15"
 level_number = 15
-zoom_scale = 1.2
-animation_duration = 0.2
-hover_z_index = 10
-normal_z_index = 0

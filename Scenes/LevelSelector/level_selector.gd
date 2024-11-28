@@ -1,7 +1,5 @@
 extends Control
 
-signal change_level(level_number: int)
-
 @export var max_offset: Vector2 = Vector2(10, 10)
 @export var smoothing: float = 20.0
 
@@ -19,7 +17,7 @@ func _ready() -> void:
 
 # Common handler for all buttons
 func _on_level_button_pressed(level_number: int) -> void:
-	change_level.emit(level_number)
+	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(level_number) + ".tscn")
 
 func _process(delta: float) -> void:
 	var center: Vector2 = get_viewport_rect().size / 2.0

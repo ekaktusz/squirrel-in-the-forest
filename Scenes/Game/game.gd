@@ -8,13 +8,6 @@ const levels = {
 @onready var hud: Node2D = $CanvasLayer/Hud
 @onready var level_changer: Control = $LevelChanger
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if Globals.changing_level:
-		level_changer.show()
-
-
 func _on_level_changer_change_level(level) -> void:
 	if levels.has(level): 
 		reset_level_logic()

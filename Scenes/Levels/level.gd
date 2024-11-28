@@ -28,11 +28,8 @@ func _set_camera_limits() -> void:
 func _on_squirrel_enemy_hit() -> void:
 	squirrel.position = starting_position.position
 
-
 func _on_squirrel_level_done() -> void:
-	Globals.changing_level = true
-	queue_free()
-
+	SceneTransition.change_scene("res://Scenes/LevelSelector/level_selector.tscn")
 
 func _on_squirrel_nut_collected() -> void:
 	level_nut_counter = level_nut_counter+1
