@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://biopddoon2btm"]
+
+[ext_resource type="Script" path="res://Scenes/LevelSelector/level_selector.gd" id="1_dlosa"]
+[ext_resource type="PackedScene" uid="uid://btuhamhviic8d" path="res://Scenes/LevelSelector/LevelButton/level_button.tscn" id="2_4ey8n"]
+[ext_resource type="Theme" uid="uid://4nraf4d63wn6" path="res://Themes/base_theme.tres" id="3_coy6b"]
+[ext_resource type="Shader" path="res://Scenes/LevelSelector/level_selector.gdshader" id="3_o5bsa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
+shader = ExtResource("3_o5bsa")
+shader_parameter/wave_amplitude = 0.2
+shader_parameter/wave_frequency = 0.01
+shader_parameter/wave_speed = 3.0
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dlosa")
+metadata/_edit_horizontal_guides_ = [646.0]
+metadata/_edit_vertical_guides_ = [1155.0]
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 647.0
+color = Color(0, 0.12549, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_kl3kk")
+layout_mode = 0
+offset_left = 70.0
+offset_top = 29.0
+offset_right = 1116.0
+offset_bottom = 167.0
+theme = ExtResource("3_coy6b")
+theme_override_font_sizes/font_size = 120
+text = "CHOOSE A LEVEL!"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 195.0
+offset_right = 1070.0
+offset_bottom = 537.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="LevelButton" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 0"
+level_number = 0
+
+[node name="LevelButton2" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+
+[node name="LevelButton3" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 2"
+level_number = 2
+
+[node name="LevelButton4" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 3"
+level_number = 3
+
+[node name="LevelButton5" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 4"
+level_number = 4
+
+[node name="LevelButton6" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 5"
+level_number = 5
+
+[node name="LevelButton7" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 6"
+level_number = 6
+
+[node name="LevelButton8" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 7"
+level_number = 7
+
+[node name="LevelButton9" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 8"
+level_number = 8
+
+[node name="LevelButton10" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 9"
+level_number = 9
+
+[node name="LevelButton11" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 10"
+level_number = 10
+
+[node name="LevelButton12" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 11"
+level_number = 11
+
+[node name="LevelButton13" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 12"
+level_number = 12
+
+[node name="LevelButton14" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 13"
+level_number = 13
+
+[node name="LevelButton15" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 14"
+level_number = 14
+
+[node name="LevelButton16" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 15"
+level_number = 15

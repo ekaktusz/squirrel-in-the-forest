@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://daj4n0evxxeig"]
+[gd_scene load_steps=9 format=4 uid="uid://b1goy6euho2hc"]
 
 [ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_omx4m"]
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xpino"]
@@ -17,7 +17,7 @@ nut_number_on_level = 4
 [node name="TilemapGroundFloor" parent="." instance=ExtResource("1_omx4m")]
 tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD+//3/AAABAAAAAAAAAP3/AAACAAAAAAACAP3/AAADAAAAAAD8////AAAAAAEAAAD+////AAABAAEAAAAAAP//AAACAAEAAAACAP//AAADAAEAAAACAAEAAAADAAIAAAAAAAEAAAACAAIAAAD+/wEAAAABAAIAAAD8/wEAAAAAAAIAAAD8/wMAAAAAAAMAAAD+/wMAAAABAAMAAAAAAAMAAAACAAMAAAACAAMAAAADAAMAAAA=")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("3_olgas")]
+[node name="TilemapFirstFloor" parent="." instance=ExtResource("3_olgas")]
 tile_map_data = PackedByteArray("AAAEAP7/AAAFAAAAAAAEAP//AAAFAAAAAAAEAAAAAAAFAAAAAAAEAAEAAAAFAAAAAAAEAAIAAAAFAAAAAAAEAAMAAAAFAAAAAAD6//3/AAAFAAAAAgD6//7/AAAFAAAAAgD6////AAAFAAAAAgD6/wAAAAAFAAAAAgD6/wEAAAAFAAAAAgD6/wIAAAAFAAAAAgD6/wMAAAAFAAAAAgD8/wUAAAAFAAAAAwD9/wUAAAAFAAAAAwD+/wUAAAAFAAAAAwD//wUAAAAFAAAAAwAAAAUAAAAFAAAAAwABAAUAAAAFAAAAAwACAAUAAAAFAAAAAwAEAP3/AAAFAAAAAAD8//v/AAAFAAAAAQD9//v/AAAFAAAAAQD+//v/AAAFAAAAAQD///v/AAAFAAAAAQAAAPv/AAAFAAAAAQABAPv/AAAFAAAAAQACAPv/AAAFAAAAAQAEAAQAAAAGAAAAAQD7/wUAAAAGAAAAAwAEAPz/AAAGAAAAAAD7//v/AAAGAAAAAgD9/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD9//3/AAADAAEAAAD//wIAAAADAAEAAAAAAAIAAAADAAAAAAABAAIAAAAEAAAAAAACAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAAAAAADAAAAAAD///7/AAADAAAAAAADAP7/AAADAAAAAAAAAP7/AAADAAEAAAABAP7/AAADAAEAAAA=")
 
 [node name="NPCs" type="Node2D" parent="."]
@@ -87,7 +87,7 @@ position = Vector2(-112, 112)
 
 [node name="StartEnd" parent="." instance=ExtResource("7_bxuyl")]
 z_index = 1
-position = Vector2(-96, 96)
+position = Vector2(-98, 97)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
 [connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]

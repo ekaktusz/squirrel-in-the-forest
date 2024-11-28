@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Squirrel In The Woods"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/LevelSelector/level_selector.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Scripts/globals.gd"
+SceneTransition="*res://Scenes/SceneTransition/scene_transition.tscn"
 
 [editor]
 

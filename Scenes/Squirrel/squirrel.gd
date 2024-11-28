@@ -14,10 +14,14 @@ signal level_done
 signal nut_collected
 
 var state: Globals.SquirrelState = Globals.SquirrelState.NORMAL
-var exit_enter_in_progress = true
+var exit_enter_in_progress: bool = true
 
-const COLLISION_LAYER_ENEMY = 3
-const COLLISION_LAYER_PLAYER = 2
+var speed: int = 150
+const acceleration: int = 50
+const friction: int = 30
+
+const COLLISION_LAYER_ENEMY: int = 3
+const COLLISION_LAYER_PLAYER: int = 2
 
 func _ready() -> void:
 	await get_tree().create_timer(2.2).timeout
@@ -30,12 +34,12 @@ func _input(event):
 	if state != Globals.SquirrelState.NORMAL:
 		return
 	
-	var can_power_up_speed_pick_up: bool = event.is_action_pressed("power_up_speed") && Globals.power_up_speed_available
+	var can_power_up_speed_pick_up: bool = event.is_action_pressed("power_up_speed") and Globals.power_up_speed_available
 	
 	if can_power_up_speed_pick_up:
 		activate_power_up_speed()
 		
-	var can_power_up_invis_pick_up: bool = event.is_action_pressed("power_up_invisible") && Globals.power_up_invis_available
+	var can_power_up_invis_pick_up: bool = event.is_action_pressed("power_up_invisible") and Globals.power_up_invis_available
 	
 	if can_power_up_invis_pick_up:
 		activate_power_up_invisible()
@@ -43,7 +47,7 @@ func _input(event):
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
 	Globals.power_up_speed_available = false
-	Globals.speed = Globals.speed * Globals.speed_power_up_percentage
+	speed = speed * Globals.speed_power_up_percentage
 	add_power_up_progressbar(2)
 	power_up_speed_timer.start()
 	
@@ -51,7 +55,7 @@ func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_speed_available = true
-	Globals.speed = Globals.speed / Globals.speed_power_up_percentage
+	speed = speed / Globals.speed_power_up_percentage
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
@@ -112,9 +116,9 @@ func handle_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		play_movement_animation(direction)
-		velocity = velocity.move_toward(direction * Globals.speed, Globals.acceleration)
+		velocity = velocity.move_toward(direction * speed, acceleration)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, Globals.friction)
+		velocity = velocity.move_toward(Vector2.ZERO, friction)
 		if (!exit_enter_in_progress):
 			match state:
 				Globals.SquirrelState.NORMAL:

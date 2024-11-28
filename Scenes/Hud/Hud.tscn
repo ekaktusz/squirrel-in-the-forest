@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Hud/hud.gd" id="1_qq101"]
 
-[node name="Hud" type="Node2D"]
+[node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qq101")
 
 [node name="TotalNut" type="Label" parent="."]
