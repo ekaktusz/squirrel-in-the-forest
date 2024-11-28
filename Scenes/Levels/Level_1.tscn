@@ -53,19 +53,13 @@ scale = Vector2(2, 2)
 [node name="Nuts" type="Node2D" parent="."]
 
 [node name="Nut1" parent="Nuts" instance=ExtResource("4_f7rwt")]
-z_index = 1
 position = Vector2(32, -32)
-scale = Vector2(0.1, 0.1)
 
 [node name="Nut2" parent="Nuts" instance=ExtResource("4_f7rwt")]
-z_index = 1
 position = Vector2(32, 32)
-scale = Vector2(0.1, 0.1)
 
 [node name="Nut3" parent="Nuts" instance=ExtResource("4_f7rwt")]
-z_index = 1
 position = Vector2(32, 96)
-scale = Vector2(0.1, 0.1)
 
 [node name="Squirrel" parent="." instance=ExtResource("5_mmdjh")]
 z_index = 1
