@@ -87,7 +87,7 @@ position = Vector2(-112, 112)
 
 [node name="StartEnd" parent="." instance=ExtResource("7_bxuyl")]
 z_index = 1
-position = Vector2(-96, 96)
+position = Vector2(-98, 97)
 
 [connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
 [connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
