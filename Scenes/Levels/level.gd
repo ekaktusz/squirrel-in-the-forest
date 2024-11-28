@@ -1,5 +1,7 @@
 extends Node2D
 
+var hud = preload("res://Scenes/Hud/hud.tscn")
+
 @onready var squirrel: CharacterBody2D = $Squirrel
 @onready var starting_position: Node2D = $StartEnd
 
@@ -11,7 +13,7 @@ var level_nut_counter: int = 0
 
 func _ready() -> void:
 	_set_camera_limits()
-	pass
+	add_child(hud.instantiate())
 
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):

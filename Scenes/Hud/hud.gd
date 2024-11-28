@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 @onready var total_nut: Label = $TotalNut
 
 func _process(delta: float) -> void:
