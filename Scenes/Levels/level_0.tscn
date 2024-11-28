@@ -58,21 +58,15 @@ style = 2
 
 [node name="Nut1" parent="Nuts" instance=ExtResource("4_ic73y")]
 position = Vector2(112, -112)
-scale = Vector2(0.1, 0.1)
 
 [node name="Nut2" parent="Nuts" instance=ExtResource("4_ic73y")]
-z_index = 1
 position = Vector2(-48, 48)
-scale = Vector2(0.1, 0.1)
 
 [node name="Nut3" parent="Nuts" instance=ExtResource("4_ic73y")]
 position = Vector2(-112, -112)
-scale = Vector2(0.1, 0.1)
 
 [node name="Nut4" parent="Nuts" instance=ExtResource("4_ic73y")]
-z_index = 1
 position = Vector2(-48, -16)
-scale = Vector2(0.1, 0.1)
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
