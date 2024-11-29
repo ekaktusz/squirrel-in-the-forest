@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkah4l6ji0nr8"]
+
+[ext_resource type="Texture2D" uid="uid://b5vodidbe667c" path="res://Assets/Images/power_up_invis.png" id="1_c5hn0"]
+
+[node name="SkillbarEntry" type="MarginContainer"]
+offset_right = 66.0
+offset_bottom = 59.0
+
+[node name="IconTextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_c5hn0")
+
+[node name="CoolDownRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.803922)

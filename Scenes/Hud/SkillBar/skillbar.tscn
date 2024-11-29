@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://timopywh7tbm"]
+
+[ext_resource type="Texture2D" uid="uid://b5vodidbe667c" path="res://Assets/Images/power_up_invis.png" id="1_qrakt"]
+[ext_resource type="Texture2D" uid="uid://csfpjy7aq0sj6" path="res://Assets/Images/power_up_run.png" id="2_k6jad"]
+
+[node name="SkillBar" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qrakt")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_k6jad")

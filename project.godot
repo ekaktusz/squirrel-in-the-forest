@@ -25,6 +25,10 @@ SceneTransition="*res://Scenes/SceneTransition/scene_transition.tscn"
 movie_writer/mjpeg_quality=0.5
 movie_writer/movie_file="D:/Gamejam/Gameoff2024/clips/clip.avi"
 
+[gui]
+
+theme/custom="res://Themes/base_theme.tres"
+
 [input]
 
 hide={
