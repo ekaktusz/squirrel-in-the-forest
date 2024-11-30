@@ -380,8 +380,7 @@ shape = SubResource("CircleShape2D_qyaax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c5cg8")
-animation = &"red_up"
-frame_progress = 0.0706489
+animation = &"red_idle"
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 4

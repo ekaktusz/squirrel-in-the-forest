@@ -36,6 +36,7 @@ func change_direction():
 		direction = Vector2.UP
 		_play_action_anim("up")
 
+
 func change_direction_side():
 	if direction_2 == Vector2.LEFT:
 		direction_2 = Vector2.RIGHT
@@ -51,6 +52,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		change_direction_side()
 	elif (style == Globals.NpcType.UP_DOWN):
 		change_direction()
+		
 		
 func _play_action_anim(action : String) -> void:
 	match color:
