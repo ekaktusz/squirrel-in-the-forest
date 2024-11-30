@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://4nraf4d63wn6"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://4nraf4d63wn6"]
 
+[ext_resource type="FontFile" uid="uid://5rw45ol7tjvd" path="res://Assets/Font/CourierPrime-Bold.ttf" id="1_3u0ng"]
 [ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="2_pe58t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gl3q"]
@@ -40,7 +41,11 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0, 0.627451, 0, 1)
+bg_color = Color(0, 0.129274, 0.086729, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdhk8"]
 
@@ -49,7 +54,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(4.75291e-07, 0.299281, 4.81308e-08, 1)
+bg_color = Color(3.36915e-07, 0.286839, 0.228262, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpjgl"]
 
@@ -72,7 +77,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 50
-Button/fonts/font = ExtResource("2_pe58t")
+Button/fonts/font = ExtResource("1_3u0ng")
 Button/styles/disabled = SubResource("StyleBoxFlat_2gl3q")
 Button/styles/focus = SubResource("StyleBoxFlat_ge6wv")
 Button/styles/hover = SubResource("StyleBoxFlat_xm2hj")

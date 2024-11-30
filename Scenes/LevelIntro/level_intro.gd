@@ -12,10 +12,11 @@ extends Node2D
 @onready var mission_label_1: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/MissionLabel1
 @onready var mission_label_2: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/MissionLabel2
 
+@onready var back_button: Button = $BackButton
 
 var selected_relic: Control = null
+var typing_speed: float = 0.00005  # Time delay between characters
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ability_description.visible = false
 	
@@ -27,10 +28,28 @@ func _ready() -> void:
 	
 	var level_details = LevelIntroDetails.intro_details[Globals.current_level_number]
 	mini_map.texture = level_details.mini_map
-	print(mission_label_1)
+	
+	mission_label_1.bbcode_text = level_details.description_1
+	mission_label_2.bbcode_text = level_details.description_2
+	
+	mission_label_1.visible_characters = 0
+	mission_label_2.visible_characters = 0
+	
+	# Start typewriter effect for mission descriptions
+	typewriter_effect(mission_label_1, func():
+		typewriter_effect(mission_label_2, func():
+			print("asd")
+		)
+	)
 
-	mission_label_1.text = level_details.description_1
-	mission_label_2.text = level_details.description_2
+func typewriter_effect(label: RichTextLabel, on_complete: Callable) -> void:
+	label.visible_characters = 0  # Start with no characters visible
+	var total_characters = label.get_total_character_count()  # Get the total character count
+	for i in range(total_characters):
+		label.visible_characters = i + 1  # Show one more character each step
+		await get_tree().create_timer(typing_speed).timeout  # Wait for the timer
+	if on_complete:
+		on_complete.call_deferred()  # Call the callback if it exists
 
 func get_two_different_random_relic_values() -> Array:
 	var enum_values = Globals.RelicType.values()
@@ -72,3 +91,6 @@ func _on_relic_2_gui_input(event: InputEvent) -> void:
 		
 func _on_start_button_pressed() -> void:
 	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
+
+func _on_back_button_pressed() -> void:
+	SceneTransition.change_scene("res://Scenes/LevelSelector/level_selector.tscn")

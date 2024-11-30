@@ -630,6 +630,7 @@ show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 metadata/_edit_lock_ = true
 

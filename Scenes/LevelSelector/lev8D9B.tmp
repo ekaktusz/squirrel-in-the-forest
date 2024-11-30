@@ -1,14 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://biopddoon2btm"]
+[gd_scene load_steps=8 format=3 uid="uid://biopddoon2btm"]
 
 [ext_resource type="Script" path="res://Scenes/LevelSelector/level_selector.gd" id="1_dlosa"]
 [ext_resource type="PackedScene" uid="uid://btuhamhviic8d" path="res://Scenes/LevelSelector/LevelButton/level_button.tscn" id="2_4ey8n"]
 [ext_resource type="Theme" uid="uid://4nraf4d63wn6" path="res://Themes/base_theme.tres" id="3_coy6b"]
 [ext_resource type="Shader" path="res://Scenes/LevelSelector/level_selector.gdshader" id="3_o5bsa"]
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="4_g80ud"]
-[ext_resource type="Texture2D" uid="uid://csur3rrsry3k" path="res://Scenes/LevelSelector/moki_portrait.png" id="5_5tunw"]
-[ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="6_d6ovy"]
 [ext_resource type="PackedScene" uid="uid://cqiq0806230f6" path="res://Scenes/crt_effect.tscn" id="6_ehbxe"]
-[ext_resource type="FontFile" uid="uid://5rw45ol7tjvd" path="res://Assets/Font/CourierPrime-Bold.ttf" id="7_vglgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
 shader = ExtResource("3_o5bsa")
@@ -49,51 +46,15 @@ theme_override_fonts/font = ExtResource("4_g80ud")
 theme_override_font_sizes/font_size = 50
 text = "CHOOSE A LEVEL!"
 
-[node name="Control" type="Node2D" parent="."]
-position = Vector2(328, 108)
-
-[node name="MokiPortrait" type="Sprite2D" parent="Control"]
-position = Vector2(353, 65)
-scale = Vector2(1.95313, 1.95313)
-texture = ExtResource("5_5tunw")
-
-[node name="AgentName" type="Label" parent="Control"]
-offset_left = 42.0
-offset_top = 9.0
-offset_right = 262.0
-offset_bottom = 46.0
-theme_override_fonts/font = ExtResource("4_g80ud")
-theme_override_font_sizes/font_size = 25
-text = "Agent Nut"
-
-[node name="CollectedNuts" type="Label" parent="Control"]
-offset_left = -30.0
-offset_top = 55.0
-offset_right = 210.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("6_d6ovy")
-theme_override_font_sizes/font_size = 25
-text = "Collected nuts: "
-uppercase = true
-
-[node name="Counter" type="Label" parent="Control"]
-offset_left = 205.0
-offset_top = 56.0
-offset_right = 297.0
-offset_bottom = 93.0
-theme_override_fonts/font = ExtResource("7_vglgv")
-theme_override_font_sizes/font_size = 25
-text = "200"
-
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = 262.0
-offset_right = 1121.0
-offset_bottom = 604.0
+offset_left = 90.0
+offset_top = 195.0
+offset_right = 1070.0
+offset_bottom = 537.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
