@@ -21,7 +21,8 @@ const relic_textures = {
 
 func _ready() -> void:
 	texture_rect.set_texture(relic_textures[type])
-	
+	_make_darker()  # Default state is darker
+
 func set_type(type: Globals.RelicType) -> void:
 	self.type = type
 	texture_rect.set_texture(relic_textures[type])
@@ -29,4 +30,16 @@ func set_type(type: Globals.RelicType) -> void:
 func get_description() -> String:
 	return relic_descriptions[type]
 
-	
+func _on_mouse_entered() -> void:
+	_make_bright()
+
+func _on_mouse_exited() -> void:
+	_make_darker() # Replace with function body.
+
+func _make_darker() -> void:
+	# Modulate to make the texture darker (adjust to your preference)
+	texture_rect.modulate = Color(0.5, 0.5, 0.5, 1)  # Darker by reducing RGB values
+
+func _make_bright() -> void:
+	# Modulate to restore original brightness
+	texture_rect.modulate = Color(1, 1, 1, 1)  # Full brightness

@@ -26,3 +26,6 @@ offset_left = 1.0
 offset_top = 65.0
 offset_right = 41.0
 offset_bottom = 88.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
