@@ -12,7 +12,7 @@ var hud = preload("res://Scenes/Hud/Hud.tscn")
 var level_nut_counter: int = 0
 
 func _ready() -> void:
-	_set_camera_limits()
+	#_set_camera_limits()
 	add_child(hud.instantiate())
 
 func _process(_delta) -> void:
