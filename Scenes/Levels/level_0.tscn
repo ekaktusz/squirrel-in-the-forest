@@ -72,8 +72,7 @@ position = Vector2(-48, -16)
 y_sort_enabled = true
 
 [node name="Tree" parent="Trees" instance=ExtResource("6_0rdc7")]
-position = Vector2(16, -112)
-scale = Vector2(0.25, 0.25)
+position = Vector2(16, -136)
 
 [node name="Squirrel" parent="." instance=ExtResource("5_53h01")]
 z_index = 1

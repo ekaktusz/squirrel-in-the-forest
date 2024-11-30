@@ -1,31 +1,98 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyjsq2ye6wjqp"]
+[gd_scene load_steps=13 format=3 uid="uid://dyjsq2ye6wjqp"]
 
 [ext_resource type="Script" path="res://Scenes/Tree/tree.gd" id="1_px7n7"]
-[ext_resource type="Texture2D" uid="uid://kys84x5wpcxf" path="res://icon.svg" id="1_tas3y"]
+[ext_resource type="Texture2D" uid="uid://fcgpwvmbn8ma" path="res://Scenes/Tree/hide_tree.png" id="2_oqyl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1scw"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt22f"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nexuw"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkbls"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi1op"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j20cf"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g83q"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a5yv"]
+atlas = ExtResource("2_oqyl1")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b430h"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1scw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt22f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nexuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkbls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi1op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j20cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g83q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a5yv")
+}],
+"loop": false,
+"name": &"hide",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qujdx"]
-size = Vector2(256, 256)
+size = Vector2(103, 94.5)
 
 [node name="Tree" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_px7n7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.210809, 0.841909, 0.211243, 1)
-texture = ExtResource("1_tas3y")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b430h")
+animation = &"hide"
+frame = 7
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8
 collision_mask = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_qujdx")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-y_sort_enabled = true
-color = Color(0, 0.592157, 0.388235, 0.196078)
-polygon = PackedVector2Array(-128, -128, -128, 128, 128, 128, 128, -128)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
