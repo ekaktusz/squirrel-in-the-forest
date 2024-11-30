@@ -4,6 +4,8 @@ enum NpcType { STATIC, UP_DOWN, SIDE_TO_SIDE, FOLLOW }
 enum NpcColor {BLUE, WHITE, RED}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE}
 
+var current_level_number: int = 0
+
 var total_nut_counter: int = 100
 
 var power_up_speed_available = true

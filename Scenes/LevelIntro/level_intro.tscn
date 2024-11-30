@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c87eg346k8tu3"]
+[gd_scene load_steps=15 format=3 uid="uid://c87eg346k8tu3"]
 
+[ext_resource type="Script" path="res://Scenes/LevelIntro/level_intro.gd" id="1_dximk"]
 [ext_resource type="Texture2D" uid="uid://cfjaomu1nrh4h" path="res://Scenes/LevelIntro/level_brief_monitors_v002.png" id="1_ec5h6"]
 [ext_resource type="Texture2D" uid="uid://b1ejwbwnj2jfo" path="res://Scenes/LevelIntro/MiniLevels/level_001.png" id="2_b6pfr"]
 [ext_resource type="Texture2D" uid="uid://bgppq83fi000r" path="res://Scenes/LevelIntro/level_brief_v003.png" id="3_awcr2"]
@@ -8,6 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bdnkkggjb1pxm" path="res://Scenes/LevelIntro/Relics/gadget_invisibility.png" id="6_g42u3"]
 [ext_resource type="FontFile" uid="uid://5rw45ol7tjvd" path="res://Assets/Font/CourierPrime-Bold.ttf" id="7_58smt"]
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="8_ujnq0"]
+[ext_resource type="StyleBox" uid="uid://rsms7ygcm2es" path="res://Scenes/LevelIntro/start_button_normal_style.tres" id="9_0dmx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yi1g"]
+bg_color = Color(0.431373, 0.831373, 0.294118, 1)
+
+[sub_resource type="Theme" id="Theme_m814e"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_6yi1g")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaohf"]
 bg_color = Color(0.472215, 0.0373394, 0, 1)
@@ -17,26 +25,16 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbtg7"]
-bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o482a"]
+bg_color = Color(0, 0.129412, 0, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.973631, 0.52409, 0.859749, 1)
+border_color = Color(1, 0.0745098, 0, 1)
 
 [node name="LevelIntro" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 960.0
-offset_bottom = 540.0
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_ec5h6")
-
-[node name="MiniMap" type="Sprite2D" parent="."]
-position = Vector2(240.1, 254.1)
-scale = Vector2(1.87407, 1.87407)
-texture = ExtResource("2_b6pfr")
+script = ExtResource("1_dximk")
 
 [node name="LevelBriefV003" type="Sprite2D" parent="."]
 visible = false
@@ -46,45 +44,95 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_awcr2")
 metadata/_edit_lock_ = true
 
-[node name="MissionLabel1" type="RichTextLabel" parent="."]
-offset_left = 330.0
-offset_top = 190.0
-offset_right = 630.0
-offset_bottom = 345.0
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_ec5h6")
+
+[node name="LevelTitleLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_right = 1152.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.589752, 0.767194, 0.861409, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_ujnq0")
+theme_override_font_sizes/font_size = 80
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 143.0
+offset_top = 161.0
+offset_right = 616.0
+offset_bottom = 517.0
+theme = SubResource("Theme_m814e")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MiniMap" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(170, 170)
+layout_mode = 2
+texture = ExtResource("2_b6pfr")
+
+[node name="MissionLabel1" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.431373, 0.831373, 0.294118, 1)
 theme_override_fonts/normal_font = ExtResource("4_hjfwn")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "Ha! Someone already got here before you? This tombs are almost completely cleaned out?"
-fit_content = true
 scroll_active = false
 
-[node name="MissionLabel2" type="RichTextLabel" parent="."]
-offset_left = 150.0
-offset_top = 348.0
-offset_right = 631.0
-offset_bottom = 522.0
+[node name="MissionLabel2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/default_color = Color(0.431373, 0.831373, 0.294118, 1)
 theme_override_fonts/normal_font = ExtResource("4_hjfwn")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around..."
+text = "It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around...
+It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around..."
 fit_content = true
 scroll_active = false
 
 [node name="UpgradeWindow" type="Node2D" parent="."]
 
 [node name="GadgetSpeed" type="Sprite2D" parent="UpgradeWindow"]
-position = Vector2(809, 270)
-scale = Vector2(1.5, 1.5)
+position = Vector2(805, 271)
+scale = Vector2(1.54687, 1.54687)
 texture = ExtResource("5_iligj")
 
 [node name="GadgetInvisibility" type="Sprite2D" parent="UpgradeWindow"]
-position = Vector2(958, 270)
-scale = Vector2(1.5, 1.5)
+position = Vector2(940, 270)
+scale = Vector2(1.54687, 1.54687)
 texture = ExtResource("6_g42u3")
 
 [node name="SpeedBuyButton" type="Button" parent="UpgradeWindow"]
+visible = false
 offset_left = 759.0
 offset_top = 337.0
 offset_right = 856.0
@@ -96,6 +144,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kaohf")
 text = "upgrade"
 
 [node name="InvisibilityBuyButton" type="Button" parent="UpgradeWindow"]
+visible = false
 offset_left = 910.0
 offset_top = 337.0
 offset_right = 1007.0
@@ -106,13 +155,29 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_kaohf")
 text = "upgrade"
 
-[node name="Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="UpgradeWindow"]
+offset_left = 769.0
+offset_top = 163.0
+offset_right = 1000.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0.431373, 0.831373, 0.294118, 1)
+theme_override_fonts/font = ExtResource("7_58smt")
+theme_override_font_sizes/font_size = 35
+text = "CHOOSE ONE!"
+
+[node name="StartButton" type="Button" parent="."]
 offset_left = 723.0
 offset_top = 491.0
 offset_right = 1040.0
 offset_bottom = 577.0
+theme_override_colors/font_hover_color = Color(0.431373, 0.831373, 0.294118, 1)
 theme_override_colors/font_color = Color(0.431373, 0.831373, 0.294118, 1)
 theme_override_fonts/font = ExtResource("8_ujnq0")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_tbtg7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o482a")
+theme_override_styles/normal = ExtResource("9_0dmx6")
 text = "START"
+
+[connection signal="pressed" from="UpgradeWindow/SpeedBuyButton" to="." method="_on_speed_buy_button_pressed"]
+[connection signal="pressed" from="UpgradeWindow/InvisibilityBuyButton" to="." method="_on_invisibility_buy_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -33,8 +33,6 @@ func _on_speed_increase_button_pressed() -> void:
 	if (Globals.total_nut_counter >= 10 && Globals.power_up_speed_unlocked):
 		Globals.total_nut_counter = Globals.total_nut_counter - 10
 		Globals.speed_power_up_percentage = Globals.speed_power_up_percentage + 0.1
-		
-
 
 func _on_invis_increase_button_pressed() -> void:
 		if (Globals.total_nut_counter >= 10 && Globals.power_up_invis_unlocked):
