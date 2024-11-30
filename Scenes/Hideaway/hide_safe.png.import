@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fcgpwvmbn8ma"
-path="res://.godot/imported/hide_tree.png-a70cb106eacbc9422c50d252475bef35.ctex"
+uid="uid://dexl2fk288oiq"
+path="res://.godot/imported/hide_safe.png-06cc9575ada90409aa09f2b03eb2127d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tree/hide_tree.png"
-dest_files=["res://.godot/imported/hide_tree.png-a70cb106eacbc9422c50d252475bef35.ctex"]
+source_file="res://Scenes/Hideaway/hide_safe.png"
+dest_files=["res://.godot/imported/hide_safe.png-06cc9575ada90409aa09f2b03eb2127d.ctex"]
 
 [params]
 

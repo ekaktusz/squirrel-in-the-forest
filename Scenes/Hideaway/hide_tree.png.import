@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8wikr7ala0dw"
-path="res://.godot/imported/hide_ice.png-7ecf20c4e7e30ac60cfd376861e8d7af.ctex"
+uid="uid://fcgpwvmbn8ma"
+path="res://.godot/imported/hide_tree.png-4fb489fb49f1ce9d7da603bafcea0ee5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tree/hide_ice.png"
-dest_files=["res://.godot/imported/hide_ice.png-7ecf20c4e7e30ac60cfd376861e8d7af.ctex"]
+source_file="res://Scenes/Hideaway/hide_tree.png"
+dest_files=["res://.godot/imported/hide_tree.png-4fb489fb49f1ce9d7da603bafcea0ee5.ctex"]
 
 [params]
 

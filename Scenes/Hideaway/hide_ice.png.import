@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmrg2vl1jbfxd"
-path="res://.godot/imported/hide_egypt.png-c154257fadb083242b726fcda6bd1f41.ctex"
+uid="uid://c8wikr7ala0dw"
+path="res://.godot/imported/hide_ice.png-4495367b73b20cb99a62124e10ba83e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tree/hide_egypt.png"
-dest_files=["res://.godot/imported/hide_egypt.png-c154257fadb083242b726fcda6bd1f41.ctex"]
+source_file="res://Scenes/Hideaway/hide_ice.png"
+dest_files=["res://.godot/imported/hide_ice.png-4495367b73b20cb99a62124e10ba83e1.ctex"]
 
 [params]
 

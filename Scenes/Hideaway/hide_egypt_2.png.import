@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kovj0q4y7ltc"
-path="res://.godot/imported/hide_egypt_2.png-f1e27bfe788a197a9ca61aadfa45a4eb.ctex"
+path="res://.godot/imported/hide_egypt_2.png-4dad75b4d507228c179d3c84990e8840.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tree/hide_egypt_2.png"
-dest_files=["res://.godot/imported/hide_egypt_2.png-f1e27bfe788a197a9ca61aadfa45a4eb.ctex"]
+source_file="res://Scenes/Hideaway/hide_egypt_2.png"
+dest_files=["res://.godot/imported/hide_egypt_2.png-4dad75b4d507228c179d3c84990e8840.ctex"]
 
 [params]
 

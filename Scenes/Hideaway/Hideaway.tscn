@@ -1,11 +1,12 @@
-[gd_scene load_steps=45 format=3 uid="uid://dyjsq2ye6wjqp"]
+[gd_scene load_steps=47 format=3 uid="uid://dyjsq2ye6wjqp"]
 
-[ext_resource type="Script" path="res://Scenes/Tree/hideaway.gd" id="1_k36c8"]
-[ext_resource type="Texture2D" uid="uid://dexl2fk288oiq" path="res://Scenes/Tree/hide_safe.png" id="2_tdjt1"]
-[ext_resource type="Texture2D" uid="uid://dmrg2vl1jbfxd" path="res://Scenes/Tree/hide_egypt.png" id="3_kq1m1"]
-[ext_resource type="Texture2D" uid="uid://kovj0q4y7ltc" path="res://Scenes/Tree/hide_egypt_2.png" id="4_ke6ae"]
-[ext_resource type="Texture2D" uid="uid://fcgpwvmbn8ma" path="res://Scenes/Tree/hide_tree.png" id="5_gg4uk"]
-[ext_resource type="Texture2D" uid="uid://c8wikr7ala0dw" path="res://Scenes/Tree/hide_ice.png" id="6_u4wda"]
+[ext_resource type="Script" path="res://Scenes/Hideaway/hideaway.gd" id="1_k36c8"]
+[ext_resource type="Texture2D" uid="uid://dexl2fk288oiq" path="res://Scenes/Hideaway/hide_safe.png" id="2_tdjt1"]
+[ext_resource type="Texture2D" uid="uid://dmrg2vl1jbfxd" path="res://Scenes/Hideaway/hide_egypt.png" id="3_kq1m1"]
+[ext_resource type="Texture2D" uid="uid://kovj0q4y7ltc" path="res://Scenes/Hideaway/hide_egypt_2.png" id="4_ke6ae"]
+[ext_resource type="Texture2D" uid="uid://fcgpwvmbn8ma" path="res://Scenes/Hideaway/hide_tree.png" id="5_gg4uk"]
+[ext_resource type="Texture2D" uid="uid://c8wikr7ala0dw" path="res://Scenes/Hideaway/hide_ice.png" id="6_u4wda"]
+[ext_resource type="Texture2D" uid="uid://c34p7vp5hmfoe" path="res://Scenes/Tilemaps/Tilesets/tilemap_v001.png" id="7_xqkh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tf2o"]
 atlas = ExtResource("4_ke6ae")
@@ -151,6 +152,10 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("5_gg4uk")
 region = Rect2(448, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7njr6"]
+atlas = ExtResource("7_xqkh6")
+region = Rect2(128, 576, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_b430h"]
 animations = [{
 "frames": [{
@@ -290,6 +295,14 @@ animations = [{
 "loop": false,
 "name": &"tree",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7njr6")
+}],
+"loop": true,
+"name": &"watertower",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qujdx"]
@@ -302,7 +315,7 @@ script = ExtResource("1_k36c8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b430h")
-animation = &"bush"
+animation = &"watertower"
 
 [node name="Area2D" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8
