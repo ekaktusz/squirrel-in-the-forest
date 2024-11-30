@@ -18,5 +18,12 @@ texture = ExtResource("1_0btj5")
 [node name="ToolTip" parent="." instance=ExtResource("2_2qcom")]
 visible = false
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 65.0
+offset_right = 41.0
+offset_bottom = 88.0
+
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

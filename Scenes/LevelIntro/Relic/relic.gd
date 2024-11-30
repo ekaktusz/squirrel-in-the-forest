@@ -25,9 +25,23 @@ func _ready() -> void:
 	texture_rect.set_texture(relic_textures[type])
 	tool_tip.set_text(relic_descriptions[type])
 	tool_tip.hide()
+	
+var is_mouse_inside_texture = false
 
 func _on_texture_rect_mouse_entered() -> void:
+	is_mouse_inside_texture = true
 	tool_tip.show()
 
 func _on_texture_rect_mouse_exited() -> void:
-	tool_tip.hide()
+	# Only hide if the mouse is not over the tooltip
+	is_mouse_inside_texture = false
+	call_deferred("hide_tooltip")
+
+
+func hide_tooltip():
+	if not is_mouse_inside_texture:
+		tool_tip.hide()
+
+
+
+	
