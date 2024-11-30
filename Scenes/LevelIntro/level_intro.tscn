@@ -121,13 +121,19 @@ scroll_active = false
 
 [node name="UpgradeWindow" type="Node2D" parent="."]
 
-[node name="GadgetSpeed" type="Sprite2D" parent="UpgradeWindow"]
-position = Vector2(805, 271)
+[node name="GadgetSpeed" type="TextureRect" parent="UpgradeWindow"]
+offset_left = 766.0
+offset_top = 221.0
+offset_right = 830.0
+offset_bottom = 285.0
 scale = Vector2(1.54687, 1.54687)
 texture = ExtResource("5_iligj")
 
-[node name="GadgetInvisibility" type="Sprite2D" parent="UpgradeWindow"]
-position = Vector2(940, 270)
+[node name="GadgetInvisibility" type="TextureRect" parent="UpgradeWindow"]
+offset_left = 889.0
+offset_top = 221.0
+offset_right = 953.0
+offset_bottom = 285.0
 scale = Vector2(1.54687, 1.54687)
 texture = ExtResource("6_g42u3")
 
