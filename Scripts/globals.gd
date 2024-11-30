@@ -1,6 +1,7 @@
 extends Node
 
 enum NpcType { STATIC, UP_DOWN, SIDE_TO_SIDE, FOLLOW }
+enum NpcColor {BLUE, WHITE, RED}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE}
 
 var total_nut_counter: int = 100

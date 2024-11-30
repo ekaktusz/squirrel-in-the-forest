@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var npc: CharacterBody2D = $"."
 @export var style : Globals.NpcType
+@export var color : Globals.NpcColor
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 60
@@ -21,24 +22,23 @@ func _process(_delta):
 		#if is_on_wall():
 			#change_direction_side()
 	elif (style == Globals.NpcType.STATIC):
-		animated_sprite_2d.play("blue_idle")
+		_play_action_anim("idle")
 func change_direction():
 	if direction == Vector2.UP:
 		direction = Vector2.DOWN
-		animated_sprite_2d.play("blue_down")
+		_play_action_anim("down")
 	else: 
 		direction = Vector2.UP
-		animated_sprite_2d.play("blue_up")
+		_play_action_anim("up")
 
 func change_direction_side():
 	if direction_2 == Vector2.LEFT:
 		direction_2 = Vector2.RIGHT
 		animated_sprite_2d.flip_h = false
-		animated_sprite_2d.play("blue_run")
 	else: 
 		direction_2 = Vector2.LEFT
 		animated_sprite_2d.flip_h = true
-		animated_sprite_2d.play("blue_run")
+	_play_action_anim("run")
 		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -46,3 +46,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		change_direction_side()
 	elif (style == Globals.NpcType.UP_DOWN):
 		change_direction()
+		
+func _play_action_anim(action : String) -> void:
+	match color:
+		Globals.NpcColor.BLUE:
+			animated_sprite_2d.play("blue" + "_" + action)
+		Globals.NpcColor.WHITE:
+			animated_sprite_2d.play("white" + "_" + action)
+		Globals.NpcColor.RED:
+			animated_sprite_2d.play("red" + "_" + action)
