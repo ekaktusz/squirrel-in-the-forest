@@ -24,9 +24,16 @@ const COLLISION_LAYER_ENEMY: int = 3
 const COLLISION_LAYER_PLAYER: int = 2
 
 func _ready() -> void:
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		enemy.owner.process_mode = Node.PROCESS_MODE_DISABLED
+		
 	await get_tree().create_timer(2.2).timeout
+	
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		enemy.owner.process_mode = Node.PROCESS_MODE_INHERIT
 	exit_enter_in_progress = false
 	
+		
 func _input(event):
 	if exit_enter_in_progress:
 		return
