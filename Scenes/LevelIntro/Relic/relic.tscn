@@ -11,6 +11,16 @@ offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_7iwwb")
 
+[node name="SelectedRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0.707144, 0.526961, 1)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 67.0
+offset_bottom = 67.0
+texture = ExtResource("1_0btj5")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0

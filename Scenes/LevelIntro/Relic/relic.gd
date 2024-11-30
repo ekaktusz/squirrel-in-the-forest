@@ -2,6 +2,8 @@ extends Control
 
 @onready var tool_tip: Control = $ToolTip
 @onready var texture_rect: TextureRect = $TextureRect
+@onready var selected_rect: TextureRect = $SelectedRect
+
 
 @export var type: Globals.RelicType = Globals.RelicType.Invisibility
 
@@ -43,3 +45,9 @@ func _make_darker() -> void:
 func _make_bright() -> void:
 	# Modulate to restore original brightness
 	texture_rect.modulate = Color(1, 1, 1, 1)  # Full brightness
+
+func select() -> void:
+	selected_rect.visible = true
+	
+func unselect() -> void:
+	selected_rect.visible = false

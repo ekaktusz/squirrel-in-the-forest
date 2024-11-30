@@ -5,6 +5,7 @@ extends Node2D
 @onready var relic_1: Control = $UpgradeWindow/Relic1
 @onready var relic_2: Control = $UpgradeWindow/Relic2
 
+var selected_relic: Control = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,23 +27,19 @@ func get_two_different_random_relic_values() -> Array:
 	
 	return [first_value, second_value]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func select_relic(relic: Control) -> void:
+	if selected_relic == relic:
+		return  # Already selected
 
+	if selected_relic:
+		# Reset the outline of the previously selected relic
+		selected_relic.unselect()
 
-func _on_speed_buy_button_pressed() -> void:
-	print("speed_buy_button_pressed")
+	relic.select()
 
+	selected_relic = relic
 
-func _on_invisibility_buy_button_pressed() -> void:
-	print("invisibility_buy_button_pressed")
-
-
-func _on_start_button_pressed() -> void:
-	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
-
-
+# Mouse hover handling
 func _on_relic_1_mouse_entered() -> void:
 	ability_description.text = relic_1.get_description()
 	ability_description.visible = true
@@ -51,9 +48,18 @@ func _on_relic_2_mouse_entered() -> void:
 	ability_description.text = relic_2.get_description()
 	ability_description.visible = true
 
-
 func _on_relic_1_mouse_exited() -> void:
 	ability_description.visible = false
 
 func _on_relic_2_mouse_exited() -> void:
 	ability_description.visible = false
+
+
+func _on_relic_1_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		select_relic(relic_1)
+
+
+func _on_relic_2_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		select_relic(relic_2)
