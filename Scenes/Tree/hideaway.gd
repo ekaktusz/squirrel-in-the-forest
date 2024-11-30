@@ -1,19 +1,25 @@
 extends Node2D
 
+@export var style = Globals.HideawayStyle.TREE
 @onready var sprite = $Sprite2D
 @onready var label = $HideLabel
 
 var is_squirrel_in_range = false
 var is_occupied = false
+var hide_animation
+
+
+# -> HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL}
+var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural"]
 
 
 func _process(_delta: float) -> void:
 	if(is_squirrel_in_range):
 		if !is_occupied and Globals.hiding:
-			sprite.play("hide")
+			sprite.play(StyleToAnimationMap[style])
 			is_occupied = true
 		elif is_occupied and !Globals.hiding:
-			sprite.play("hide")
+			sprite.play(StyleToAnimationMap[style])
 			is_occupied = false
 
 
