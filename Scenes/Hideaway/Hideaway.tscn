@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dyjsq2ye6wjqp"]
+[gd_scene load_steps=48 format=3 uid="uid://dyjsq2ye6wjqp"]
 
 [ext_resource type="Script" path="res://Scenes/Hideaway/hideaway.gd" id="1_k36c8"]
 [ext_resource type="Texture2D" uid="uid://dexl2fk288oiq" path="res://Scenes/Hideaway/hide_safe.png" id="2_tdjt1"]
@@ -308,7 +308,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qujdx"]
 size = Vector2(45, 42)
 
-[node name="Hideaway" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chfm8"]
+size = Vector2(29, 28)
+
+[node name="Hideaway" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_k36c8")
@@ -316,11 +319,11 @@ script = ExtResource("1_k36c8")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b430h")
 
-[node name="Area2D" type="Area2D" parent="." groups=["tree"]]
+[node name="InteractionArea" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8
 collision_mask = 514
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-16.5, 16)
 shape = SubResource("RectangleShape2D_qujdx")
 
@@ -333,5 +336,9 @@ offset_right = 69.0
 offset_bottom = -21.0
 text = "Press [F] to hide"
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16.5, 15)
+shape = SubResource("RectangleShape2D_chfm8")
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_area_2d_area_exited"]
