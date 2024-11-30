@@ -18,15 +18,18 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):
 		Globals.ready_to_evacuate = true
-		
+
+
 func _set_camera_limits() -> void:
-	var map_limits = map.get_used_rect()
 	var map_cellsize = map.tile_set.tile_size
-	camera.limit_left = (map_limits.position.x + 1) * map_cellsize.x
-	camera.limit_right = map_limits.end.x * map_cellsize.x
-	camera.limit_top = map_limits.position.y * map_cellsize.y
-	camera.limit_bottom = (map_limits.end.y - 1) * map_cellsize.y
-	
+	var level_size_px = map.get_used_rect().size.x * map_cellsize.x
+
+	camera.limit_top = -level_size_px
+	camera.limit_right = level_size_px
+	camera.limit_bottom = level_size_px
+	camera.limit_left = -level_size_px 
+
+
 func _on_squirrel_enemy_hit() -> void:
 	squirrel.position = starting_position.position
 
