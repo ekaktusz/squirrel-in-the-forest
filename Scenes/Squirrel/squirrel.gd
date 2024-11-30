@@ -27,9 +27,7 @@ var enemy_state
 
 func _ready() -> void:
 	set_enemy_state(Node.PROCESS_MODE_DISABLED)
-		
 	await get_tree().create_timer(2.2).timeout
-
 	exit_enter_in_progress = false
 
 
@@ -42,20 +40,20 @@ func _input(event):
 	if state != Globals.SquirrelState.NORMAL:
 		return
 	
-	var can_power_up_speed_pick_up: bool = event.is_action_pressed("power_up_speed") and Globals.power_up_speed_available
-	
-	if can_power_up_speed_pick_up:
-		activate_power_up_speed()
-		
-	var can_power_up_invis_pick_up: bool = event.is_action_pressed("power_up_invisible") and Globals.power_up_invis_available
-	
-	if can_power_up_invis_pick_up:
-		activate_power_up_invisible()
+	if event.is_action_pressed("action"):
+		match Globals.selected_power_up:
+			Globals.RelicType.Speed:
+				activate_power_up_speed()
+			Globals.RelicType.Invisibility:
+				activate_power_up_invisible()
+			Globals.RelicType.Shield:
+				activate_power_up_shield()
+			Globals.RelicType.Reveal:
+				activate_power_up_reveal()
 
 
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
-	Globals.power_up_speed_available = false
 	speed = speed * Globals.speed_power_up_percentage
 	add_power_up_progressbar(2)
 	power_up_speed_timer.start()
@@ -64,13 +62,11 @@ func activate_power_up_speed():
 func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
-	Globals.power_up_speed_available = true
 	speed = speed / Globals.speed_power_up_percentage
 	
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
-	Globals.power_up_invis_available = false
 	set_collision_layers(false)
 	add_power_up_progressbar(Globals.invis_power_up_time)
 	power_up_invisible_timer.wait_time = Globals.invis_power_up_time
@@ -80,9 +76,15 @@ func activate_power_up_invisible():
 func _on_power_up_invisible_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
-	Globals.power_up_invis_available = true
 	set_collision_layers(true)
 	
+func activate_power_up_shield() -> void:
+	print("implement me pls shield")
+	pass
+
+func activate_power_up_reveal() -> void:
+	print("implement me pls reveal")
+	pass
 	
 func set_collision_layers(enabled: bool):
 	area_2d.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
@@ -121,7 +123,7 @@ func handle_hiding() -> void:
 		
 		
 func handle_evacuation() -> void:
-	if Input.is_action_just_pressed("evacuate") and Globals.ready_to_evacuate and Globals.in_start_area:
+	if Input.is_action_just_pressed("action") and Globals.ready_to_evacuate and Globals.in_start_area:
 		exit_enter_in_progress = true
 		animated_sprite_2d.play("evacuate")
 		sprite_collision.disabled = true
