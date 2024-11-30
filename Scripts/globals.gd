@@ -6,7 +6,7 @@ enum HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE, SHIELD}
 enum RelicType {Speed, Invisibility, Shield, Reveal}
 
-var current_level_number: int = 10
+var current_level_number: int = 0
 var total_nut_counter: int = 100
 
 var selected_power_up: RelicType = RelicType.Speed

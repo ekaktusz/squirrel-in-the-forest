@@ -97,8 +97,7 @@ func add_power_up_progressbar(time: float):
 	progress_bar.visible = true
 	progress_bar.value = 100
 	var tween = get_tree().create_tween()
-	tween.tween_property(progress_bar,"value",0,time)	
-		
+	tween.tween_property(progress_bar, "value", 0, time)	
 		
 func _physics_process(_delta: float) -> void:
 	if exit_enter_in_progress:
