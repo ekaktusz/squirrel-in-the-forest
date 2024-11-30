@@ -4,6 +4,10 @@ extends Node2D
 
 @onready var relic_1: Control = $UpgradeWindow/Relic1
 @onready var relic_2: Control = $UpgradeWindow/Relic2
+@onready var start_button: Button = $StartButton
+
+@onready var level_title_label: Label = $LevelTitleLabel
+
 
 var selected_relic: Control = null
 
@@ -14,6 +18,8 @@ func _ready() -> void:
 	var random_relic_types = get_two_different_random_relic_values()
 	relic_1.set_type(random_relic_types[0])
 	relic_2.set_type(random_relic_types[1])
+	
+	level_title_label.text = "Level " + str(Globals.current_level_number)
 
 func get_two_different_random_relic_values() -> Array:
 	var enum_values = Globals.RelicType.values()
@@ -36,30 +42,22 @@ func select_relic(relic: Control) -> void:
 		selected_relic.unselect()
 
 	relic.select()
-
+	ability_description.visible = true
+	ability_description.text = relic.get_description()
+	
+	start_button.disabled = false
+	
 	selected_relic = relic
-
-# Mouse hover handling
-func _on_relic_1_mouse_entered() -> void:
-	ability_description.text = relic_1.get_description()
-	ability_description.visible = true
-
-func _on_relic_2_mouse_entered() -> void:
-	ability_description.text = relic_2.get_description()
-	ability_description.visible = true
-
-func _on_relic_1_mouse_exited() -> void:
-	ability_description.visible = false
-
-func _on_relic_2_mouse_exited() -> void:
-	ability_description.visible = false
-
+	
 
 func _on_relic_1_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		select_relic(relic_1)
-
+		
 
 func _on_relic_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		select_relic(relic_2)
+		
+func _on_start_button_pressed() -> void:
+	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
