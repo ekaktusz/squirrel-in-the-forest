@@ -84,6 +84,48 @@ size_flags_vertical = 4
 text = "Level 7
 "
 
+[node name="Level8" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 8
+"
+
+[node name="Level9" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 9
+"
+
+[node name="Level10" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 10
+"
+
+[node name="Level11" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 11
+"
+
+[node name="Level12" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 12
+"
+
+[node name="Level13" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 13
+"
+
 [node name="PowerUpShop" parent="." instance=ExtResource("2_isc0t")]
 visible = false
 position = Vector2(547, 334)
@@ -97,3 +139,9 @@ position = Vector2(547, 334)
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level11" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level12" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level13" to="." method="_on_level_13_pressed"]
