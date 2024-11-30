@@ -8,6 +8,10 @@ extends Node2D
 
 @onready var level_title_label: Label = $LevelTitleLabel
 
+@onready var mini_map: TextureRect = $ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MiniMap
+@onready var mission_label_1: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/MissionLabel1
+@onready var mission_label_2: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/MissionLabel2
+
 
 var selected_relic: Control = null
 
@@ -20,6 +24,13 @@ func _ready() -> void:
 	relic_2.set_type(random_relic_types[1])
 	
 	level_title_label.text = "Level " + str(Globals.current_level_number)
+	
+	var level_details = LevelIntroDetails.intro_details[Globals.current_level_number]
+	mini_map.texture = level_details.mini_map
+	print(mission_label_1)
+
+	mission_label_1.text = level_details.description_1
+	mission_label_2.text = level_details.description_2
 
 func get_two_different_random_relic_values() -> Array:
 	var enum_values = Globals.RelicType.values()
