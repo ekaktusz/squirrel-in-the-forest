@@ -17,7 +17,8 @@ func _ready() -> void:
 
 # Common handler for all buttons
 func _on_level_button_pressed(level_number: int) -> void:
-	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(level_number) + ".tscn")
+	Globals.current_level_number = level_number
+	SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
 
 func _process(delta: float) -> void:
 	var center: Vector2 = get_viewport_rect().size / 2.0
