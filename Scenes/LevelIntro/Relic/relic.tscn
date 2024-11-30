@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://2pu5mema10ue"]
+
+[ext_resource type="Texture2D" uid="uid://btfd2ssl8vhql" path="res://Scenes/LevelIntro/Relics/gadget_armour.png" id="1_0btj5"]
+[ext_resource type="Script" path="res://Scenes/LevelIntro/Relic/relic.gd" id="1_7iwwb"]
+[ext_resource type="PackedScene" uid="uid://bv3pbsp2wjb2q" path="res://Scenes/LevelIntro/Relic/ToolTip/tool_tip.tscn" id="2_2qcom"]
+
+[node name="Relic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_7iwwb")
+
+[node name="SelectedRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0.707144, 0.526961, 1)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 67.0
+offset_bottom = 67.0
+texture = ExtResource("1_0btj5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0btj5")
+
+[node name="ToolTip" parent="." instance=ExtResource("2_2qcom")]
+visible = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 65.0
+offset_right = 41.0
+offset_bottom = 88.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

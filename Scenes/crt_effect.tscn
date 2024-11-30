@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqiq0806230f6"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/screen_shader.gdshader" id="1_wo823"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwruo"]
+shader = ExtResource("1_wo823")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8cu37"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_kwruo")
+mesh = SubResource("QuadMesh_8cu37")

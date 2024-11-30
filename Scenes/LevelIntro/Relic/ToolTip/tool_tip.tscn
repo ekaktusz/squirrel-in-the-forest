@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3pbsp2wjb2q"]
+
+[ext_resource type="Script" path="res://Scenes/LevelIntro/Relic/ToolTip/tool_tip.gd" id="1_hnx1a"]
+[ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="1_odpdv"]
+
+[node name="ToolTip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_hnx1a")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 271.0
+offset_bottom = 147.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 271.0
+offset_bottom = 146.0
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_odpdv")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "This is a power up that make you a better lover."
