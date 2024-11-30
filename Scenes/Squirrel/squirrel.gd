@@ -23,13 +23,21 @@ const friction: int = 30
 const COLLISION_LAYER_ENEMY: int = 3
 const COLLISION_LAYER_PLAYER: int = 2
 
+var enemy_state
+
 func _ready() -> void:
+	set_enemy_state(Node.PROCESS_MODE_DISABLED)
+		
 	await get_tree().create_timer(2.2).timeout
+
 	exit_enter_in_progress = false
-	
+
+
 func _input(event):
 	if exit_enter_in_progress:
 		return
+	
+	set_enemy_state(Node.PROCESS_MODE_INHERIT)
 		
 	if state != Globals.SquirrelState.NORMAL:
 		return
@@ -43,19 +51,22 @@ func _input(event):
 	
 	if can_power_up_invis_pick_up:
 		activate_power_up_invisible()
-		
+
+
 func activate_power_up_speed():
 	state = Globals.SquirrelState.SPEEDY
 	Globals.power_up_speed_available = false
 	speed = speed * Globals.speed_power_up_percentage
 	add_power_up_progressbar(2)
 	power_up_speed_timer.start()
+
 	
 func _on_power_up_speed_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_speed_available = true
 	speed = speed / Globals.speed_power_up_percentage
+	
 	
 func activate_power_up_invisible():
 	state = Globals.SquirrelState.INVISIBLE
@@ -65,11 +76,13 @@ func activate_power_up_invisible():
 	power_up_invisible_timer.wait_time = Globals.invis_power_up_time
 	power_up_invisible_timer.start()
 	
+	
 func _on_power_up_invisible_timer_timeout() -> void:
 	progress_bar.visible = false
 	state = Globals.SquirrelState.NORMAL
 	Globals.power_up_invis_available = true
 	set_collision_layers(true)
+	
 	
 func set_collision_layers(enabled: bool):
 	area_2d.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
@@ -77,11 +90,13 @@ func set_collision_layers(enabled: bool):
 	squirrel.set_collision_mask_value(COLLISION_LAYER_ENEMY, enabled)
 	squirrel.set_collision_layer_value(COLLISION_LAYER_PLAYER, enabled)
 	
+	
 func add_power_up_progressbar(time: float):
 	progress_bar.visible = true
 	progress_bar.value = 100
 	var tween = get_tree().create_tween()
 	tween.tween_property(progress_bar,"value",0,time)	
+		
 		
 func _physics_process(_delta: float) -> void:
 	if exit_enter_in_progress:
@@ -90,6 +105,7 @@ func _physics_process(_delta: float) -> void:
 	handle_hiding()
 	handle_evacuation()
 	handle_movement()
+		
 		
 func handle_hiding() -> void:
 	sprite_collision.disabled = Globals.hiding
@@ -103,6 +119,7 @@ func handle_hiding() -> void:
 		print("stopped hiding")
 		Globals.hiding = false
 		
+		
 func handle_evacuation() -> void:
 	if Input.is_action_just_pressed("evacuate") and Globals.ready_to_evacuate and Globals.in_start_area:
 		exit_enter_in_progress = true
@@ -111,6 +128,7 @@ func handle_evacuation() -> void:
 		area_collision.disabled = true
 		await get_tree().create_timer(2.2).timeout
 		level_done.emit()
+		
 		
 func handle_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -129,6 +147,7 @@ func handle_movement() -> void:
 					animated_sprite_2d.play("idle_invis")
 	if (!Globals.hiding):
 		move_and_slide()
+
 
 func play_movement_animation(direction: Vector2) -> void:
 	match state:
@@ -169,10 +188,20 @@ func play_movement_animation(direction: Vector2) -> void:
 					animated_sprite_2d.flip_h = true
 					animated_sprite_2d.play("run_invis")	
 
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		Globals.lose_nut()
 		enemy_hit.emit()
+		set_enemy_state(Node.PROCESS_MODE_DISABLED)
+
 	if area.is_in_group("nut"):
 		nut_collected.emit()
 		Globals.collect_nut()
+	
+		
+func set_enemy_state(state : Node.ProcessMode):
+	if(enemy_state != state):
+		enemy_state = state
+		for enemy in get_tree().get_nodes_in_group("enemy"):
+			enemy.owner.process_mode = state

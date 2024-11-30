@@ -17,6 +17,7 @@ shape = SubResource("RectangleShape2D_bu0mo")
 
 [node name="EvacuateLabel" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = -80.0
 offset_top = -56.0
 offset_right = 80.0
