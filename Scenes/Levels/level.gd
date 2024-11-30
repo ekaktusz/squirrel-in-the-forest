@@ -1,6 +1,6 @@
 extends Node2D
 
-var hud = preload("res://Scenes/Hud/hud.tscn")
+var hud = preload("res://Scenes/Hud/Hud.tscn")
 
 @onready var squirrel: CharacterBody2D = $Squirrel
 @onready var starting_position: Node2D = $StartEnd
