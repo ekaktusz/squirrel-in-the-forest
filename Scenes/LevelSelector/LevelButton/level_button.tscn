@@ -7,7 +7,7 @@
 offset_left = -1.0
 offset_right = 79.0
 offset_bottom = 39.0
-pivot_offset = Vector2(103, 39)
+pivot_offset = Vector2(115, 39)
 theme = ExtResource("1_k8liw")
 text = "LEVEL 1"
 script = ExtResource("1_nvu8a")

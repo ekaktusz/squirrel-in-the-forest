@@ -12,6 +12,7 @@ extends Node2D
 @onready var mission_label_1: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/MissionLabel1
 @onready var mission_label_2: RichTextLabel = $ScrollContainer/MarginContainer/VBoxContainer/MissionLabel2
 
+@onready var back_button: Button = $BackButton
 
 var selected_relic: Control = null
 
@@ -72,3 +73,6 @@ func _on_relic_2_gui_input(event: InputEvent) -> void:
 		
 func _on_start_button_pressed() -> void:
 	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
+
+func _on_back_button_pressed() -> void:
+	SceneTransition.change_scene("res://Scenes/LevelSelector/level_selector.tscn")

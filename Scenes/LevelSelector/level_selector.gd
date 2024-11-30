@@ -2,11 +2,15 @@ extends Control
 
 @export var max_offset: Vector2 = Vector2(10, 10)
 @export var smoothing: float = 20.0
+@onready var counter: Label = $Control/Counter
+
 
 @onready var grid_container: GridContainer = $GridContainer
 var initial_position: Vector2
 
 func _ready() -> void:
+	counter.text = str(Globals.total_nut_counter)
+	
 	# Save the grid_container's initial position
 	initial_position = grid_container.position
 
