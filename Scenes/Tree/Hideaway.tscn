@@ -293,7 +293,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qujdx"]
-size = Vector2(71.5, 68.25)
+size = Vector2(45, 42)
 
 [node name="Hideaway" type="Node2D"]
 z_index = 1
@@ -302,14 +302,14 @@ script = ExtResource("1_k36c8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b430h")
-animation = &"mural"
+animation = &"bush"
 
 [node name="Area2D" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8
 collision_mask = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -2)
+position = Vector2(-16.5, 16)
 shape = SubResource("RectangleShape2D_qujdx")
 
 [node name="HideLabel" type="Label" parent="."]

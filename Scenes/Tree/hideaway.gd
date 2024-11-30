@@ -13,6 +13,10 @@ var hide_animation
 var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural"]
 
 
+func _ready() -> void:
+	sprite.play(StyleToAnimationMap[style])
+	
+	
 func _process(_delta: float) -> void:
 	if(is_squirrel_in_range):
 		if !is_occupied and Globals.hiding:
