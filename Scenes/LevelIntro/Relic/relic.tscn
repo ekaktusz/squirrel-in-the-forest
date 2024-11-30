@@ -7,6 +7,8 @@
 [node name="Relic" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("1_7iwwb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -24,6 +26,3 @@ offset_left = 1.0
 offset_top = 65.0
 offset_right = 41.0
 offset_bottom = 88.0
-
-[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
-[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

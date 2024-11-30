@@ -3,6 +3,7 @@ extends Node
 enum NpcType { STATIC, UP_DOWN, SIDE_TO_SIDE, FOLLOW }
 enum NpcColor {BLUE, WHITE, RED}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE}
+enum RelicType {Speed, Invisibility, Shield, Reveal}
 
 var current_level_number: int = 0
 
