@@ -34,7 +34,8 @@ func _on_squirrel_enemy_hit() -> void:
 	squirrel.position = starting_position.position
 
 func _on_squirrel_level_done() -> void:
-	SceneTransition.change_scene("res://Scenes/LevelSelector/level_selector.tscn")
+	Globals.current_level_number += 1
+	SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
 
 func _on_squirrel_nut_collected() -> void:
 	level_nut_counter = level_nut_counter+1
