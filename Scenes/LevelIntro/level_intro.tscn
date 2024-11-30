@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c87eg346k8tu3"]
+[gd_scene load_steps=18 format=3 uid="uid://c87eg346k8tu3"]
 
 [ext_resource type="Script" path="res://Scenes/LevelIntro/level_intro.gd" id="1_dximk"]
 [ext_resource type="Texture2D" uid="uid://cfjaomu1nrh4h" path="res://Scenes/LevelIntro/level_brief_monitors_v002.png" id="1_ec5h6"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="8_ujnq0"]
 [ext_resource type="StyleBox" uid="uid://rsms7ygcm2es" path="res://Scenes/LevelIntro/start_button_normal_style.tres" id="9_0dmx6"]
 [ext_resource type="PackedScene" uid="uid://2pu5mema10ue" path="res://Scenes/LevelIntro/Relic/relic.tscn" id="9_l56la"]
+[ext_resource type="Shader" path="res://Assets/Shaders/screen_shader.gdshader" id="10_g8u16"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yi1g"]
 bg_color = Color(0.431373, 0.831373, 0.294118, 1)
@@ -39,6 +40,13 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(1, 0.0745098, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwruo"]
+shader = ExtResource("10_g8u16")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8cu37"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
 
 [node name="LevelIntro" type="Node2D"]
 script = ExtResource("1_dximk")
@@ -202,6 +210,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_o482a")
 theme_override_styles/normal = ExtResource("9_0dmx6")
 disabled = true
 text = "START"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_kwruo")
+mesh = SubResource("QuadMesh_8cu37")
 
 [connection signal="pressed" from="UpgradeWindow/SpeedBuyButton" to="." method="_on_speed_buy_button_pressed"]
 [connection signal="pressed" from="UpgradeWindow/InvisibilityBuyButton" to="." method="_on_invisibility_buy_button_pressed"]
