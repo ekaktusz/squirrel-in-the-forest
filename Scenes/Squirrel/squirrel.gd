@@ -200,8 +200,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Globals.collect_nut()
 	
 		
-func set_enemy_state(state : Node.ProcessMode):
-	if(enemy_state != state):
-		enemy_state = state
+func set_enemy_state(enemy_state : Node.ProcessMode):
+	if(enemy_state != enemy_state):
+		enemy_state = enemy_state
 		for enemy in get_tree().get_nodes_in_group("enemy"):
-			enemy.owner.process_mode = state
+			enemy.owner.process_mode = enemy_state
