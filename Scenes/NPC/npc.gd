@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var npc: CharacterBody2D = $"."
 @export var style : Globals.NpcType
 @export var color : Globals.NpcColor
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -9,7 +8,11 @@ const SPEED = 15
 const ACCELERATION = 2
 var direction: Vector2 = Vector2.UP
 var direction_2: Vector2 = Vector2.LEFT
-		
+
+func _ready() -> void:
+	_play_idle_anim()
+	
+	
 func _process(_delta):
 	if (style == Globals.NpcType.UP_DOWN):
 		velocity = direction * SPEED * ACCELERATION
@@ -23,6 +26,8 @@ func _process(_delta):
 			#change_direction_side()
 	elif (style == Globals.NpcType.STATIC):
 		_play_action_anim("idle")
+		
+		
 func change_direction():
 	if direction == Vector2.UP:
 		direction = Vector2.DOWN
@@ -55,3 +60,13 @@ func _play_action_anim(action : String) -> void:
 			animated_sprite_2d.play("white" + "_" + action)
 		Globals.NpcColor.RED:
 			animated_sprite_2d.play("red" + "_" + action)
+
+
+func _play_idle_anim() -> void:
+	match color:
+		Globals.NpcColor.BLUE:
+			animated_sprite_2d.play("blue_idle")
+		Globals.NpcColor.WHITE:
+			animated_sprite_2d.play("white_idle")
+		Globals.NpcColor.RED:
+			animated_sprite_2d.play("red_idle")
