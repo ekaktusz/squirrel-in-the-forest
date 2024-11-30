@@ -315,7 +315,6 @@ script = ExtResource("1_k36c8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b430h")
-animation = &"watertower"
 
 [node name="Area2D" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8

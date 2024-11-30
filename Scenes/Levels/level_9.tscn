@@ -77,3 +77,4 @@ position = Vector2(15, 208)
 
 [node name="Hideaway" parent="." index="23" instance=ExtResource("4_2ekpr")]
 position = Vector2(-96, 128)
+style = 5

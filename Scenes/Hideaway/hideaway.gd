@@ -15,6 +15,7 @@ var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertowe
 
 func _ready() -> void:
 	sprite.play(StyleToAnimationMap[style])
+	sprite.stop()
 	
 	
 func _process(_delta: float) -> void:
@@ -23,7 +24,6 @@ func _process(_delta: float) -> void:
 			sprite.play(StyleToAnimationMap[style])
 			is_occupied = true
 		elif is_occupied and !Globals.hiding:
-			sprite.play(StyleToAnimationMap[style])
 			is_occupied = false
 
 
