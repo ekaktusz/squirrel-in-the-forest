@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var color : Globals.NpcColor
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 60
+const SPEED = 15
 const ACCELERATION = 2
 var direction: Vector2 = Vector2.UP
 var direction_2: Vector2 = Vector2.LEFT
