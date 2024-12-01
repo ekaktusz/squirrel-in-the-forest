@@ -2,8 +2,8 @@ extends Node
 
 var intro_details = {
 	0: LevelIntroDetail.create(
-		"Ha! Someone already got here before you? These tombs are almost completely cleaned out?", 
-		"It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around...", 
+		"Ha! Someone already got here before you? These tombs are almost completely", 
+		"cleaned out? It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around...", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_001.png")
 	),
 	1: LevelIntroDetail.create(
