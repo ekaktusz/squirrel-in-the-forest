@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://cksgsa0ydwtrv"]
+[gd_scene load_steps=5 format=4 uid="uid://cksgsa0ydwtrv"]
 
 [ext_resource type="PackedScene" uid="uid://dkkluhyruoleb" path="res://Scenes/Levels/Level.tscn" id="1_x6ews"]
 [ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_ta8yv"]
 [ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="3_8obs4"]
+[ext_resource type="PackedScene" uid="uid://dyjsq2ye6wjqp" path="res://Scenes/Hideaway/Hideaway.tscn" id="4_3pi0t"]
 
 [node name="Level8" instance=ExtResource("1_x6ews")]
 
@@ -103,8 +104,12 @@ position = Vector2(17, 113)
 [node name="Nut3" parent="." index="30" instance=ExtResource("3_8obs4")]
 position = Vector2(-17, 145)
 
-[node name="Nut4" parent="." index="31" instance=ExtResource("3_8obs4")]
-position = Vector2(17, -16)
+[node name="Hideaway" parent="." index="31" instance=ExtResource("4_3pi0t")]
+position = Vector2(32, -32)
+style = 1
+is_secret = true
 
-[node name="Nut5" parent="." index="32" instance=ExtResource("3_8obs4")]
-position = Vector2(17, 212)
+[node name="Hideaway2" parent="." index="32" instance=ExtResource("4_3pi0t")]
+position = Vector2(32, 192)
+style = 1
+is_secret = true

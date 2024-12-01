@@ -3,14 +3,17 @@ extends Node2D
 @export var style = Globals.HideawayStyle.TREE
 @onready var sprite = $Sprite2D
 @onready var label = $HideLabel
+@onready var pickup_sfx = $SFX
 
+@export var is_secret = false
 var is_squirrel_in_range = false
 var is_occupied = false
 var hide_animation
 
+signal nut_collected
 
-# -> HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER}
-var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertower"]
+# -> HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER, HACIENDA}
+var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertower", "hacienda garden"]
 
 
 func _ready() -> void:
@@ -18,6 +21,9 @@ func _ready() -> void:
 	sprite.stop()
 	if (style == 0 ):
 		sprite.position = Vector2(sprite.position.x - 16, sprite.position.y)
+		
+	if (is_secret):
+		self.connect('nut_collected', get_parent()._on_squirrel_nut_collected)
 	
 	
 func _process(_delta: float) -> void:
@@ -25,6 +31,12 @@ func _process(_delta: float) -> void:
 		if !is_occupied and Globals.hiding:
 			sprite.play(StyleToAnimationMap[style])
 			is_occupied = true
+			if is_secret:
+				nut_collected.emit()
+				if (!pickup_sfx.playing):
+					pickup_sfx.play()
+				is_secret = false
+				
 		elif is_occupied and !Globals.hiding:
 			is_occupied = false
 

@@ -37,20 +37,21 @@ position = Vector2(-48, 80)
 style = 1
 color = 2
 
-[node name="Nut" parent="." index="8" instance=ExtResource("3_3ib08")]
-position = Vector2(-176, 112)
-
-[node name="Nut2" parent="." index="9" instance=ExtResource("3_3ib08")]
+[node name="Nut2" parent="." index="8" instance=ExtResource("3_3ib08")]
 position = Vector2(-144, 80)
 
-[node name="Nut3" parent="." index="10" instance=ExtResource("3_3ib08")]
+[node name="Nut3" parent="." index="9" instance=ExtResource("3_3ib08")]
 position = Vector2(-80, 48)
 
-[node name="Nut4" parent="." index="11" instance=ExtResource("3_3ib08")]
+[node name="Nut4" parent="." index="10" instance=ExtResource("3_3ib08")]
 position = Vector2(-48, 112)
 
-[node name="Nut5" parent="." index="12" instance=ExtResource("3_3ib08")]
+[node name="Nut5" parent="." index="11" instance=ExtResource("3_3ib08")]
 position = Vector2(-112, 176)
 
-[node name="Hideaway" parent="." index="13" instance=ExtResource("4_3vvjm")]
+[node name="Hideaway" parent="." index="12" instance=ExtResource("4_3vvjm")]
 position = Vector2(-64, 96)
+
+[node name="Hideaway2" parent="." index="13" instance=ExtResource("4_3vvjm")]
+position = Vector2(-160, 96)
+is_secret = true

@@ -107,45 +107,47 @@ position = Vector2(-241, -47)
 [node name="Nut2" parent="." index="25" instance=ExtResource("3_s76o2")]
 position = Vector2(49, -47)
 
-[node name="Nut3" parent="." index="26" instance=ExtResource("3_s76o2")]
-position = Vector2(-16, 49)
-
-[node name="Nut4" parent="." index="27" instance=ExtResource("3_s76o2")]
+[node name="Nut4" parent="." index="26" instance=ExtResource("3_s76o2")]
 position = Vector2(-112, 49)
 
-[node name="Nut5" parent="." index="28" instance=ExtResource("3_s76o2")]
+[node name="Nut5" parent="." index="27" instance=ExtResource("3_s76o2")]
 position = Vector2(-145, 144)
 
-[node name="Nut6" parent="." index="29" instance=ExtResource("3_s76o2")]
+[node name="Nut6" parent="." index="28" instance=ExtResource("3_s76o2")]
 position = Vector2(49, 241)
 
-[node name="Hideaway" parent="." index="30" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway" parent="." index="29" instance=ExtResource("4_2ckyw")]
 position = Vector2(-192, 129)
 style = 2
 
-[node name="Hideaway2" parent="." index="31" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway2" parent="." index="30" instance=ExtResource("4_2ckyw")]
 position = Vector2(-1, 196)
 style = 2
 
-[node name="Hideaway3" parent="." index="32" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway3" parent="." index="31" instance=ExtResource("4_2ckyw")]
 position = Vector2(-1, 160)
 style = 2
 
-[node name="Hideaway4" parent="." index="33" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway4" parent="." index="32" instance=ExtResource("4_2ckyw")]
 position = Vector2(-1, 129)
 style = 2
 
-[node name="Hideaway5" parent="." index="34" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway5" parent="." index="33" instance=ExtResource("4_2ckyw")]
 position = Vector2(-1, 96)
 style = 2
 
-[node name="Hideaway6" parent="." index="35" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway6" parent="." index="34" instance=ExtResource("4_2ckyw")]
 position = Vector2(-1, 64)
 style = 2
 
-[node name="Hideaway7" parent="." index="36" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway7" parent="." index="35" instance=ExtResource("4_2ckyw")]
 style = 2
 
-[node name="Hideaway8" parent="." index="37" instance=ExtResource("4_2ckyw")]
+[node name="Hideaway8" parent="." index="36" instance=ExtResource("4_2ckyw")]
 position = Vector2(0, -31)
 style = 2
+
+[node name="Hideaway9" parent="." index="37" instance=ExtResource("4_2ckyw")]
+position = Vector2(0, 32)
+style = 2
+is_secret = true

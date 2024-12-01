@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAD5//7/AAADAAYAAAD7//7/AAABAAYAAAD8//7/AAADAAY
 [node name="Hideaway" parent="." index="4" instance=ExtResource("2_poru4")]
 position = Vector2(-64, -32)
 style = 4
+is_secret = true
 
 [node name="NPC" parent="." index="5" instance=ExtResource("3_nh6rd")]
 position = Vector2(-112, -16)

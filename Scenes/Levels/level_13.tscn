@@ -78,3 +78,8 @@ position = Vector2(15, 208)
 [node name="Hideaway" parent="." index="23" instance=ExtResource("4_2ekpr")]
 position = Vector2(-96, 128)
 style = 5
+
+[node name="Hideaway2" parent="." index="24" instance=ExtResource("4_2ekpr")]
+position = Vector2(32, 32)
+style = 5
+is_secret = true
