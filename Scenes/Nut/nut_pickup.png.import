@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brvt3k0qe61ph"
-path="res://.godot/imported/Dungeon_Tileset.png-0a6821be34a6c2e96894d838c9612882.ctex"
+uid="uid://c5dv48gpc012w"
+path="res://.godot/imported/nut_pickup.png-6eb9435b0746b8b873f635ae4959dbe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tilemaps/Tilesets/Dungeon_Tileset.png"
-dest_files=["res://.godot/imported/Dungeon_Tileset.png-0a6821be34a6c2e96894d838c9612882.ctex"]
+source_file="res://Scenes/Nut/nut_pickup.png"
+dest_files=["res://.godot/imported/nut_pickup.png-6eb9435b0746b8b873f635ae4959dbe1.ctex"]
 
 [params]
 

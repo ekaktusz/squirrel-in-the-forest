@@ -217,9 +217,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func trigger_explosion() -> void:
 	gpu_particles_2d.emitting = true
 	await get_tree().create_timer(gpu_particles_2d.lifetime).timeout
+
 	
 func set_enemy_state(state : Node.ProcessMode):
 	if(enemy_state != state):
 		enemy_state = state
 		for enemy in get_tree().get_nodes_in_group("enemy"):
-			enemy.owner.process_mode = state
+			enemy.owner.process_mode = enemy_state

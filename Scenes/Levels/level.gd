@@ -38,7 +38,7 @@ func _on_squirrel_enemy_hit() -> void:
 	pass
 
 func _on_squirrel_level_done() -> void:
-	Globals.current_level_number += 1
+	Globals.current_level_number = min(25, Globals.current_level_number + 1)
 	SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
 
 func _on_squirrel_nut_collected() -> void:

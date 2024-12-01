@@ -125,5 +125,10 @@ var intro_details = {
 		"This is it, Agent N. The final showdown awaits.", 
 		"The Treasure of Ages lies at the heart of this domain. Face Hamm, his crew, and all the challenges head-on!", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_210.png")
+	),
+	25: LevelIntroDetail.create(
+		"This is it, Agent N. The final showdown awaits.", 
+		"The Treasure of Ages lies at the heart of this domain. Face Hamm, his crew, and all the challenges head-on!", 
+		load("res://Scenes/LevelIntro/MiniLevels/level_210.png")
 	)
 }
