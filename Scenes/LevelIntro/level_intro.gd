@@ -64,6 +64,7 @@ func typewriter_effect(label: RichTextLabel, on_complete: Callable) -> void:
 
 func get_two_different_random_relic_values() -> Array:
 	var enum_values = Globals.RelicType.values()
+	enum_values.erase(Globals.RelicType.None)
 	
 	var first_value = enum_values[randi() % enum_values.size()]
 	
