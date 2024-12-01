@@ -16,6 +16,14 @@ func _ready() -> void:
 	#_set_camera_limits()
 	add_child(hud.instantiate())
 	add_child(crt.instantiate())
+	
+	var number_of_nuts: int = 0
+	
+	for nut in get_tree().get_nodes_in_group("nut"):
+		number_of_nuts += 1
+	
+	Globals.current_level_no_of_nuts = number_of_nuts
+	Globals.current_level_collected_nuts = 0
 
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):
@@ -43,3 +51,4 @@ func _on_squirrel_level_done() -> void:
 
 func _on_squirrel_nut_collected() -> void:
 	level_nut_counter = level_nut_counter+1
+	Globals.current_level_collected_nuts = level_nut_counter
