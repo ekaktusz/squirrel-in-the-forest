@@ -41,6 +41,7 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("action"):
+		print("asd")
 		match Globals.selected_power_up:
 			Globals.RelicType.Speed:
 				activate_power_up_speed()

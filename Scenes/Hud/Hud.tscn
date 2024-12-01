@@ -1,17 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdnwvb5y6yy62"]
+[gd_scene load_steps=4 format=3 uid="uid://cdnwvb5y6yy62"]
 
 [ext_resource type="Script" path="res://Scenes/Hud/hud.gd" id="1_qq101"]
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="2_scfj6"]
+[ext_resource type="PackedScene" uid="uid://darby8d8b15om" path="res://Scenes/Hud/CurrentRelic/current_relic.tscn" id="3_sumi8"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qq101")
 
 [node name="TotalNut" type="Label" parent="."]
-offset_top = 23.0
-offset_right = 46.0
-offset_bottom = 46.0
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 252.0
+offset_bottom = 44.0
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("2_scfj6")
 theme_override_font_sizes/font_size = 16
-text = "Nuts: "
+text = "Nuts collected:"
 horizontal_alignment = 2
+
+[node name="Ability" type="Label" parent="."]
+offset_left = 806.0
+offset_top = 19.0
+offset_right = 1019.0
+offset_bottom = 44.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("2_scfj6")
+theme_override_font_sizes/font_size = 16
+text = "Press E to use
+"
+
+[node name="CurrentRelic" parent="." instance=ExtResource("3_sumi8")]
+position = Vector2(1043, 5)
