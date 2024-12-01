@@ -40,17 +40,19 @@ color = Color(8.12206e-08, 0.118147, 0.0981122, 1)
 [node name="Label" type="Label" parent="."]
 material = SubResource("ShaderMaterial_kl3kk")
 layout_mode = 0
-offset_left = 146.0
-offset_top = 36.0
-offset_right = 1192.0
-offset_bottom = 174.0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1153.0
+offset_bottom = 90.0
 theme = ExtResource("3_coy6b")
 theme_override_fonts/font = ExtResource("4_g80ud")
 theme_override_font_sizes/font_size = 50
 text = "CHOOSE A LEVEL!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Node2D" parent="."]
-position = Vector2(328, 108)
+position = Vector2(338, 83)
 
 [node name="MokiPortrait" type="Sprite2D" parent="Control"]
 position = Vector2(353, 65)
@@ -90,15 +92,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = 262.0
-offset_right = 1121.0
-offset_bottom = 604.0
+offset_left = 56.0
+offset_top = 238.0
+offset_right = 1126.0
+offset_bottom = 618.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = -26
-columns = 4
+theme_override_constants/v_separation = 10
+columns = 6
 
 [node name="LevelButton" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2
@@ -217,6 +219,12 @@ level_number = 22
 layout_mode = 2
 text = "LEVEL 23"
 level_number = 23
+
+[node name="Control" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="GridContainer"]
+layout_mode = 2
 
 [node name="LevelButton25" parent="GridContainer" instance=ExtResource("2_4ey8n")]
 layout_mode = 2

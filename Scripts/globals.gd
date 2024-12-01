@@ -7,7 +7,7 @@ enum SquirrelState {NORMAL, SPEEDY, INVISIBLE, SHIELD}
 enum RelicType {Speed, Invisibility, Shield, Reveal}
 
 var current_level_number: int = 0
-var total_nut_counter: int = 100
+var total_nut_counter: int = 0
 var current_level_no_of_nuts: int = 0
 var current_level_collected_nuts: int = 0
 

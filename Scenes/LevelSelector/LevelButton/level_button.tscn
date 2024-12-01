@@ -9,6 +9,7 @@ offset_right = 79.0
 offset_bottom = 39.0
 pivot_offset = Vector2(115, 39)
 theme = ExtResource("1_k8liw")
+theme_override_font_sizes/font_size = 30
 text = "LEVEL 1"
 script = ExtResource("1_nvu8a")
 
