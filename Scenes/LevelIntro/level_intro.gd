@@ -51,7 +51,7 @@ func _ready() -> void:
 	)
 
 func is_tutorial_map() -> bool:
-	return Globals.current_level_number <= 4
+	return Globals.current_level_number < 4
 
 func typewriter_effect(label: RichTextLabel, on_complete: Callable) -> void:
 	label.visible_characters = 0  # Start with no characters visible
