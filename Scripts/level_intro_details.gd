@@ -18,7 +18,7 @@ var intro_details = {
 	),
 	3: LevelIntroDetail.create(
 		"In real missions you have 5 nuts to collect. You need a minimum of 3 nuts to finish a stage. ", 
-		"Some nuts are TOP SECRET. You need to search in the most obscure or well-guarded places to find them.", 
+		"Some nuts are TOP SECRET. You need to search in the most obscure or well-guarded places to find them. Also beware: Our intel might not be perfect", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_004.png")
 	),
 	4: LevelIntroDetail.create(
@@ -129,6 +129,6 @@ var intro_details = {
 	25: LevelIntroDetail.create(
 		"Victory!!! Dr. Sterling Hamm is gone! I know you could do this, Agent N... Wait! You have a last", 
 		"mission! Which is... Taking me on a date. :$ <3", 
-		load("res://Scenes/LevelIntro/MiniLevels/level_210.png")
+		load("res://Scenes/LevelIntro/MiniLevels/level_25.png")
 	)
 }
