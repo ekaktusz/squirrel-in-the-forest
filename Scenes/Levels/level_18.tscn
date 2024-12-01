@@ -149,6 +149,7 @@ style = 6
 [node name="Hideaway15" parent="." index="34" instance=ExtResource("4_2p315")]
 position = Vector2(-160, 160)
 style = 6
+is_secret = true
 
 [node name="Hideaway16" parent="." index="35" instance=ExtResource("4_2p315")]
 position = Vector2(-128, 128)

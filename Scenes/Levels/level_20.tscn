@@ -110,53 +110,51 @@ position = Vector2(-80, 112)
 [node name="Nut4" parent="." index="25" instance=ExtResource("3_4d8tw")]
 position = Vector2(-16, 112)
 
-[node name="Nut5" parent="." index="26" instance=ExtResource("3_4d8tw")]
-position = Vector2(-80, 48)
-
-[node name="Hideaway" parent="." index="27" instance=ExtResource("4_saagr")]
+[node name="Hideaway" parent="." index="26" instance=ExtResource("4_saagr")]
 position = Vector2(-160, -32)
 style = 6
 
-[node name="Hideaway2" parent="." index="28" instance=ExtResource("4_saagr")]
+[node name="Hideaway2" parent="." index="27" instance=ExtResource("4_saagr")]
 position = Vector2(-96, -32)
 style = 6
 
-[node name="Hideaway3" parent="." index="29" instance=ExtResource("4_saagr")]
+[node name="Hideaway3" parent="." index="28" instance=ExtResource("4_saagr")]
 position = Vector2(-32, -32)
 style = 6
 
-[node name="Hideaway4" parent="." index="30" instance=ExtResource("4_saagr")]
+[node name="Hideaway4" parent="." index="29" instance=ExtResource("4_saagr")]
 position = Vector2(32, -32)
 style = 6
 
-[node name="Hideaway5" parent="." index="31" instance=ExtResource("4_saagr")]
+[node name="Hideaway5" parent="." index="30" instance=ExtResource("4_saagr")]
 position = Vector2(0, 32)
 style = 6
 
-[node name="Hideaway6" parent="." index="32" instance=ExtResource("4_saagr")]
+[node name="Hideaway6" parent="." index="31" instance=ExtResource("4_saagr")]
 position = Vector2(-128, 32)
 style = 6
 
-[node name="Hideaway7" parent="." index="33" instance=ExtResource("4_saagr")]
+[node name="Hideaway7" parent="." index="32" instance=ExtResource("4_saagr")]
 position = Vector2(-192, 32)
 style = 6
 
-[node name="Hideaway8" parent="." index="34" instance=ExtResource("4_saagr")]
+[node name="Hideaway8" parent="." index="33" instance=ExtResource("4_saagr")]
 position = Vector2(-64, 32)
 style = 6
+is_secret = true
 
-[node name="Hideaway9" parent="." index="35" instance=ExtResource("4_saagr")]
+[node name="Hideaway9" parent="." index="34" instance=ExtResource("4_saagr")]
 position = Vector2(-160, 160)
 style = 6
 
-[node name="Hideaway10" parent="." index="36" instance=ExtResource("4_saagr")]
+[node name="Hideaway10" parent="." index="35" instance=ExtResource("4_saagr")]
 position = Vector2(0, 160)
 style = 6
 
-[node name="Hideaway11" parent="." index="37" instance=ExtResource("4_saagr")]
+[node name="Hideaway11" parent="." index="36" instance=ExtResource("4_saagr")]
 position = Vector2(-64, 224)
 style = 6
 
-[node name="Hideaway12" parent="." index="38" instance=ExtResource("4_saagr")]
+[node name="Hideaway12" parent="." index="37" instance=ExtResource("4_saagr")]
 position = Vector2(-192, 224)
 style = 6

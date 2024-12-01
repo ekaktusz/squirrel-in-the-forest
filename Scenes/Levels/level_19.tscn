@@ -88,19 +88,23 @@ position = Vector2(-112, -48)
 [node name="Nut3" parent="." index="18" instance=ExtResource("3_q1arf")]
 position = Vector2(16, 240)
 
-[node name="Nut4" parent="." index="19" instance=ExtResource("3_q1arf")]
-position = Vector2(-16, -48)
-
-[node name="Nut5" parent="." index="20" instance=ExtResource("3_q1arf")]
-position = Vector2(-240, 80)
-
-[node name="Hideaway" parent="." index="21" instance=ExtResource("4_ghvot")]
+[node name="Hideaway" parent="." index="19" instance=ExtResource("4_ghvot")]
 position = Vector2(-192, 192)
 style = 6
 
-[node name="Hideaway2" parent="." index="22" instance=ExtResource("4_ghvot")]
+[node name="Hideaway2" parent="." index="20" instance=ExtResource("4_ghvot")]
 position = Vector2(-192, -64)
 style = 6
+
+[node name="Hideaway34" parent="." index="21" instance=ExtResource("4_ghvot")]
+position = Vector2(0, -64)
+style = 6
+is_secret = true
+
+[node name="Hideaway35" parent="." index="22" instance=ExtResource("4_ghvot")]
+position = Vector2(-224, 32)
+style = 6
+is_secret = true
 
 [node name="Hideaway3" parent="." index="23" instance=ExtResource("4_ghvot")]
 position = Vector2(-192, -32)
