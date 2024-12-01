@@ -2,7 +2,7 @@ extends Node
 
 enum NpcType { STATIC, UP_DOWN, SIDE_TO_SIDE, FOLLOW }
 enum NpcColor {BLUE, WHITE, RED}
-enum HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER}
+enum HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER, HACIENDA}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE, SHIELD}
 enum RelicType {Speed, Invisibility, Shield, Reveal, None}
 

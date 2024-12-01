@@ -9,8 +9,8 @@ var is_occupied = false
 var hide_animation
 
 
-# -> HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER}
-var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertower"]
+# -> HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER, HACIENDA}
+var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertower", "hacienda garden"]
 
 
 func _ready() -> void:

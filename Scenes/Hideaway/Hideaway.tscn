@@ -1,7 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://dyjsq2ye6wjqp"]
+[gd_scene load_steps=53 format=3 uid="uid://dyjsq2ye6wjqp"]
 
 [ext_resource type="Script" path="res://Scenes/Hideaway/hideaway.gd" id="1_k36c8"]
 [ext_resource type="Texture2D" uid="uid://dexl2fk288oiq" path="res://Scenes/Hideaway/hide_safe.png" id="2_tdjt1"]
+[ext_resource type="Texture2D" uid="uid://b1mko5c2kh4cu" path="res://Scenes/Hideaway/hide_hacienda_garden.png" id="3_glrux"]
 [ext_resource type="Texture2D" uid="uid://dmrg2vl1jbfxd" path="res://Scenes/Hideaway/hide_egypt.png" id="3_kq1m1"]
 [ext_resource type="Texture2D" uid="uid://kovj0q4y7ltc" path="res://Scenes/Hideaway/hide_egypt_2.png" id="4_ke6ae"]
 [ext_resource type="Texture2D" uid="uid://fcgpwvmbn8ma" path="res://Scenes/Hideaway/hide_tree.png" id="5_gg4uk"]
@@ -31,6 +32,22 @@ region = Rect2(256, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_08eyt"]
 atlas = ExtResource("4_ke6ae")
 region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl553"]
+atlas = ExtResource("3_glrux")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyi03"]
+atlas = ExtResource("3_glrux")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0eui"]
+atlas = ExtResource("3_glrux")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqxro"]
+atlas = ExtResource("3_glrux")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmkg0"]
 atlas = ExtResource("3_kq1m1")
@@ -188,6 +205,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vl553")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyi03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0eui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqxro")
+}],
+"loop": false,
+"name": &"hacienda garden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fmkg0")
 }, {
 "duration": 1.0,
@@ -318,6 +352,7 @@ script = ExtResource("1_k36c8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b430h")
+animation = &"hacienda garden"
 
 [node name="InteractionArea" type="Area2D" parent="." groups=["tree"]]
 collision_layer = 8
