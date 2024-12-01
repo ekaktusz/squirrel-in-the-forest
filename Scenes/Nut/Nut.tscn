@@ -97,7 +97,7 @@ disabled = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.823994, 0.692834, 0.226163, 1)
 sprite_frames = SubResource("SpriteFrames_7lnnq")
-animation = &"pickup"
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" groups=["nut"]]
 z_index = 1
