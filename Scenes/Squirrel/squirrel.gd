@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+
 signal enemy_hit
 signal level_done
 signal nut_collected
@@ -23,12 +25,16 @@ const friction: int = 30
 const COLLISION_LAYER_ENEMY: int = 3
 const COLLISION_LAYER_PLAYER: int = 2
 
+var initial_position: Vector2
+var is_exploding: bool = false  # New flag to track explosion state
+
 var enemy_state
 
 func _ready() -> void:
 	set_enemy_state(Node.PROCESS_MODE_DISABLED)
 	await get_tree().create_timer(2.2).timeout
 	exit_enter_in_progress = false
+	initial_position = position
 
 
 func _input(event):
@@ -101,7 +107,7 @@ func add_power_up_progressbar(time: float):
 	tween.tween_property(progress_bar, "value", 0, time)	
 		
 func _physics_process(_delta: float) -> void:
-	if exit_enter_in_progress:
+	if exit_enter_in_progress or is_exploding:
 		return
 	
 	handle_hiding()
@@ -193,17 +199,27 @@ func play_movement_animation(direction: Vector2) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
+		is_exploding = true  # Block movement during explosion
+		animated_sprite_2d.visible = false
+		trigger_explosion()
+		await get_tree().create_timer(0.6).timeout
 		Globals.lose_nut()
 		enemy_hit.emit()
+		position = initial_position
+		animated_sprite_2d.visible = true
 		set_enemy_state(Node.PROCESS_MODE_DISABLED)
+		is_exploding = false  # Allow movement again after explosion
 
 	if area.is_in_group("nut"):
 		nut_collected.emit()
 		Globals.collect_nut()
+
+func trigger_explosion() -> void:
+	gpu_particles_2d.emitting = true
+	await get_tree().create_timer(gpu_particles_2d.lifetime).timeout
 	
-		
-func set_enemy_state(enemy_state : Node.ProcessMode):
-	if(enemy_state != enemy_state):
-		enemy_state = enemy_state
+func set_enemy_state(state : Node.ProcessMode):
+	if(enemy_state != state):
+		enemy_state = state
 		for enemy in get_tree().get_nodes_in_group("enemy"):
 			enemy.owner.process_mode = enemy_state
