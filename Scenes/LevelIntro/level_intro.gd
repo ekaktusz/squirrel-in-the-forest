@@ -33,8 +33,8 @@ func _ready() -> void:
 	var level_details = LevelIntroDetails.intro_details[Globals.current_level_number]
 	mini_map.texture = level_details.mini_map
 	
-	mission_label_1.bbcode_text = level_details.description_1
-	mission_label_2.bbcode_text = level_details.description_2
+	mission_label_1.text = level_details.description_1
+	mission_label_2.text = level_details.description_2
 	
 	upgrade_window.visible = not is_tutorial_map()
 	minimap_legend.visible = is_tutorial_map()

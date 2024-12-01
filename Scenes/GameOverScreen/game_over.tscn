@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccd5wu63rfndt"]
+
+[ext_resource type="Script" path="res://Scenes/GameOverScreen/game_over.gd" id="1_7k8aa"]
+[ext_resource type="PackedScene" uid="uid://cqiq0806230f6" path="res://Scenes/crt_effect.tscn" id="2_cw08t"]
+[ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="3_vkrmb"]
+[ext_resource type="StyleBox" uid="uid://rsms7ygcm2es" path="res://Scenes/LevelIntro/start_button_normal_style.tres" id="4_1meup"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3ct2"]
+bg_color = Color(0.321728, 0.321728, 0.321728, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lofir"]
+bg_color = Color(0, 0.129412, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.0745098, 0, 1)
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_7k8aa")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 657.0
+color = Color(0.176471, 0.196078, 0.262745, 1)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_cw08t")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 259.0
+offset_top = 142.0
+offset_right = 888.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("3_vkrmb")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 411.0
+offset_top = 284.0
+offset_right = 728.0
+offset_bottom = 370.0
+theme_override_colors/font_hover_color = Color(0.431373, 0.831373, 0.294118, 1)
+theme_override_colors/font_color = Color(0.431373, 0.831373, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_vkrmb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g3ct2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lofir")
+theme_override_styles/normal = ExtResource("4_1meup")
+text = "RETRY"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

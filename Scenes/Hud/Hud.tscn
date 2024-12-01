@@ -7,11 +7,25 @@
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qq101")
 
+[node name="Level" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 14.0
+offset_right = 251.0
+offset_bottom = 39.0
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(6.73831e-07, 0.917792, 5.39064e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_scfj6")
+theme_override_font_sizes/font_size = 16
+text = "LEVEL 1"
+horizontal_alignment = 1
+
 [node name="TotalNut" type="Label" parent="."]
-offset_left = 39.0
-offset_top = 19.0
-offset_right = 252.0
-offset_bottom = 44.0
+offset_left = 38.0
+offset_top = 44.0
+offset_right = 251.0
+offset_bottom = 69.0
 size_flags_horizontal = 8
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 5
@@ -21,10 +35,10 @@ text = "Nuts collected:"
 horizontal_alignment = 2
 
 [node name="LevelProgress" type="Label" parent="."]
-offset_left = 39.0
-offset_top = 44.0
-offset_right = 252.0
-offset_bottom = 69.0
+offset_left = 38.0
+offset_top = 69.0
+offset_right = 285.0
+offset_bottom = 94.0
 size_flags_horizontal = 8
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 5
@@ -34,10 +48,10 @@ text = "Nuts on level: 0/0"
 horizontal_alignment = 2
 
 [node name="Life" type="Label" parent="."]
-offset_left = 39.0
-offset_top = 69.0
-offset_right = 286.0
-offset_bottom = 94.0
+offset_left = 38.0
+offset_top = 94.0
+offset_right = 285.0
+offset_bottom = 119.0
 size_flags_horizontal = 8
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

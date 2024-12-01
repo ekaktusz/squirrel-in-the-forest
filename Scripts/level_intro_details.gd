@@ -2,133 +2,133 @@ extends Node
 
 var intro_details = {
 	0: LevelIntroDetail.create(
-		"Ha! Someone already got here before you? These tombs are almost completely", 
-		"cleaned out? It must’ve been our arch-enemy, the nefarious Dr. Hamm... Better watch your tail on the way out – his crew might still be lurking around...", 
+		"Agent N! Do you copy? Before you go to the field, we need to go through the basics.", 
+		"Avoid enemy agents, and collect all the nuts you can locate. If you found every nut, deliver them to the secret stash. Press E to Evacuate in the Evatuation Zone.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_001.png")
 	),
 	1: LevelIntroDetail.create(
-		"Agent N, I have to say, you are pretty... pretty impressive, I mean. Ahem.", 
-		"Your first mission is to rob the ancient Crackanut Pyramids. The Squirrel Pharaoh was sitting on a mountain of delicious treasures... Go ahead and stash as many nuts as you can! Let’s show the rich that sometimes, the nutty ones come out on top!", 
+		"You will need to sneak past patrols. Study their movement. They are following", 
+		"orders, they will not go off-course.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_002.png")
 	),
 	2: LevelIntroDetail.create(
-		"The winds of adventure are blowing strong today, aren’t they, Agent N?", 
-		"The tomb ahead is rumored to house the Gem of Eternal Crunch. A priceless artifact for squirrels like us! Be wary of traps – they don’t like uninvited guests.", 
+		"When near a hiding spot, hold F to stay undetected.", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_003.png")
 	),
 	3: LevelIntroDetail.create(
-		"This level is all about wits and reflexes, Agent N!", 
-		"You’ll have to jump, dodge, and grab treasures while avoiding Dr. Hamm's goons. Keep your tail high and your spirit higher!", 
+		"In real missions you have 5 nuts to collect. You need a minimum of 3 nuts to finish a stage. ", 
+		"Some nuts are TOP SECRET. You need to search in the most obscure or well-guarded places to find them. Also beware: Our intel might not be perfect", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_004.png")
 	),
 	4: LevelIntroDetail.create(
-		"The treasures of the Squirrel Pharaoh await – deep within the labyrinth ahead.", 
-		"Remember: stick to the shadows and keep your ears sharp for any signs of danger. You’ve got this!", 
+		"You can choose a gadget to make your life easier. Press E to use a gadget. Some of them can be used", 
+		"once, others are passive and works by default. Agent N! Now, it's time for you to prove what you've learned.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_005.png")
 	),
 	5: LevelIntroDetail.create(
-		"A secret hideout? Perfect for sneaky squirrels like us!", 
-		"Dr. Hamm’s crew may have left clues here. Gather what you can and escape before they return. Time is ticking!", 
+		"Agent N, I have to say, you are pretty... ... pretty impressive, I mean. Ahem.", 
+		"Your first mission is to rob the ancient Crackanut Pyramids. The Squirrel Pharaoh was sitting on a mountain of delicious treasures... Go ahead and stash as many nuts as you can! ", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_101.png")
 	),
 	6: LevelIntroDetail.create(
-		"The Crunch Forest is alive with danger.", 
-		"Hidden among the trees lies a cache of nuts. But beware – it’s guarded by Hamm's robotic hawks. Stealth is your ally here!", 
+		"Let’s show the rich that sometimes, the nutty ones come out on top!", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_102.png")
 	),
 	7: LevelIntroDetail.create(
-		"The sands of time won’t wait, Agent N.", 
-		"Some say the buried pyramid ahead has treasures older than squirrelkind itself. Unearth them and claim your rightful place in history!", 
+		"Ha! Someone already got here before you? This tombs are almost completely cleaned out? It", 
+		"must’ve been our arch-enemy, the nefarious Dr. Hamm...", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_103.png")
 	),
 	8: LevelIntroDetail.create(
-		"The treasure maps led us to this desolate canyon.", 
-		"Deep in the heart of this rocky maze, more treasures await. But tread carefully – the cliffs are unforgiving.", 
+		"Better watch your tail on the way out – his crew might still be lurking around...", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_104.png")
 	),
 	9: LevelIntroDetail.create(
-		"Dr. Hamm left his mark here, Agent N.", 
-		"Deface his traps and outwit his goons. This is a test of agility and courage. Show him what squirrels are made of!", 
+		"Looking good, Agent N! I'm glad you made it! Your next mission should be obvious – you", 
+		"must rob the banks of Dr. Hamm. That greedy little rodent’s got half the city stuffed in his cheek pouches! Time to show him he’s messing with the wrong crew.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_105.png")
 	),
 	10: LevelIntroDetail.create(
-		"The whispers of the ancient keepers can still be heard here.", 
-		"Hidden treasures lie beneath the ruins, guarded by Hamm's advanced security systems. Be swift, be smart.", 
+		"Fortu-nut-ely, I'm not keeping my money at this bank. I don't even have money. I'm a squirrel.", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_106.png")
 	),
 	11: LevelIntroDetail.create(
-		"Agent N, your daring escapades bring us to new heights!", 
-		"The floating cliffs house treasures unseen by squirrel eyes. Glide carefully and gather the riches!", 
+		"These hyenas are sneaky, be extra cautious!", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_107.png")
 	),
 	12: LevelIntroDetail.create(
-		"A shadow looms over the city ruins.", 
-		"The nuts stored here are vital for our cause. Move fast, Agent N, before Hamm’s spies catch wind of your plans!", 
+		"Wow, you are amazing at this, let's keep on going!", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_108.png")
 	),
 	13: LevelIntroDetail.create(
-		"High tide, high stakes!", 
-		"The coastal caves are rumored to house treasures washed ashore from shipwrecks. Beware of Hamm’s divers lurking nearby!", 
+		"The last bank of Dr. Sterling Hamm... Set it all on fire!!!", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_109.png")
 	),
 	14: LevelIntroDetail.create(
-		"The great oak stands as a fortress of nature.", 
-		"Deep within its branches lies the Squirrel’s Crown, an artifact of immeasurable value. Climb and claim it, Agent N!", 
+		"Alright, it's getting hot in here...", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_110.png")
 	),
 	15: LevelIntroDetail.create(
-		"Agent N, this icy fortress hides more than just cold secrets.", 
-		"The treasures of the Glacier King are said to be guarded by frostbite traps. Bundle up and take the plunge!", 
+		"Bad news, Agent N: it seems like we have been barking up the wrong tree... But I’ve just", 
+		"got an intel on where that hamster’s secret warehouse is! On the North Pole! Dangerous and nut-urally tempting, huh? Just like you... Ahem. Good luck, Agent N!",  
 		load("res://Scenes/LevelIntro/MiniLevels/level_201.png")
 	),
 	16: LevelIntroDetail.create(
-		"The molten depths call to you, brave squirrel.", 
-		"In the heart of the volcano lies the Golden Acorn. Be careful of Hamm’s lava-proof bots patrolling the area!", 
+		"Don't leave a single nut for this rascal...", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_202.png")
 	),
 	17: LevelIntroDetail.create(
-		"This abandoned space station is crawling with danger.", 
-		"Treasure capsules float within zero gravity. Use your jetpack and cunning to outwit Hamm’s drones!", 
+		"Where could that fat, greedy, bastard-of-a-hamster be?", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_203.png")
 	),
 	18: LevelIntroDetail.create(
-		"The Mystic Marshes are shrouded in fog and mystery.", 
-		"Rumors speak of glowing acorns hidden among the reeds. Tread lightly and avoid the Marsh Spirits.", 
+		"Here it is. The Royal Nut Hacienda... You gonna need all your nuts to do it, Agent.", 
+		"Ready? Let’s get cracking!", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_204.png")
 	),
 	19: LevelIntroDetail.create(
-		"Agent N, this ancient castle holds secrets of a bygone era.", 
-		"Legends say the Nutcracker Blade is hidden here. It’s time to prove yourself worthy of such a weapon.", 
+		"These bad guys aren’t playing with pinecones... I’m rooting for you, Agent N! Legends say the", 
+		"Nutcracker Blade is hidden here. It’s time to prove yourself worthy of such a weapon.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_205.png")
 	),
 	20: LevelIntroDetail.create(
-		"The Starry Labyrinth is unlike anything you’ve faced before.", 
-		"Navigate the floating platforms and claim the Cosmic Nut. One misstep, and you’re lost in the void!", 
+		"Hiding like a coward, hamster... Agent Nut is much-much braver than you...  ", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_206.png")
 	),
 	21: LevelIntroDetail.create(
-		"The Underwater Caverns hold treasures left behind by ancient sea squirrels.", 
-		"Navigate the currents and avoid Hamm’s submarines. It’s a deep dive to glory!", 
+		"Oh my, oh my, you make me go nuts, Mr. N!", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_207.png")
 	),
 	22: LevelIntroDetail.create(
-		"This desolate battlefield echoes with the cries of old wars.", 
-		"The victory nuts are still buried in the rubble. Uncover them and bring honor to squirrelkind.", 
+		"Ha! Look, the nuts all have a message engraved: 'If found, please return to The", 
+		" Royal Nut Hacienda.' So that's where your base is! We've got you, you little hoarder! I bet you wouldn’t want to lose a single one, huh? Agent N is coming for you, you little scoundrel...", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_208.png")
 	),
 	23: LevelIntroDetail.create(
-		"The Crystallized Caverns shimmer with untold riches.", 
-		"Collect as many crystal nuts as you can, but beware – Hamm’s mining crew is on high alert.", 
+		"Damn, I could imagine myself chilling in a castle like this all day long... Make sure to", 
+		"look around, maybe there are some hidden nuts here.", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_209.png")
 	),
 	24: LevelIntroDetail.create(
-		"This is it, Agent N. The final showdown awaits.", 
-		"The Treasure of Ages lies at the heart of this domain. Face Hamm, his crew, and all the challenges head-on!", 
+		"Good rodent, my heart is racing... Best of luck, Agent N.", 
+		"", 
 		load("res://Scenes/LevelIntro/MiniLevels/level_210.png")
 	),
 	25: LevelIntroDetail.create(
-		"This is it, Agent N. The final showdown awaits.", 
-		"The Treasure of Ages lies at the heart of this domain. Face Hamm, his crew, and all the challenges head-on!", 
-		load("res://Scenes/LevelIntro/MiniLevels/level_210.png")
+		"Victory!!! Dr. Sterling Hamm is gone! I know you could do this, Agent N... Wait! You have a last", 
+		"mission! Which is... Taking me on a date. :$ <3", 
+		load("res://Scenes/LevelIntro/MiniLevels/level_25.png")
 	)
 }
