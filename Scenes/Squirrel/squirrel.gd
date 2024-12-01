@@ -9,6 +9,17 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 
+@onready var evacuate_sfx: AudioStreamPlayer2D = $SFX/EvacuateSFX
+@onready var enter_sfx: AudioStreamPlayer2D = $SFX/EnterSFX
+@onready var run_sfx: AudioStreamPlayer2D = $SFX/RunSFX
+@onready var speedy_run_sfx: AudioStreamPlayer2D = $SFX/SpeedyRunSFX
+@onready var enemy_hit_sfx: AudioStreamPlayer2D = $SFX/EnemyHitSFX
+@onready var speed_booster_sfx: AudioStreamPlayer2D = $SFX/SpeedBoosterSFX
+@onready var invisible_sfx: AudioStreamPlayer2D = $SFX/InvisibleSFX
+@onready var hide_sfx: AudioStreamPlayer2D = $SFX/HideSFX
+@onready var music: AudioStreamPlayer2D = $Music
+
+
 @onready var gpu_particles_2d: CPUParticles2D = $CPUParticles2D
 
 signal enemy_hit
@@ -32,6 +43,8 @@ var enemy_state
 
 func _ready() -> void:
 	set_enemy_state(Node.PROCESS_MODE_DISABLED)
+	enter_sfx.play()
+	music.play()
 	await get_tree().create_timer(2.2).timeout
 	exit_enter_in_progress = false
 	initial_position = position
@@ -47,7 +60,6 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("action"):
-		print("asd")
 		match Globals.selected_power_up:
 			Globals.RelicType.Speed:
 				activate_power_up_speed()
@@ -60,6 +72,7 @@ func _input(event):
 
 
 func activate_power_up_speed():
+	speed_booster_sfx.play()
 	state = Globals.SquirrelState.SPEEDY
 	speed = speed * Globals.speed_power_up_percentage
 	add_power_up_progressbar(2)
@@ -73,6 +86,7 @@ func _on_power_up_speed_timer_timeout() -> void:
 	
 	
 func activate_power_up_invisible():
+	invisible_sfx.play()
 	state = Globals.SquirrelState.INVISIBLE
 	set_collision_layers(false)
 	add_power_up_progressbar(Globals.invis_power_up_time)
@@ -122,6 +136,7 @@ func handle_hiding() -> void:
 	
 	if Input.is_action_just_pressed("hide") and Globals.able_to_hide:
 		print("hiding")
+		hide_sfx.play()
 		Globals.hiding = true
 	if Input.is_action_just_released("hide"):
 		print("stopped hiding")
@@ -132,6 +147,7 @@ func handle_evacuation() -> void:
 	if Input.is_action_just_pressed("action") and Globals.ready_to_evacuate and Globals.in_start_area:
 		exit_enter_in_progress = true
 		animated_sprite_2d.play("evacuate")
+		evacuate_sfx.play()
 		sprite_collision.disabled = true
 		area_collision.disabled = true
 		await get_tree().create_timer(2.2).timeout
@@ -160,6 +176,8 @@ func handle_movement() -> void:
 func play_movement_animation(direction: Vector2) -> void:
 	match state:
 		Globals.SquirrelState.NORMAL:
+			if (!run_sfx.playing):
+				run_sfx.play()
 			match direction:
 				Vector2.UP:
 					animated_sprite_2d.play("run_up")
@@ -172,6 +190,8 @@ func play_movement_animation(direction: Vector2) -> void:
 					animated_sprite_2d.flip_h = true
 					animated_sprite_2d.play("run")
 		Globals.SquirrelState.SPEEDY:
+			if (!speedy_run_sfx.playing):
+				speedy_run_sfx.play()
 			match direction:
 				Vector2.UP:
 					animated_sprite_2d.play("run_up_speedy")
@@ -184,6 +204,8 @@ func play_movement_animation(direction: Vector2) -> void:
 					animated_sprite_2d.flip_h = true
 					animated_sprite_2d.play("run_speedy")	
 		Globals.SquirrelState.INVISIBLE:
+			if (!run_sfx.playing):
+				run_sfx.play()
 			match direction:
 				Vector2.UP:
 					animated_sprite_2d.play("run_up_invis")
@@ -215,6 +237,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Globals.collect_nut()
 
 func trigger_explosion() -> void:
+	enemy_hit_sfx.play()
 	gpu_particles_2d.emitting = true
 	await get_tree().create_timer(gpu_particles_2d.lifetime).timeout
 
