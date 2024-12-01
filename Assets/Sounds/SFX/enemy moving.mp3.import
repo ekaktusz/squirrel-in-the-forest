@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xo44k1jht6ms"
+path="res://.godot/imported/enemy moving.mp3-1a64331603eb613f5aead120250c259d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/enemy moving.mp3"
+dest_files=["res://.godot/imported/enemy moving.mp3-1a64331603eb613f5aead120250c259d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

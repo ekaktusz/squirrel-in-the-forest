@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmkkegdbsiwcv"]
+[gd_scene load_steps=16 format=3 uid="uid://cmkkegdbsiwcv"]
 
 [ext_resource type="Script" path="res://Scenes/Nut/nut.gd" id="1_bqe84"]
 [ext_resource type="Texture2D" uid="uid://d3jy8pxmxgcuw" path="res://Scenes/Nut/nut.png" id="2_oofvd"]
+[ext_resource type="AudioStream" uid="uid://dbny2dbajgp43" path="res://Assets/Sounds/SFX/nut pickup2.mp3" id="2_p84c2"]
 [ext_resource type="Texture2D" uid="uid://bwokp6avk3nsj" path="res://Scenes/Nut/nut_golden.png" id="3_2xfuu"]
 [ext_resource type="Texture2D" uid="uid://c5dv48gpc012w" path="res://Scenes/Nut/nut_pickup.png" id="3_3uwb5"]
 
@@ -85,6 +86,10 @@ collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_bqe84")
 
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p84c2")
+bus = &"SFX"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qygvw")
 disabled = true
@@ -92,6 +97,7 @@ disabled = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.823994, 0.692834, 0.226163, 1)
 sprite_frames = SubResource("SpriteFrames_7lnnq")
+animation = &"pickup"
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" groups=["nut"]]
 z_index = 1
