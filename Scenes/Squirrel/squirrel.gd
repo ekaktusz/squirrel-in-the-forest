@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 
-@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var gpu_particles_2d: CPUParticles2D = $CPUParticles2D
 
 signal enemy_hit
 signal level_done
