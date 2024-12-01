@@ -1,9 +1,10 @@
-[gd_scene load_steps=81 format=3 uid="uid://cauia1447s1l2"]
+[gd_scene load_steps=83 format=3 uid="uid://cauia1447s1l2"]
 
 [ext_resource type="Script" path="res://Scenes/Squirrel/squirrel.gd" id="1_ufrd5"]
 [ext_resource type="Texture2D" uid="uid://c8uj2lmfc8owk" path="res://Assets/Animations/mokus_entry.png" id="2_4yjlw"]
 [ext_resource type="Texture2D" uid="uid://b03j7cmj4u1ep" path="res://Assets/Animations/mokus_gadget_runs.png" id="2_nx48e"]
 [ext_resource type="Texture2D" uid="uid://bpmehibsoc0i6" path="res://Assets/Animations/mokus_exit.png" id="3_vuy3o"]
+[ext_resource type="Shader" path="res://Scenes/Squirrel/Squirrel.gdshader" id="5_6td6m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2k2wp"]
 atlas = ExtResource("2_4yjlw")
@@ -592,6 +593,9 @@ radius = 4.0
 bg_color = Color(0.133165, 0.623586, 0.551104, 1)
 anti_aliasing = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6632"]
+shader = ExtResource("5_6td6m")
+
 [node name="Squirrel" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 514
@@ -648,6 +652,7 @@ one_shot = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 z_index = 100
+material = SubResource("ShaderMaterial_u6632")
 emitting = false
 amount = 100
 lifetime = 0.5

@@ -4,7 +4,6 @@ extends Control
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var selected_rect: TextureRect = $SelectedRect
 
-
 @export var type: Globals.RelicType = Globals.RelicType.Invisibility
 
 const relic_descriptions =  {
