@@ -151,10 +151,6 @@ func handle_hiding() -> void:
 		print("hiding")
 		hide_sfx.play()
 		Globals.hiding = true
-		if Globals.secret_hideout:
-			Globals.secret_hideout = false
-			nut_collected.emit()
-			Globals.collect_nut()
 	if Input.is_action_just_released("hide"):
 		print("stopped hiding")
 		Globals.hiding = false

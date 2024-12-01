@@ -22,7 +22,6 @@ var invis_power_up_time = 1
 # to do add state manager later if need
 var hiding = false
 var able_to_hide = false
-var secret_hideout : bool = false
 var ready_to_evacuate: bool = false
 var in_start_area: bool = false
 
