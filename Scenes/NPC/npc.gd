@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var style : Globals.NpcType
 @export var color : Globals.NpcColor
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var move_sfx: AudioStreamPlayer2D = $MoveSFX
 
 const SPEED = 15
 const ACCELERATION = 2
@@ -14,13 +15,18 @@ func _ready() -> void:
 	
 	
 func _process(_delta):
+
 	if (style == Globals.NpcType.UP_DOWN):
 		velocity = direction * SPEED * ACCELERATION
+		if (!move_sfx.playing):
+			move_sfx.play()
 		move_and_slide()
 		#if is_on_ceiling() or is_on_floor():
 			#change_direction()
 	elif (style == Globals.NpcType.SIDE_TO_SIDE):
 		velocity = direction_2 * SPEED * ACCELERATION
+		if (!move_sfx.playing):
+			move_sfx.play()
 		move_and_slide()
 		#if is_on_wall():
 			#change_direction_side()

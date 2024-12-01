@@ -1,10 +1,18 @@
-[gd_scene load_steps=83 format=3 uid="uid://cauia1447s1l2"]
+[gd_scene load_steps=91 format=3 uid="uid://cauia1447s1l2"]
 
 [ext_resource type="Script" path="res://Scenes/Squirrel/squirrel.gd" id="1_ufrd5"]
 [ext_resource type="Texture2D" uid="uid://c8uj2lmfc8owk" path="res://Assets/Animations/mokus_entry.png" id="2_4yjlw"]
 [ext_resource type="Texture2D" uid="uid://b03j7cmj4u1ep" path="res://Assets/Animations/mokus_gadget_runs.png" id="2_nx48e"]
 [ext_resource type="Texture2D" uid="uid://bpmehibsoc0i6" path="res://Assets/Animations/mokus_exit.png" id="3_vuy3o"]
 [ext_resource type="Shader" path="res://Scenes/Squirrel/Squirrel.gdshader" id="5_6td6m"]
+[ext_resource type="AudioStream" uid="uid://b1aox6lpoamew" path="res://Assets/Sounds/SFX/victory.mp3" id="6_lakr4"]
+[ext_resource type="AudioStream" uid="uid://cjf3bxc2kyc3h" path="res://Assets/Sounds/SFX/érkezés.mp3" id="7_2yjpb"]
+[ext_resource type="AudioStream" uid="uid://2ld57ig7ikcq" path="res://Assets/Sounds/SFX/mokus move.mp3" id="8_h6q8h"]
+[ext_resource type="AudioStream" uid="uid://df3cbjvga2bji" path="res://Assets/Sounds/SFX/hit.mp3" id="9_twflp"]
+[ext_resource type="AudioStream" uid="uid://beq4ny3o5ncv8" path="res://Assets/Sounds/SFX/speed boost.mp3" id="10_lvje1"]
+[ext_resource type="AudioStream" uid="uid://wsax7wb0efa8" path="res://Assets/Sounds/SFX/invisibility.mp3" id="11_wn50d"]
+[ext_resource type="AudioStream" uid="uid://75vib55gb6pp" path="res://Assets/Sounds/SFX/hide.mp3" id="12_e1ejo"]
+[ext_resource type="AudioStream" uid="uid://isvgcwanyr4k" path="res://Assets/Sounds/Music/001_theme.mp3" id="13_kk5gr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2k2wp"]
 atlas = ExtResource("2_4yjlw")
@@ -664,6 +672,46 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 30.0
 initial_velocity_max = 100.0
 scale_amount_max = 2.0
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="EvacuateSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_lakr4")
+bus = &"SFX"
+
+[node name="EnterSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("7_2yjpb")
+bus = &"SFX"
+
+[node name="RunSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("8_h6q8h")
+bus = &"SFX"
+
+[node name="SpeedyRunSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("8_h6q8h")
+pitch_scale = 1.3
+bus = &"SFX"
+
+[node name="EnemyHitSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("9_twflp")
+bus = &"SFX"
+
+[node name="SpeedBoosterSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("10_lvje1")
+bus = &"SFX"
+
+[node name="InvisibleSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("11_wn50d")
+bus = &"SFX"
+
+[node name="HideSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("12_e1ejo")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_kk5gr")
+volume_db = -2.0
+bus = &"Music"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="PowerUpSpeedTimer" to="." method="_on_power_up_speed_timer_timeout"]

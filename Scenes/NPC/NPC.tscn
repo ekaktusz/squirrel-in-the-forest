@@ -1,7 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://c56unw6ldcudi"]
+[gd_scene load_steps=49 format=3 uid="uid://c56unw6ldcudi"]
 
 [ext_resource type="Script" path="res://Scenes/NPC/npc.gd" id="1_r6vrx"]
 [ext_resource type="Texture2D" uid="uid://d1sx4dr0u3oui" path="res://Assets/Animations/enemy_runs.png" id="2_xtetu"]
+[ext_resource type="AudioStream" uid="uid://xo44k1jht6ms" path="res://Assets/Sounds/SFX/enemy moving.mp3" id="3_iycd4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qyaax"]
 radius = 8.0
@@ -390,6 +391,12 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_iw6pf")
+
+[node name="MoveSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iycd4")
+volume_db = -4.0
+max_distance = 64.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
