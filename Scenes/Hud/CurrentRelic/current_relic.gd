@@ -1,4 +1,4 @@
-extends Node2D
+extends MarginContainer
 
 const relic_textures = {
 	Globals.RelicType.Speed: preload("res://Scenes/LevelIntro/Relics/gadget_speed.png"),

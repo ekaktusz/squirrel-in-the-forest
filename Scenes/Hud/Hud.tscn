@@ -48,10 +48,10 @@ text = "Lives: 3/3"
 horizontal_alignment = 2
 
 [node name="Ability" type="Label" parent="."]
-offset_left = 806.0
-offset_top = 19.0
-offset_right = 1019.0
-offset_bottom = 44.0
+offset_left = 803.0
+offset_top = 44.0
+offset_right = 1016.0
+offset_bottom = 69.0
 size_flags_horizontal = 8
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -62,4 +62,7 @@ text = "Press E to use
 "
 
 [node name="CurrentRelic" parent="." instance=ExtResource("3_sumi8")]
-position = Vector2(1043, 5)
+offset_left = 1038.0
+offset_top = 21.0
+offset_right = 1121.0
+offset_bottom = 104.0

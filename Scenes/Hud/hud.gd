@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var level_progress: Label = $LevelProgress
 @onready var life: Label = $Life
 @onready var ability: Label = $Ability
-@onready var current_relic: Node2D = $CurrentRelic
+@onready var current_relic: MarginContainer = $CurrentRelic
 
 
 func _ready() -> void:
