@@ -1,87 +1,41 @@
-[gd_scene load_steps=9 format=4 uid="uid://b1goy6euho2hc"]
+[gd_scene load_steps=4 format=4 uid="uid://cfawsqk8tcrlg"]
 
-[ext_resource type="PackedScene" uid="uid://cy6e58i5cbg2h" path="res://Scenes/Tilemaps/TilemapGroundFloor.tscn" id="1_omx4m"]
-[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_xpino"]
-[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_4m5nu"]
-[ext_resource type="PackedScene" uid="uid://cwj7k7y1bdw51" path="res://Scenes/Tilemaps/TilemapFirstFloor.tscn" id="3_olgas"]
-[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="4_ic73y"]
-[ext_resource type="PackedScene" uid="uid://cauia1447s1l2" path="res://Scenes/Squirrel/Squirrel.tscn" id="5_53h01"]
-[ext_resource type="PackedScene" uid="uid://dyjsq2ye6wjqp" path="res://Scenes/Hideaway/Hideaway.tscn" id="6_0rdc7"]
-[ext_resource type="PackedScene" uid="uid://cm0d02nx3eh2y" path="res://Scenes/StartEnd/StartEnd.tscn" id="7_bxuyl"]
+[ext_resource type="PackedScene" uid="uid://dkkluhyruoleb" path="res://Scenes/Levels/Level.tscn" id="1_astbx"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="2_u4xxn"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_wrgn8"]
 
-[node name="DummyLevel" type="Node2D"]
-y_sort_enabled = true
-script = ExtResource("1_xpino")
-nut_number_on_level = 4
+[node name="Tutorial1" instance=ExtResource("1_astbx")]
 
-[node name="TilemapGroundFloor" parent="." instance=ExtResource("1_omx4m")]
-tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD+//3/AAABAAAAAAAAAP3/AAACAAAAAAACAP3/AAADAAAAAAD8////AAAAAAEAAAD+////AAABAAEAAAAAAP//AAACAAEAAAACAP//AAADAAEAAAACAAEAAAADAAIAAAAAAAEAAAACAAIAAAD+/wEAAAABAAIAAAD8/wEAAAAAAAIAAAD8/wMAAAAAAAMAAAD+/wMAAAABAAMAAAAAAAMAAAACAAMAAAACAAMAAAADAAMAAAA=")
+[node name="TilemapGroundFloor" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD9/wIAAAACAAEAAAD6/wUAAAAAAAMAAAD8/wUAAAABAAMAAAD8/wMAAAABAAIAAAD6/wMAAAAAAAIAAAD6/wIAAAACAAEAAAD8/wIAAAACAAEAAAD9/wUAAAACAAMAAAD9/wMAAAACAAIAAAA=")
 
-[node name="TilemapFirstFloor" parent="." instance=ExtResource("3_olgas")]
-tile_map_data = PackedByteArray("AAAEAP7/AAAFAAAAAAAEAP//AAAFAAAAAAAEAAAAAAAFAAAAAAAEAAEAAAAFAAAAAAAEAAIAAAAFAAAAAAAEAAMAAAAFAAAAAAD6//3/AAAFAAAAAgD6//7/AAAFAAAAAgD6////AAAFAAAAAgD6/wAAAAAFAAAAAgD6/wEAAAAFAAAAAgD6/wIAAAAFAAAAAgD6/wMAAAAFAAAAAgD8/wUAAAAFAAAAAwD9/wUAAAAFAAAAAwD+/wUAAAAFAAAAAwD//wUAAAAFAAAAAwAAAAUAAAAFAAAAAwABAAUAAAAFAAAAAwACAAUAAAAFAAAAAwAEAP3/AAAFAAAAAAD8//v/AAAFAAAAAQD9//v/AAAFAAAAAQD+//v/AAAFAAAAAQD///v/AAAFAAAAAQAAAPv/AAAFAAAAAQABAPv/AAAFAAAAAQACAPv/AAAFAAAAAQAEAAQAAAAGAAAAAQD7/wUAAAAGAAAAAwAEAPz/AAAGAAAAAAD7//v/AAAGAAAAAgD9/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wAAAAAEAAEAAAD9////AAAEAAEAAAD9//7/AAAEAAEAAAD9//3/AAADAAEAAAD//wIAAAADAAEAAAAAAAIAAAADAAAAAAABAAIAAAAEAAAAAAACAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAAAAAADAAAAAAD///7/AAADAAAAAAADAP7/AAADAAAAAAAAAP7/AAADAAEAAAABAP7/AAADAAEAAAA=")
+[node name="TilemapFirstFloor" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD7/wYAAAAGAAEAAAD8/wYAAAAGAAEAAAD9/wYAAAAGAAEAAAD+/wYAAAAGAAEAAAD//wYAAAAGAAAAAQD5/wcAAAAGAAAAAwD+/wAAAAAFAAEAAAD9/wAAAAAFAAEAAAD8/wAAAAAFAAEAAAD7/wAAAAAFAAEAAAD6/wAAAAAFAAEAAAD//wAAAAAGAAAAAAD4/wAAAAAGAAAAABD//wIAAAAFAAAAAAD//wQAAAAFAAAAAAD4/wIAAAAFAAAAAgD4/wQAAAAFAAAAAgD4/wUAAAAFAAAAAgD7/wIAAAABAAEAAAD9/wQAAAAAAAAAAAA=")
 
-[node name="NPCs" type="Node2D" parent="."]
-y_sort_enabled = true
+[node name="Squirrel" parent="." index="2"]
+position = Vector2(-176, 176)
 
-[node name="NPC" parent="NPCs" instance=ExtResource("2_4m5nu")]
-position = Vector2(112, 80)
-style = 1
+[node name="StartEnd" parent="." index="3"]
+position = Vector2(-160, 160)
 
-[node name="StaticNpcs" type="Node2D" parent="NPCs"]
-
-[node name="NPC3" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(-16, -112)
-
-[node name="NPC4" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(48, -112)
-
-[node name="NPC5" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(112, 16)
-
-[node name="NPC6" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(16, 16)
-
-[node name="NPC7" parent="NPCs/StaticNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(-48, 16)
-
-[node name="SideNpcs" type="Node2D" parent="NPCs"]
-
-[node name="NPC2" parent="NPCs/SideNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(16, 112)
-style = 2
-
-[node name="NPC3" parent="NPCs/SideNpcs" instance=ExtResource("2_4m5nu")]
-position = Vector2(16, -80)
-style = 2
-
-[node name="Nuts" type="Node2D" parent="."]
-
-[node name="Nut1" parent="Nuts" instance=ExtResource("4_ic73y")]
-position = Vector2(112, -112)
-
-[node name="Nut2" parent="Nuts" instance=ExtResource("4_ic73y")]
+[node name="Nut" parent="." index="4" instance=ExtResource("2_u4xxn")]
 position = Vector2(-48, 48)
 
-[node name="Nut3" parent="Nuts" instance=ExtResource("4_ic73y")]
-position = Vector2(-112, -112)
+[node name="NPC" parent="." index="5" instance=ExtResource("3_wrgn8")]
+position = Vector2(-80, 48)
+color = 1
 
-[node name="Nut4" parent="Nuts" instance=ExtResource("4_ic73y")]
-position = Vector2(-48, -16)
+[node name="NPC2" parent="." index="6" instance=ExtResource("3_wrgn8")]
+position = Vector2(-80, 80)
+color = 1
 
-[node name="Trees" type="Node2D" parent="."]
-y_sort_enabled = true
+[node name="NPC3" parent="." index="7" instance=ExtResource("3_wrgn8")]
+position = Vector2(-144, 112)
+color = 2
 
-[node name="Tree" parent="Trees" instance=ExtResource("6_0rdc7")]
-position = Vector2(16, -136)
+[node name="NPC4" parent="." index="8" instance=ExtResource("3_wrgn8")]
+position = Vector2(-144, 144)
+color = 2
 
-[node name="Squirrel" parent="." instance=ExtResource("5_53h01")]
-z_index = 1
-position = Vector2(-112, 112)
-
-[node name="StartEnd" parent="." instance=ExtResource("7_bxuyl")]
-z_index = 1
-position = Vector2(-98, 97)
-
-[connection signal="enemy_hit" from="Squirrel" to="." method="_on_squirrel_enemy_hit"]
-[connection signal="level_done" from="Squirrel" to="." method="_on_squirrel_level_done"]
-[connection signal="nut_collected" from="Squirrel" to="." method="_on_squirrel_nut_collected"]
+[node name="NPC5" parent="." index="9" instance=ExtResource("3_wrgn8")]
+position = Vector2(-112, 176)

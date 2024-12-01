@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=4 uid="uid://bys5fp4vgg8ln"]
+[gd_scene load_steps=4 format=4 uid="uid://bdo06y508fks2"]
 
-[ext_resource type="PackedScene" uid="uid://dkkluhyruoleb" path="res://Scenes/Levels/Level.tscn" id="1_10nfw"]
-[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_8ikxy"]
-[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="3_xhkvq"]
+[ext_resource type="PackedScene" uid="uid://dkkluhyruoleb" path="res://Scenes/Levels/Level.tscn" id="1_kse8b"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_fw7be"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="3_4d8tw"]
 
-[node name="Level20" instance=ExtResource("1_10nfw")]
+[node name="Level16" instance=ExtResource("1_kse8b")]
 
 [node name="TilemapGroundFloor" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD4/wcAAAAUAAMAAAD6/wcAAAAVAAMAAAD7/wcAAAAWAAMAAAD9/wcAAAAWAAMAAAD+/wcAAAAWAAMAAAAAAAcAAAAXAAMAAAD4/wUAAAAUAAIAAAD4/wQAAAAUAAIAAAD4/wIAAAAUAAEAAAD4/wEAAAAUAAEAAAD4////AAAUAAAAAAD6////AAAVAAAAAAD7////AAAVAAAAAAD9////AAAWAAAAAAD+////AAAWAAAAAAAAAP//AAAXAAAAAAAAAAEAAAAXAAEAAAAAAAIAAAAXAAEAAAAAAAQAAAAXAAIAAAAAAAUAAAAXAAIAAAD+/wEAAAAWAAEAAAD8/wEAAAAWAAEAAAD6/wEAAAAWAAEAAAD6/wMAAAAWAAEAAAD8/wMAAAAWAAEAAAD+/wMAAAAWAAEAAAD+/wUAAAAWAAEAAAD8/wUAAAAWAAEAAAD6/wUAAAAWAAEAAAA=")
+tile_map_data = PackedByteArray("AAD5/wYAAAAAAAMAAAD7/wYAAAABAAMAAAD9/wYAAAACAAMAAAD//wYAAAADAAEAAAD5/wQAAAAAAAIAAAD7/wQAAAABAAIAAAD9/wQAAAACAAIAAAD//wQAAAADAAIAAAD//wIAAAADAAEAAAD9/wIAAAACAAEAAAD7/wIAAAABAAEAAAD5/wIAAAAAAAEAAAD5/wAAAAAAAAAAAAD7/wAAAAABAAAAAAD9/wAAAAACAAAAAAD//wAAAAADAAAAAAD5////AAADAAEAAAD7////AAADAAEAAAD9////AAADAAEAAAD/////AAADAAEAAAAAAP//AAADAAEAAAAAAAAAAAADAAEAAAAAAAEAAAADAAEAAAAAAAIAAAADAAEAAAAAAAMAAAADAAEAAAAAAAQAAAADAAEAAAAAAAUAAAADAAEAAAAAAAYAAAADAAEAAAAAAAcAAAADAAEAAAD//wcAAAADAAEAAAD+/wcAAAADAAEAAAD9/wcAAAADAAEAAAD8/wcAAAADAAEAAAD7/wcAAAADAAEAAAD6/wcAAAADAAEAAAD5/wcAAAADAAEAAAD4/wcAAAADAAEAAAD4/wYAAAADAAEAAAD4/wUAAAADAAEAAAD4/wQAAAADAAEAAAD4/wMAAAADAAEAAAD4/wIAAAADAAEAAAD4/wEAAAADAAEAAAD4/wAAAAADAAEAAAD4////AAADAAEAAAD+/wYAAAADAAEAAAA=")
 
 [node name="TilemapFirstFloor" parent="." index="1"]
-tile_map_data = PackedByteArray("AAD3//7/AAAFAAsAAQD3////AAAFAAsAAQD3/wAAAAAFAAsAAQD3/wEAAAAFAAsAAQD3/wIAAAAFAAsAAQD3/wMAAAAFAAsAAQD3/wQAAAAFAAsAAQD3/wUAAAAFAAsAAQD3/wYAAAAFAAsAAQD3/wcAAAAFAAsAAQD3/wgAAAAFAAsAAQD3//3/AAAFAAsAAQD3//z/AAAFAAsAAQACAAgAAAAFAAsAAAACAAcAAAAFAAsAAAACAAYAAAAFAAsAAAACAAUAAAAFAAsAAAACAAQAAAAFAAsAAAACAAMAAAAFAAsAAAACAAIAAAAFAAsAAAACAAEAAAAFAAsAAAACAAAAAAAFAAsAAAACAP//AAAFAAsAAAACAP7/AAAFAAsAAAACAP3/AAAFAAsAAAACAPz/AAAFAAsAAAD4//3/AAAEAAsAAAD5//3/AAAEAAsAAAD6//3/AAAEAAsAAAD7//3/AAAEAAsAAAD8//3/AAAEAAsAAAD9//3/AAAEAAsAAAD+//3/AAAEAAsAAAD///3/AAAEAAsAAAAAAP3/AAAEAAsAAAABAP3/AAAEAAsAAAD4//z/AAADAAoAAAD5//z/AAADAAoAAAD6//z/AAADAAoAAAD7//z/AAADAAoAAAD8//z/AAADAAoAAAD9//z/AAADAAoAAAD+//z/AAADAAoAAAD///z/AAADAAoAAAAAAPz/AAADAAoAAAABAPz/AAADAAoAAAD4/wgAAAAFAAoAAAD5/wgAAAAFAAoAAAD6/wgAAAAFAAoAAAD7/wgAAAAFAAoAAAD8/wgAAAAFAAoAAAD9/wgAAAAFAAoAAAD+/wgAAAAFAAoAAAD//wgAAAAFAAoAAAAAAAgAAAAFAAoAAAABAAgAAAAFAAoAAAA=")
+tile_map_data = PackedByteArray("AAACAAgAAAAGAAAAAQD3/wkAAAAGAAAAAwD5/wkAAAAFAAAAAwD7/wkAAAAFAAAAAwD9/wkAAAAFAAAAAwAAAAkAAAAFAAAAAwD//wkAAAAFAAAAAwD2/wcAAAAFAAAAAgD2/wUAAAAFAAAAAgD2/wMAAAAFAAAAAgD2/wEAAAAFAAAAAgD2////AAAFAAAAAgD5//3/AAAFAAEAAAD7//3/AAAFAAEAAAD9//3/AAAFAAEAAAD///3/AAAFAAEAAAAAAP3/AAAFAAEAAAACAAEAAAAFAAAAAAACAAIAAAAFAAAAAAACAAMAAAAFAAAAAAACAAQAAAAFAAAAAAACAAUAAAAFAAAAAAACAAYAAAAFAAAAAAD6////AAABAAAAAAD8////AAABAAAAAAD+////AAABAAAAAAAAAP//AAABAAAAAAD//wEAAAABAAAAAAD7/wEAAAABAAAAAAD5/wEAAAABAAAAAAD6/wUAAAABAAAAAAD//wUAAAABAAAAAAD5/wcAAAABAAAAAAD9/wcAAAABAAAAAAD+/wcAAAAEAAEAAAAAAAUAAAADAAAAAAD4//3/AAAFAAEAAAD6//3/AAAFAAEAAAD8//3/AAAFAAEAAAD+//3/AAAFAAEAAAABAP3/AAAFAAEAAAACAP3/AAAGAAAAAAACAP//AAAFAAAAAAD2//3/AAAGAAAAA1D5/wMAAAAEAAAAAAD5/wQAAAADAAEAAAD5/wUAAAADAAAAAAD7/wUAAAADAAAAAAD7/wMAAAABAAEAAAD7/wQAAAADAAAAAAD+/wUAAAAAAAAAAAD+/wQAAAACAAAAAAD+/wMAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAEAAAAAAD6/wcAAAACAAAAAAA=")
 
 [node name="Squirrel" parent="." index="2"]
 position = Vector2(-240, 240)
@@ -18,168 +18,96 @@ position = Vector2(-240, 240)
 [node name="StartEnd" parent="." index="3"]
 position = Vector2(-224, 224)
 
-[node name="NPC" parent="." index="4" instance=ExtResource("2_8ikxy")]
-position = Vector2(-240, -16)
-color = 2
+[node name="NPC" parent="." index="4" instance=ExtResource("2_fw7be")]
+position = Vector2(-144, -48)
+style = 2
 
-[node name="NPC30" parent="." index="5" instance=ExtResource("2_8ikxy")]
-position = Vector2(-208, 48)
-color = 2
+[node name="NPC2" parent="." index="5" instance=ExtResource("2_fw7be")]
+position = Vector2(-144, 16)
+style = 2
 
-[node name="NPC31" parent="." index="6" instance=ExtResource("2_8ikxy")]
-position = Vector2(-208, 80)
-color = 2
+[node name="NPC3" parent="." index="6" instance=ExtResource("2_fw7be")]
+position = Vector2(-16, 240)
+style = 2
 
-[node name="NPC32" parent="." index="7" instance=ExtResource("2_8ikxy")]
-position = Vector2(-208, 112)
-color = 2
+[node name="NPC4" parent="." index="7" instance=ExtResource("2_fw7be")]
+position = Vector2(-144, 208)
+style = 2
 
-[node name="NPC33" parent="." index="8" instance=ExtResource("2_8ikxy")]
+[node name="NPC5" parent="." index="8" instance=ExtResource("2_fw7be")]
+position = Vector2(48, 112)
+style = 1
+color = 1
+
+[node name="NPC6" parent="." index="9" instance=ExtResource("2_fw7be")]
 position = Vector2(-176, 80)
+style = 1
+color = 1
+
+[node name="NPC7" parent="." index="10" instance=ExtResource("2_fw7be")]
+position = Vector2(-80, 144)
+style = 1
+color = 1
+
+[node name="NPC8" parent="." index="11" instance=ExtResource("2_fw7be")]
+position = Vector2(-112, 176)
+style = 1
+color = 1
+
+[node name="NPC9" parent="." index="12" instance=ExtResource("2_fw7be")]
+position = Vector2(-16, 80)
+style = 1
+color = 1
+
+[node name="NPC10" parent="." index="13" instance=ExtResource("2_fw7be")]
+position = Vector2(-240, 144)
+style = 1
+color = 1
+
+[node name="NPC11" parent="." index="14" instance=ExtResource("2_fw7be")]
+position = Vector2(-240, 48)
+style = 1
+color = 1
+
+[node name="NPC12" parent="." index="15" instance=ExtResource("2_fw7be")]
+position = Vector2(-144, 240)
 color = 2
 
-[node name="NPC2" parent="." index="9" instance=ExtResource("2_8ikxy")]
+[node name="NPC13" parent="." index="16" instance=ExtResource("2_fw7be")]
+position = Vector2(-112, 240)
+color = 2
+
+[node name="NPC14" parent="." index="17" instance=ExtResource("2_fw7be")]
+position = Vector2(-112, 80)
+color = 2
+
+[node name="NPC15" parent="." index="18" instance=ExtResource("2_fw7be")]
+position = Vector2(-80, 80)
+color = 2
+
+[node name="NPC16" parent="." index="19" instance=ExtResource("2_fw7be")]
 position = Vector2(-208, -16)
 color = 2
 
-[node name="NPC3" parent="." index="10" instance=ExtResource("2_8ikxy")]
-position = Vector2(-176, -16)
+[node name="NPC17" parent="." index="20" instance=ExtResource("2_fw7be")]
+position = Vector2(16, 48)
 color = 2
 
-[node name="NPC4" parent="." index="11" instance=ExtResource("2_8ikxy")]
-position = Vector2(-144, -16)
+[node name="NPC18" parent="." index="21" instance=ExtResource("2_fw7be")]
+position = Vector2(16, 208)
 color = 2
 
-[node name="NPC5" parent="." index="12" instance=ExtResource("2_8ikxy")]
-position = Vector2(16, -16)
-color = 2
-
-[node name="NPC6" parent="." index="13" instance=ExtResource("2_8ikxy")]
-position = Vector2(16, -48)
-color = 2
-
-[node name="NPC7" parent="." index="14" instance=ExtResource("2_8ikxy")]
-position = Vector2(16, 16)
-color = 2
-
-[node name="NPC8" parent="." index="15" instance=ExtResource("2_8ikxy")]
-position = Vector2(-48, 16)
-color = 2
-
-[node name="NPC9" parent="." index="16" instance=ExtResource("2_8ikxy")]
-position = Vector2(-48, 48)
-color = 2
-
-[node name="NPC10" parent="." index="17" instance=ExtResource("2_8ikxy")]
-position = Vector2(-48, 80)
-color = 2
-
-[node name="NPC11" parent="." index="18" instance=ExtResource("2_8ikxy")]
-position = Vector2(-48, 112)
-color = 2
-
-[node name="NPC12" parent="." index="19" instance=ExtResource("2_8ikxy")]
-position = Vector2(-16, 112)
-color = 2
-
-[node name="NPC13" parent="." index="20" instance=ExtResource("2_8ikxy")]
-position = Vector2(16, 112)
-color = 2
-
-[node name="NPC14" parent="." index="21" instance=ExtResource("2_8ikxy")]
-position = Vector2(-112, 208)
-color = 2
-
-[node name="NPC15" parent="." index="22" instance=ExtResource("2_8ikxy")]
-position = Vector2(-80, 208)
-color = 2
-
-[node name="NPC16" parent="." index="23" instance=ExtResource("2_8ikxy")]
-position = Vector2(-144, 208)
-color = 2
-
-[node name="NPC17" parent="." index="24" instance=ExtResource("2_8ikxy")]
-position = Vector2(-176, 208)
-color = 2
-
-[node name="NPC18" parent="." index="25" instance=ExtResource("2_8ikxy")]
-position = Vector2(-208, 208)
-color = 2
-
-[node name="NPC19" parent="." index="26" instance=ExtResource("2_8ikxy")]
-position = Vector2(-48, 208)
-color = 2
-
-[node name="NPC20" parent="." index="27" instance=ExtResource("2_8ikxy")]
-position = Vector2(-16, 208)
-style = 2
-color = 1
-
-[node name="NPC21" parent="." index="28" instance=ExtResource("2_8ikxy")]
-position = Vector2(-16, 176)
-style = 2
-color = 1
-
-[node name="NPC22" parent="." index="29" instance=ExtResource("2_8ikxy")]
-position = Vector2(-80, 112)
-style = 2
-color = 1
-
-[node name="NPC23" parent="." index="30" instance=ExtResource("2_8ikxy")]
-position = Vector2(-112, 144)
-style = 2
-color = 1
-
-[node name="NPC24" parent="." index="31" instance=ExtResource("2_8ikxy")]
-position = Vector2(-144, 176)
-style = 2
-color = 1
-
-[node name="NPC25" parent="." index="32" instance=ExtResource("2_8ikxy")]
-position = Vector2(-144, 176)
-style = 2
-color = 1
-
-[node name="NPC26" parent="." index="33" instance=ExtResource("2_8ikxy")]
-position = Vector2(-80, -48)
-style = 2
-color = 1
-
-[node name="NPC27" parent="." index="34" instance=ExtResource("2_8ikxy")]
-position = Vector2(-80, -16)
-style = 2
-color = 1
-
-[node name="NPC28" parent="." index="35" instance=ExtResource("2_8ikxy")]
-position = Vector2(-112, 16)
-style = 2
-color = 1
-
-[node name="NPC29" parent="." index="36" instance=ExtResource("2_8ikxy")]
-position = Vector2(-144, 48)
-style = 2
-color = 1
-
-[node name="NPC35" parent="." index="37" instance=ExtResource("2_8ikxy")]
-position = Vector2(16, 80)
-style = 2
-color = 1
-
-[node name="NPC34" parent="." index="38" instance=ExtResource("2_8ikxy")]
-position = Vector2(48, 16)
-style = 1
-
-[node name="Nut" parent="." index="39" instance=ExtResource("3_xhkvq")]
-position = Vector2(48, -48)
-
-[node name="Nut2" parent="." index="40" instance=ExtResource("3_xhkvq")]
+[node name="Nut" parent="." index="22" instance=ExtResource("3_4d8tw")]
 position = Vector2(-240, -48)
 
-[node name="Nut3" parent="." index="41" instance=ExtResource("3_xhkvq")]
-position = Vector2(-208, 16)
+[node name="Nut2" parent="." index="23" instance=ExtResource("3_4d8tw")]
+position = Vector2(-176, 112)
 
-[node name="Nut4" parent="." index="42" instance=ExtResource("3_xhkvq")]
-position = Vector2(16, 48)
+[node name="Nut3" parent="." index="24" instance=ExtResource("3_4d8tw")]
+position = Vector2(-80, 112)
 
-[node name="Nut5" parent="." index="43" instance=ExtResource("3_xhkvq")]
-position = Vector2(-80, 176)
+[node name="Nut4" parent="." index="25" instance=ExtResource("3_4d8tw")]
+position = Vector2(-16, 112)
+
+[node name="Nut5" parent="." index="26" instance=ExtResource("3_4d8tw")]
+position = Vector2(-80, 48)
