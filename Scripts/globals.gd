@@ -11,6 +11,8 @@ var total_nut_counter: int = 100
 var current_level_no_of_nuts: int = 0
 var current_level_collected_nuts: int = 0
 
+var remaining_life: int = 0
+
 var selected_power_up: RelicType = RelicType.Speed
 
 var speed_power_up_percentage = 1.5
