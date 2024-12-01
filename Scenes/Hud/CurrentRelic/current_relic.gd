@@ -13,7 +13,6 @@ const relic_textures = {
 func _ready() -> void:
 	texture_rect.set_texture(relic_textures[Globals.selected_power_up])
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

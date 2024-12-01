@@ -7,6 +7,15 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	_update_values()
+
+func _process(delta: float) -> void:
+	_update_values()
+	if Globals.power_up_used:
+		ability.text = ""
+		current_relic.texture_rect.modulate = Color(0.5, 0.5, 0.5, 1)  # Darker by reducing RGB values
+
+func _update_values() -> void:
 	total_nut.text = "Nuts collected: " + str(Globals.total_nut_counter)
 	level_progress.text = "Nuts on level: " + str(Globals.current_level_collected_nuts) + "/" + str(Globals.current_level_no_of_nuts)
 	life.text = "Lives: " + str(Globals.remaining_life) + "/3"
@@ -15,8 +24,3 @@ func _ready() -> void:
 		ability.text = "Press E to use"
 	else:
 		ability.text = ""
-
-func _process(delta: float) -> void:
-	if Globals.power_up_used:
-		ability.text = ""
-		current_relic.texture_rect.modulate = Color(0.5, 0.5, 0.5, 1)  # Darker by reducing RGB values
