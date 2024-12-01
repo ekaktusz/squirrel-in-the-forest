@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5dv48gpc012w" path="res://Scenes/Nut/nut_pickup.png" id="3_3uwb5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qygvw"]
-radius = 11.1803
+radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6phio"]
 atlas = ExtResource("2_oofvd")
@@ -76,9 +76,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7wy3"]
-radius = 16.1245
+radius = 11.0454
 
-[node name="Nut" type="CharacterBody2D"]
+[node name="Nut" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 8
@@ -87,6 +87,7 @@ script = ExtResource("1_bqe84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qygvw")
+disabled = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.823994, 0.692834, 0.226163, 1)
