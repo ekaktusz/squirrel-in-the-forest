@@ -68,7 +68,7 @@ func _input(event):
 		return
 	
 	
-	if Globals.selected_power_up == Globals.RelicType.Shield or Globals.selected_power_up == Globals.RelicType.Reveal:
+	if Globals.selected_power_up == Globals.RelicType.None and Globals.selected_power_up == Globals.RelicType.Shield or Globals.selected_power_up == Globals.RelicType.Reveal:
 		return
 	
 	if event.is_action_pressed("action") and not Globals.power_up_used:
@@ -163,6 +163,7 @@ func handle_evacuation() -> void:
 		evacuate_sfx.play()
 		sprite_collision.disabled = true
 		area_collision.disabled = true
+		Globals.selected_power_up = Globals.RelicType.None
 		await get_tree().create_timer(2.2).timeout
 		level_done.emit()
 		
