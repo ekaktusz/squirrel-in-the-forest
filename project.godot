@@ -21,6 +21,10 @@ Globals="*res://Scripts/globals.gd"
 SceneTransition="*res://Scenes/SceneTransition/scene_transition.tscn"
 LevelIntroDetails="*res://Scripts/level_intro_details.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 movie_writer/mjpeg_quality=0.5
