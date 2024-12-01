@@ -90,6 +90,7 @@ func _on_relic_2_gui_input(event: InputEvent) -> void:
 		select_relic(relic_2)
 		
 func _on_start_button_pressed() -> void:
+	Globals.selected_power_up = selected_relic.type
 	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
 
 func _on_back_button_pressed() -> void:
