@@ -1,10 +1,11 @@
-extends Node2D
+extends MarginContainer
 
-const relic_textures = {
+var relic_textures = {
 	Globals.RelicType.Speed: preload("res://Scenes/LevelIntro/Relics/gadget_speed.png"),
 	Globals.RelicType.Invisibility: preload("res://Scenes/LevelIntro/Relics/gadget_invisibility.png"),
 	Globals.RelicType.Shield: preload("res://Scenes/LevelIntro/Relics/gadget_armour.png"),
-	Globals.RelicType.Reveal: preload("res://Scenes/LevelIntro/Relics/gadget_samfisher.png")
+	Globals.RelicType.Reveal: preload("res://Scenes/LevelIntro/Relics/gadget_samfisher.png"),
+	Globals.RelicType.None: TextureRect.new()
 }
 
 @onready var texture_rect: TextureRect = $TextureRect
@@ -12,7 +13,6 @@ const relic_textures = {
 
 func _ready() -> void:
 	texture_rect.set_texture(relic_textures[Globals.selected_power_up])
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

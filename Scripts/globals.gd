@@ -4,7 +4,7 @@ enum NpcType { STATIC, UP_DOWN, SIDE_TO_SIDE, FOLLOW }
 enum NpcColor {BLUE, WHITE, RED}
 enum HideawayStyle {TREE, SAFE, PUDDLE, BUSH, MURAL, WATERTOWER}
 enum SquirrelState {NORMAL, SPEEDY, INVISIBLE, SHIELD}
-enum RelicType {Speed, Invisibility, Shield, Reveal}
+enum RelicType {Speed, Invisibility, Shield, Reveal, None}
 
 var current_level_number: int = 0
 var total_nut_counter: int = 0
@@ -13,7 +13,8 @@ var current_level_collected_nuts: int = 0
 
 var remaining_life: int = 0
 
-var selected_power_up: RelicType = RelicType.Speed
+var selected_power_up: RelicType = RelicType.None
+var power_up_used: bool = false
 
 var speed_power_up_percentage = 1.5
 var invis_power_up_time = 1

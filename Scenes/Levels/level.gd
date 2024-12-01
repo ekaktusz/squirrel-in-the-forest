@@ -26,6 +26,7 @@ func _ready() -> void:
 	Globals.current_level_collected_nuts = 0
 	Globals.remaining_life = 3
 	Globals.ready_to_evacuate = false
+	Globals.power_up_used = false
 
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):
@@ -43,9 +44,13 @@ func _set_camera_limits() -> void:
 
 
 func _on_squirrel_enemy_hit() -> void:
-	Globals.remaining_life -= 1
+	if squirrel.shield_active:
+		squirrel.deactivate_power_up_shield()
+	else:
+		Globals.remaining_life -= 1
+	
 	if Globals.remaining_life == 0:
-		Globals.current_level_number = 0
+		Globals.current_level_number  = 0
 		SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
 			
 

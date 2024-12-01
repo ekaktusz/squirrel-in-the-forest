@@ -39,6 +39,8 @@ const COLLISION_LAYER_PLAYER: int = 2
 var initial_position: Vector2
 var is_exploding: bool = false  # New flag to track explosion state
 
+var shield_active: bool = false
+
 var enemy_state
 
 func _ready() -> void:
@@ -48,6 +50,12 @@ func _ready() -> void:
 	await get_tree().create_timer(2.2).timeout
 	exit_enter_in_progress = false
 	initial_position = position
+	if Globals.selected_power_up == Globals.RelicType.Shield:
+		activate_power_up_shield()
+		
+	if Globals.selected_power_up == Globals.RelicType.Reveal:
+		activate_power_up_shield()
+	
 
 
 func _input(event):
@@ -59,16 +67,18 @@ func _input(event):
 	if state != Globals.SquirrelState.NORMAL:
 		return
 	
-	if event.is_action_pressed("action"):
+	
+	if Globals.selected_power_up == Globals.RelicType.Shield or Globals.selected_power_up == Globals.RelicType.Reveal:
+		return
+	
+	if event.is_action_pressed("action") and not Globals.power_up_used:
+		Globals.power_up_used = true
+
 		match Globals.selected_power_up:
 			Globals.RelicType.Speed:
 				activate_power_up_speed()
 			Globals.RelicType.Invisibility:
 				activate_power_up_invisible()
-			Globals.RelicType.Shield:
-				activate_power_up_shield()
-			Globals.RelicType.Reveal:
-				activate_power_up_reveal()
 
 
 func activate_power_up_speed():
@@ -100,8 +110,11 @@ func _on_power_up_invisible_timer_timeout() -> void:
 	set_collision_layers(true)
 	
 func activate_power_up_shield() -> void:
-	print("implement me pls shield")
-	pass
+	shield_active = true
+	
+func deactivate_power_up_shield() -> void:
+	shield_active = false
+	Globals.power_up_used = true
 
 func activate_power_up_reveal() -> void:
 	print("implement me pls reveal")

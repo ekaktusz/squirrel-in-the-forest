@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/Hud/CurrentRelic/current_relic.gd" id="1_8vssj"]
 [ext_resource type="Texture2D" uid="uid://btfd2ssl8vhql" path="res://Scenes/LevelIntro/Relics/gadget_armour.png" id="2_3vkab"]
 
-[node name="CurrentRelic" type="Node2D"]
+[node name="CurrentRelic" type="MarginContainer"]
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("1_8vssj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
 texture = ExtResource("2_3vkab")
