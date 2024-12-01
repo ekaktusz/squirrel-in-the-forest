@@ -5,6 +5,7 @@ extends Control
 @onready var selected_rect: TextureRect = $SelectedRect
 
 @export var type: Globals.RelicType = Globals.RelicType.Invisibility
+var selected: bool = false  # Flag to track if this relic is selected
 
 const relic_descriptions =  {
 	Globals.RelicType.Speed: "SPEEEEEEEED power lets goooo baby i love speed ",
@@ -22,7 +23,7 @@ const relic_textures = {
 
 func _ready() -> void:
 	texture_rect.set_texture(relic_textures[type])
-	_make_darker()  # Default state is darker
+	_update_modulate()  # Set the initial modulation state
 
 func set_type(type: Globals.RelicType) -> void:
 	self.type = type
@@ -32,13 +33,15 @@ func get_description() -> String:
 	return relic_descriptions[type]
 
 func _on_mouse_entered() -> void:
-	_make_bright()
+	if not selected:
+		_make_bright()
 
 func _on_mouse_exited() -> void:
-	_make_darker() # Replace with function body.
+	if not selected:
+		_make_darker()
 
 func _make_darker() -> void:
-	# Modulate to make the texture darker (adjust to your preference)
+	# Modulate to make the texture darker
 	texture_rect.modulate = Color(0.5, 0.5, 0.5, 1)  # Darker by reducing RGB values
 
 func _make_bright() -> void:
@@ -46,7 +49,17 @@ func _make_bright() -> void:
 	texture_rect.modulate = Color(1, 1, 1, 1)  # Full brightness
 
 func select() -> void:
+	selected = true
 	selected_rect.visible = true
-	
+	_make_bright()  # Ensure it stays bright when selected
+
 func unselect() -> void:
+	selected = false
 	selected_rect.visible = false
+	_make_darker()  # Return to darker unless the mouse is still hovering
+
+func _update_modulate() -> void:
+	if selected:
+		_make_bright()
+	else:
+		_make_darker()
