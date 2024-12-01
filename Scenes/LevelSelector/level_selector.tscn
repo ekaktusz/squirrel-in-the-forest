@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="4_g80ud"]
 [ext_resource type="Texture2D" uid="uid://csur3rrsry3k" path="res://Scenes/LevelSelector/moki_portrait.png" id="5_5tunw"]
 [ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="6_d6ovy"]
-[ext_resource type="PackedScene" path="res://Scenes/crt_effect.tscn" id="6_ehbxe"]
+[ext_resource type="PackedScene" uid="uid://cqiq0806230f6" path="res://Scenes/crt_effect.tscn" id="6_ehbxe"]
 [ext_resource type="FontFile" uid="uid://5rw45ol7tjvd" path="res://Assets/Font/CourierPrime-Bold.ttf" id="7_vglgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
