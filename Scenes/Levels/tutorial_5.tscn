@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=4 uid="uid://b2epfv57xqjce"]
+
+[ext_resource type="PackedScene" uid="uid://dkkluhyruoleb" path="res://Scenes/Levels/Level.tscn" id="1_r001w"]
+[ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="2_nrar6"]
+[ext_resource type="PackedScene" uid="uid://cmkkegdbsiwcv" path="res://Scenes/Nut/Nut.tscn" id="3_i35i0"]
+[ext_resource type="PackedScene" uid="uid://dyjsq2ye6wjqp" path="res://Scenes/Hideaway/Hideaway.tscn" id="4_5102w"]
+
+[node name="Tutorial5" instance=ExtResource("1_r001w")]
+
+[node name="TilemapGroundFloor" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD6/wUAAAAAAAMAAAD8/wUAAAABAAMAAAD+/wUAAAACAAMAAAD+/wMAAAACAAIAAAD8/wMAAAABAAIAAAD6/wMAAAAAAAIAAAD6/wEAAAAAAAEAAAD8/wEAAAABAAEAAAD+/wEAAAACAAEAAAA=")
+
+[node name="TilemapFirstFloor" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD7/wAAAAAFAAEAAAD8/wAAAAAFAAEAAAD9/wAAAAAFAAEAAAD+/wAAAAAFAAEAAAD6/wAAAAAFAAEAAAD//wAAAAAGAAAAAAD//wIAAAAFAAAAAAD//wQAAAAFAAAAAAD//wYAAAAGAAAAAQD+/wYAAAAGAAEAAAD9/wYAAAAGAAEAAAD8/wYAAAAGAAEAAAD7/wYAAAAGAAEAAAD6/wYAAAAGAAEAAAD4/wYAAAAGAAAAARD4/wQAAAAFAAAAAgD4/wMAAAAFAAAAAgD4/wIAAAAFAAAAAgD4/wAAAAAGAAAAABD6/wEAAAABAAEAAAD7/wQAAAAAAAEAAAD8/wMAAAAEAAAAAAD+/wUAAAACAAAAAAA=")
+
+[node name="Squirrel" parent="." index="2"]
+position = Vector2(-176, 176)
+
+[node name="StartEnd" parent="." index="3"]
+position = Vector2(-160, 160)
+
+[node name="NPC" parent="." index="4" instance=ExtResource("2_nrar6")]
+position = Vector2(-144, 48)
+style = 2
+color = 1
+
+[node name="NPC3" parent="." index="5" instance=ExtResource("2_nrar6")]
+position = Vector2(-80, 144)
+style = 2
+color = 1
+
+[node name="NPC4" parent="." index="6" instance=ExtResource("2_nrar6")]
+position = Vector2(-176, 144)
+
+[node name="NPC2" parent="." index="7" instance=ExtResource("2_nrar6")]
+position = Vector2(-48, 80)
+style = 1
+color = 2
+
+[node name="Nut" parent="." index="8" instance=ExtResource("3_i35i0")]
+position = Vector2(-176, 112)
+
+[node name="Nut2" parent="." index="9" instance=ExtResource("3_i35i0")]
+position = Vector2(-144, 80)
+
+[node name="Nut3" parent="." index="10" instance=ExtResource("3_i35i0")]
+position = Vector2(-80, 48)
+
+[node name="Nut4" parent="." index="11" instance=ExtResource("3_i35i0")]
+position = Vector2(-48, 112)
+
+[node name="Nut5" parent="." index="12" instance=ExtResource("3_i35i0")]
+position = Vector2(-112, 176)
+
+[node name="Hideaway" parent="." index="13" instance=ExtResource("4_5102w")]
+position = Vector2(-64, 96)
