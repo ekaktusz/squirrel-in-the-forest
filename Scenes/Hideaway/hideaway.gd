@@ -16,6 +16,8 @@ var StyleToAnimationMap = ["tree", "safe", "puddle", "bush", "mural", "watertowe
 func _ready() -> void:
 	sprite.play(StyleToAnimationMap[style])
 	sprite.stop()
+	if (style == 0 ):
+		sprite.position = Vector2(sprite.position.x - 16, sprite.position.y)
 	
 	
 func _process(_delta: float) -> void:
