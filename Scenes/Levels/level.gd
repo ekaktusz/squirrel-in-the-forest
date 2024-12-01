@@ -26,6 +26,7 @@ func _ready() -> void:
 	Globals.current_level_collected_nuts = 0
 	Globals.remaining_life = 3
 	Globals.ready_to_evacuate = false
+	Globals.power_up_used = false
 
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):

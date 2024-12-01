@@ -39,6 +39,7 @@ const COLLISION_LAYER_PLAYER: int = 2
 var initial_position: Vector2
 var is_exploding: bool = false  # New flag to track explosion state
 
+
 var enemy_state
 
 func _ready() -> void:
@@ -59,7 +60,9 @@ func _input(event):
 	if state != Globals.SquirrelState.NORMAL:
 		return
 	
-	if event.is_action_pressed("action"):
+	if event.is_action_pressed("action") and not Globals.power_up_used:
+		Globals.power_up_used = true
+
 		match Globals.selected_power_up:
 			Globals.RelicType.Speed:
 				activate_power_up_speed()

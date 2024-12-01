@@ -14,6 +14,7 @@ var current_level_collected_nuts: int = 0
 var remaining_life: int = 0
 
 var selected_power_up: RelicType = RelicType.Speed
+var power_up_used: bool = false
 
 var speed_power_up_percentage = 1.5
 var invis_power_up_time = 1
