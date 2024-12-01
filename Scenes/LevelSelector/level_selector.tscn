@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://cq3270g5iby40" path="res://Assets/Font/StalinistOne-Regular.ttf" id="4_g80ud"]
 [ext_resource type="Texture2D" uid="uid://csur3rrsry3k" path="res://Scenes/LevelSelector/moki_portrait.png" id="5_5tunw"]
 [ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="6_d6ovy"]
-[ext_resource type="PackedScene" uid="uid://cqiq0806230f6" path="res://Scenes/crt_effect.tscn" id="6_ehbxe"]
+[ext_resource type="PackedScene" path="res://Scenes/crt_effect.tscn" id="6_ehbxe"]
 [ext_resource type="FontFile" uid="uid://5rw45ol7tjvd" path="res://Assets/Font/CourierPrime-Bold.ttf" id="7_vglgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3kk"]
@@ -97,7 +97,7 @@ offset_bottom = 604.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/v_separation = -26
 columns = 4
 
 [node name="LevelButton" parent="GridContainer" instance=ExtResource("2_4ey8n")]
@@ -167,5 +167,65 @@ level_number = 12
 layout_mode = 2
 text = "LEVEL 13"
 level_number = 13
+
+[node name="LevelButton15" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 14"
+level_number = 14
+
+[node name="LevelButton16" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 15"
+level_number = 15
+
+[node name="LevelButton17" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 16"
+level_number = 16
+
+[node name="LevelButton18" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 17"
+level_number = 17
+
+[node name="LevelButton19" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 18"
+level_number = 18
+
+[node name="LevelButton20" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 19"
+level_number = 19
+
+[node name="LevelButton21" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 20"
+level_number = 20
+
+[node name="LevelButton22" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 21"
+level_number = 21
+
+[node name="LevelButton23" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 22"
+level_number = 22
+
+[node name="LevelButton24" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 23"
+level_number = 23
+
+[node name="LevelButton25" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 24"
+level_number = 24
+
+[node name="LevelButton26" parent="GridContainer" instance=ExtResource("2_4ey8n")]
+layout_mode = 2
+text = "LEVEL 25"
+level_number = 25
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_ehbxe")]
