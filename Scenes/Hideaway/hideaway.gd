@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite = $Sprite2D
 @onready var label = $HideLabel
 
+@export var is_secret = false
 var is_squirrel_in_range = false
 var is_occupied = false
 var hide_animation
@@ -25,6 +26,10 @@ func _process(_delta: float) -> void:
 		if !is_occupied and Globals.hiding:
 			sprite.play(StyleToAnimationMap[style])
 			is_occupied = true
+			if is_secret:
+				Globals.secret_hideout = true
+				is_secret = false
+				
 		elif is_occupied and !Globals.hiding:
 			is_occupied = false
 
