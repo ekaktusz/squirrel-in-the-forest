@@ -17,7 +17,7 @@ var selected_power_up: RelicType = RelicType.None
 var power_up_used: bool = false
 
 var speed_power_up_percentage = 1.5
-var invis_power_up_time = 1
+var invis_power_up_time = 3
 
 # to do add state manager later if need
 var hiding = false
