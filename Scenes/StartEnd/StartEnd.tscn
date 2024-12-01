@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm0d02nx3eh2y"]
+[gd_scene load_steps=4 format=3 uid="uid://cm0d02nx3eh2y"]
 
 [ext_resource type="Script" path="res://Scenes/StartEnd/start_end.gd" id="1_ida47"]
+[ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="2_5ftv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0mo"]
 size = Vector2(32, 32)
@@ -18,10 +19,13 @@ shape = SubResource("RectangleShape2D_bu0mo")
 [node name="EvacuateLabel" type="Label" parent="."]
 visible = false
 z_index = 1
-offset_left = -80.0
-offset_top = -56.0
-offset_right = 80.0
-offset_bottom = -33.0
+offset_left = -76.0
+offset_top = -6.0
+offset_right = 126.0
+offset_bottom = 17.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ftv7")
+theme_override_font_sizes/font_size = 10
 text = "Press [E] to evacuate"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

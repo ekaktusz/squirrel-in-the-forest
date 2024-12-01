@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dyjsq2ye6wjqp"]
+[gd_scene load_steps=55 format=3 uid="uid://dyjsq2ye6wjqp"]
 
 [ext_resource type="Script" path="res://Scenes/Hideaway/hideaway.gd" id="1_k36c8"]
 [ext_resource type="Texture2D" uid="uid://dexl2fk288oiq" path="res://Scenes/Hideaway/hide_safe.png" id="2_tdjt1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fcgpwvmbn8ma" path="res://Scenes/Hideaway/hide_tree.png" id="5_gg4uk"]
 [ext_resource type="Texture2D" uid="uid://c8wikr7ala0dw" path="res://Scenes/Hideaway/hide_ice.png" id="6_u4wda"]
 [ext_resource type="Texture2D" uid="uid://c34p7vp5hmfoe" path="res://Scenes/Tilemaps/Tilesets/tilemap_v001.png" id="7_xqkh6"]
+[ext_resource type="FontFile" uid="uid://cyvukf7545abt" path="res://Assets/Font/CourierPrime-Regular.ttf" id="9_8upp1"]
 [ext_resource type="AudioStream" uid="uid://dbny2dbajgp43" path="res://Assets/Sounds/SFX/nut pickup2.mp3" id="9_xe0g1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tf2o"]
@@ -364,12 +365,14 @@ position = Vector2(-16.5, 16)
 shape = SubResource("RectangleShape2D_qujdx")
 
 [node name="HideLabel" type="Label" parent="."]
-visible = false
 z_index = 1
-offset_left = -54.0
-offset_top = -44.0
-offset_right = 69.0
-offset_bottom = -21.0
+offset_left = -67.0
+offset_top = -17.0
+offset_right = 97.0
+offset_bottom = 6.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_8upp1")
+theme_override_font_sizes/font_size = 10
 text = "Press [F] to hide"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
