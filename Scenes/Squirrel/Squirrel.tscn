@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cauia1447s1l2"]
+[gd_scene load_steps=84 format=3 uid="uid://cauia1447s1l2"]
 
 [ext_resource type="Script" path="res://Scenes/Squirrel/squirrel.gd" id="1_ufrd5"]
 [ext_resource type="Texture2D" uid="uid://c8uj2lmfc8owk" path="res://Assets/Animations/mokus_entry.png" id="2_4yjlw"]
@@ -592,6 +592,25 @@ radius = 4.0
 bg_color = Color(0.133165, 0.623586, 0.551104, 1)
 anti_aliasing = false
 
+[sub_resource type="Curve" id="Curve_qyux7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0311005, 0.964545), 0.0, 0.0, 0, 0, Vector2(0.995215, 0.509545), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_77l5v"]
+curve = SubResource("Curve_qyux7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_44v60"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+damping_min = 10.0
+damping_max = 20.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_77l5v")
+
 [node name="Squirrel" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 514
@@ -645,6 +664,16 @@ one_shot = true
 [node name="PowerUpInvisibleTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 100
+position = Vector2(-1, 2)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_44v60")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="PowerUpSpeedTimer" to="." method="_on_power_up_speed_timer_timeout"]

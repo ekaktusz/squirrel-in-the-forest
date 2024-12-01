@@ -33,7 +33,9 @@ func _set_camera_limits() -> void:
 
 
 func _on_squirrel_enemy_hit() -> void:
-	squirrel.position = starting_position.position
+	#await get_tree().create_timer(0.5).timeout
+	#squirrel.position = starting_position.position
+	pass
 
 func _on_squirrel_level_done() -> void:
 	Globals.current_level_number += 1
