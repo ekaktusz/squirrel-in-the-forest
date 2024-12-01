@@ -50,7 +50,7 @@ func _on_squirrel_enemy_hit() -> void:
 		Globals.remaining_life -= 1
 	
 	if Globals.remaining_life == 0:
-		Globals.current_level_number = 0
+		Globals.current_level_number  = 0
 		SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
 			
 

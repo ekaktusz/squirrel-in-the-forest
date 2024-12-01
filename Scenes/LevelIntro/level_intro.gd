@@ -14,6 +14,10 @@ extends Node2D
 
 @onready var back_button: Button = $BackButton
 
+@onready var minimap_legend: Sprite2D = $MinimapLegend
+@onready var upgrade_window: Node2D = $UpgradeWindow
+
+
 var selected_relic: Control = null
 var typing_speed: float = 0.00005  # Time delay between characters
 
@@ -32,6 +36,10 @@ func _ready() -> void:
 	mission_label_1.bbcode_text = level_details.description_1
 	mission_label_2.bbcode_text = level_details.description_2
 	
+	upgrade_window.visible = not is_tutorial_map()
+	minimap_legend.visible = is_tutorial_map()
+	start_button.disabled = not is_tutorial_map() # enabled by default if fucker is tutorial level still
+	
 	mission_label_1.visible_characters = 0
 	mission_label_2.visible_characters = 0
 	
@@ -41,6 +49,9 @@ func _ready() -> void:
 			print("asd")
 		)
 	)
+
+func is_tutorial_map() -> bool:
+	return Globals.current_level_number <= 4
 
 func typewriter_effect(label: RichTextLabel, on_complete: Callable) -> void:
 	label.visible_characters = 0  # Start with no characters visible
@@ -90,7 +101,8 @@ func _on_relic_2_gui_input(event: InputEvent) -> void:
 		select_relic(relic_2)
 		
 func _on_start_button_pressed() -> void:
-	Globals.selected_power_up = selected_relic.type
+	if not is_tutorial_map():
+		Globals.selected_power_up = selected_relic.type
 	SceneTransition.change_scene("res://Scenes/Levels/level_" + str(Globals.current_level_number) + ".tscn")
 
 func _on_back_button_pressed() -> void:
