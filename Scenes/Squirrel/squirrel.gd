@@ -177,7 +177,12 @@ func handle_movement() -> void:
 		if (!exit_enter_in_progress):
 			match state:
 				Globals.SquirrelState.NORMAL:
-					animated_sprite_2d.play("idle")
+					if (Globals.selected_power_up == Globals.RelicType.Shield && shield_active):
+						animated_sprite_2d.play("idle_shield")
+					elif (Globals.selected_power_up == Globals.RelicType.Reveal):
+						animated_sprite_2d.play("idle_vision")
+					else:
+						animated_sprite_2d.play("idle")
 				Globals.SquirrelState.SPEEDY:
 					animated_sprite_2d.play("idle_speedy")
 				Globals.SquirrelState.INVISIBLE:
@@ -193,15 +198,35 @@ func play_movement_animation(direction: Vector2) -> void:
 				run_sfx.play()
 			match direction:
 				Vector2.UP:
-					animated_sprite_2d.play("run_up")
+					if (Globals.selected_power_up == Globals.RelicType.Shield && shield_active):
+						animated_sprite_2d.play("run_up_shield")
+					elif (Globals.selected_power_up == Globals.RelicType.Reveal):
+						animated_sprite_2d.play("run_up_vision")
+					else:
+						animated_sprite_2d.play("run_up")
 				Vector2.DOWN:
-					animated_sprite_2d.play("run_down")
+					if (Globals.selected_power_up == Globals.RelicType.Shield && shield_active):
+						animated_sprite_2d.play("run_down_shield")
+					elif (Globals.selected_power_up == Globals.RelicType.Reveal):
+						animated_sprite_2d.play("run_down_vision")
+					else:
+						animated_sprite_2d.play("run_down")
 				Vector2.RIGHT:
 					animated_sprite_2d.flip_h = false
-					animated_sprite_2d.play("run")
+					if (Globals.selected_power_up == Globals.RelicType.Shield && shield_active):
+						animated_sprite_2d.play("run_shield")
+					elif (Globals.selected_power_up == Globals.RelicType.Reveal):
+						animated_sprite_2d.play("run_vision")
+					else:
+						animated_sprite_2d.play("run")
 				Vector2.LEFT:
 					animated_sprite_2d.flip_h = true
-					animated_sprite_2d.play("run")
+					if (Globals.selected_power_up == Globals.RelicType.Shield && shield_active):
+						animated_sprite_2d.play("run_shield")
+					elif (Globals.selected_power_up == Globals.RelicType.Reveal):
+						animated_sprite_2d.play("run_vision")
+					else:
+						animated_sprite_2d.play("run")
 		Globals.SquirrelState.SPEEDY:
 			if (!speedy_run_sfx.playing):
 				speedy_run_sfx.play()
