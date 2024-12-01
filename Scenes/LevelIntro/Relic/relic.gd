@@ -14,11 +14,12 @@ const relic_descriptions =  {
 	Globals.RelicType.Reveal: "x ray vision nuts edition v2000 beast mode"
 }
 
-const relic_textures = {
+var relic_textures = {
 	Globals.RelicType.Speed: preload("res://Scenes/LevelIntro/Relics/gadget_speed.png"),
 	Globals.RelicType.Invisibility: preload("res://Scenes/LevelIntro/Relics/gadget_invisibility.png"),
 	Globals.RelicType.Shield: preload("res://Scenes/LevelIntro/Relics/gadget_armour.png"),
-	Globals.RelicType.Reveal: preload("res://Scenes/LevelIntro/Relics/gadget_samfisher.png")
+	Globals.RelicType.Reveal: preload("res://Scenes/LevelIntro/Relics/gadget_samfisher.png"),
+	Globals.RelicType.None: TextureRect.new()
 }
 
 func _ready() -> void:
