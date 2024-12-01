@@ -8,10 +8,10 @@ extends Control
 var selected: bool = false  # Flag to track if this relic is selected
 
 const relic_descriptions =  {
-	Globals.RelicType.Speed: "SPEEEEEEEED power lets goooo baby i love speed ",
-	Globals.RelicType.Invisibility: "not even your mom can see u bro, hidehide",
-	Globals.RelicType.Shield: "protect you from serious injuries (from ur mom)",
-	Globals.RelicType.Reveal: "x ray vision nuts edition v2000 beast mode"
+	Globals.RelicType.Speed: "Gotta go FASTER!",
+	Globals.RelicType.Invisibility: "Enemies will not see you.",
+	Globals.RelicType.Shield: "Saves you from lethal damage.",
+	Globals.RelicType.Reveal: "X-Ray vision v2000!"
 }
 
 var relic_textures = {
