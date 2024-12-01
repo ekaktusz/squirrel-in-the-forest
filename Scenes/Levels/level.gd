@@ -16,6 +16,16 @@ func _ready() -> void:
 	#_set_camera_limits()
 	add_child(hud.instantiate())
 	add_child(crt.instantiate())
+	
+	var number_of_nuts: int = 0
+	
+	for nut in get_tree().get_nodes_in_group("nut"):
+		number_of_nuts += 1
+	
+	Globals.current_level_no_of_nuts = number_of_nuts
+	Globals.current_level_collected_nuts = 0
+	Globals.remaining_life = 3
+	Globals.ready_to_evacuate = false
 
 func _process(_delta) -> void:
 	if (level_nut_counter >= nut_number_on_level):
@@ -33,9 +43,11 @@ func _set_camera_limits() -> void:
 
 
 func _on_squirrel_enemy_hit() -> void:
-	#await get_tree().create_timer(0.5).timeout
-	#squirrel.position = starting_position.position
-	pass
+	Globals.remaining_life -= 1
+	if Globals.remaining_life == 0:
+		Globals.current_level_number = 0
+		SceneTransition.change_scene("res://Scenes/LevelIntro/level_intro.tscn")
+			
 
 func _on_squirrel_level_done() -> void:
 	Globals.current_level_number = min(25, Globals.current_level_number + 1)
@@ -43,3 +55,4 @@ func _on_squirrel_level_done() -> void:
 
 func _on_squirrel_nut_collected() -> void:
 	level_nut_counter = level_nut_counter+1
+	Globals.current_level_collected_nuts = level_nut_counter

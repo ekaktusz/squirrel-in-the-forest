@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c56unw6ldcudi" path="res://Scenes/NPC/NPC.tscn" id="3_wrgn8"]
 
 [node name="Tutorial1" instance=ExtResource("1_astbx")]
+nut_number_on_level = 1
 
 [node name="TilemapGroundFloor" parent="." index="0"]
 tile_map_data = PackedByteArray("AAD9/wIAAAACAAEAAAD6/wUAAAAAAAMAAAD8/wUAAAABAAMAAAD8/wMAAAABAAIAAAD6/wMAAAAAAAIAAAD6/wIAAAACAAEAAAD8/wIAAAACAAEAAAD9/wUAAAACAAMAAAD9/wMAAAACAAIAAAA=")
